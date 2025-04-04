@@ -15,7 +15,7 @@ const Index: React.FC = () => {
         <title>CTC to Take Home Salary Calculator India | Calculate Actual In-Hand Pay</title>
         <meta name="description" content="Best free CTC to take home calculator for Indian employees. Calculate your in-hand salary with detailed breakdown of PF, tax & other deductions from your CTC package." />
         <meta name="keywords" content="ctc to take home calculator, salary calculator india, in-hand salary, cost to company, net salary, take home pay calculator, salary calculator india, ctc breakdown" />
-        <link rel="canonical" href="https://ctc-calculator.com/" />
+        <link rel="canonical" href="https://www.ctc-calculator.com/" />
         <meta property="og:title" content="CTC to Take Home Salary Calculator India | Calculate Actual In-Hand Pay" />
         <meta property="og:description" content="Best free CTC to take home calculator for Indian employees. Calculate your in-hand salary with detailed breakdown of PF, tax & other deductions from your CTC package." />
         <meta property="og:type" content="website" />
@@ -26,7 +26,7 @@ const Index: React.FC = () => {
             "@context": "https://schema.org",
             "@type": "WebApplication",
             "name": "CTC to Take Home Salary Calculator",
-            "url": "https://ctc-calculator.com/",
+            "url": "https://www.ctc-calculator.com/",
             "applicationCategory": "FinanceApplication",
             "description": "Free CTC to take home calculator that helps Indian employees calculate their in-hand salary with detailed breakdown of all components.",
             "offers": {

@@ -75,7 +75,7 @@ const Contact: React.FC = () => {
         <title>Contact Us | CTC to Take Home Salary Calculator</title>
         <meta name="description" content="Have questions about calculating your CTC to take home salary? Contact our salary calculator experts for personalized assistance." />
         <meta name="keywords" content="contact ctc calculator, salary calculation help, take home salary questions" />
-        <link rel="canonical" href="https://ctc-calculator.com/contact.html" />
+        <link rel="canonical" href="https://www.ctc-calculator.com/contact.html" />
       </Helmet>
       
       <Header />

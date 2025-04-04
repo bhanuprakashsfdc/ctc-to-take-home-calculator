@@ -12,7 +12,7 @@ const About: React.FC = () => {
         <title>About Our CTC to Take Home Salary Calculator | How It Works</title>
         <meta name="description" content="Learn how our CTC to take home calculator works. Understand the methodology behind accurate in-hand salary calculations after all deductions for Indian employees." />
         <meta name="keywords" content="ctc to take home calculator, salary breakdown, take home salary calculation, in-hand salary, salary calculator india" />
-        <link rel="canonical" href="https://ctc-calculator.com/about.html" />
+        <link rel="canonical" href="https://www.ctc-calculator.com/about.html" />
       </Helmet>
       
       <Header />
