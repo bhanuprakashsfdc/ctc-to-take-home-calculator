@@ -16,23 +16,23 @@ const CTCCalculatorForm: React.FC = () => {
   const [ctc, setCtc] = useState<number>(1500000);
   const [showAdvanced, setShowAdvanced] = useState<boolean>(false);
   const [taxRegime, setTaxRegime] = useState<'old' | 'new'>('new');
-  const [section80C, setSection80C] = useState<number>(0);
-  const [section80D, setSection80D] = useState<number>(0);
-  const [housingLoan, setHousingLoan] = useState<number>(0);
-  const [nps, setNps] = useState<number>(0);
+  const [section80C, setSection80C] = useState<number | "">("");
+  const [section80D, setSection80D] = useState<number | "">("");
+  const [housingLoan, setHousingLoan] = useState<number | "">("");
+  const [nps, setNps] = useState<number | "">("");
   const [viewMode, setViewMode] = useState<'monthly' | 'yearly'>('monthly');
   
   // Calculate salary breakdown based on inputs
   const salaryBreakdown = calculateSalaryBreakdown(ctc);
   
-  // Calculate income tax
+  // Calculate income tax - convert empty string to 0 for calculation
   const incomeTax = calculateIncomeTax({
     annualSalary: salaryBreakdown.grossSalary,
     taxRegime,
-    section80C,
-    section80D,
-    housingLoan,
-    nps,
+    section80C: typeof section80C === 'string' ? 0 : section80C,
+    section80D: typeof section80D === 'string' ? 0 : section80D,
+    housingLoan: typeof housingLoan === 'string' ? 0 : housingLoan,
+    nps: typeof nps === 'string' ? 0 : nps,
   });
   
   // Total deductions including income tax
@@ -46,6 +46,17 @@ const CTCCalculatorForm: React.FC = () => {
     const displayValue = viewMode === 'monthly' ? value / 12 : value;
     return formatCurrency(Math.round(displayValue));
   };
+
+  // Handle numeric input change with empty string support
+  const handleNumberChange = (setter: React.Dispatch<React.SetStateAction<number | "">>) => 
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      const value = e.target.value;
+      if (value === "") {
+        setter("");
+      } else {
+        setter(Number(value));
+      }
+    };
 
   return (
     <div className="space-y-6 ctc-calculator">
@@ -192,7 +203,8 @@ const CTCCalculatorForm: React.FC = () => {
                       id="section80c"
                       type="number"
                       value={section80C}
-                      onChange={(e) => setSection80C(Number(e.target.value))}
+                      onChange={handleNumberChange(setSection80C)}
+                      placeholder="Enter amount"
                       max={150000}
                     />
                     <p className="text-xs text-muted-foreground">Max: ₹1,50,000</p>
@@ -204,7 +216,8 @@ const CTCCalculatorForm: React.FC = () => {
                       id="section80d"
                       type="number"
                       value={section80D}
-                      onChange={(e) => setSection80D(Number(e.target.value))}
+                      onChange={handleNumberChange(setSection80D)}
+                      placeholder="Enter amount"
                       max={25000}
                     />
                     <p className="text-xs text-muted-foreground">Max: ₹25,000</p>
@@ -216,7 +229,8 @@ const CTCCalculatorForm: React.FC = () => {
                       id="housingLoan"
                       type="number"
                       value={housingLoan}
-                      onChange={(e) => setHousingLoan(Number(e.target.value))}
+                      onChange={handleNumberChange(setHousingLoan)}
+                      placeholder="Enter amount"
                       max={200000}
                     />
                     <p className="text-xs text-muted-foreground">Max: ₹2,00,000</p>
@@ -228,7 +242,8 @@ const CTCCalculatorForm: React.FC = () => {
                       id="nps"
                       type="number"
                       value={nps}
-                      onChange={(e) => setNps(Number(e.target.value))}
+                      onChange={handleNumberChange(setNps)}
+                      placeholder="Enter amount"
                       max={50000}
                     />
                     <p className="text-xs text-muted-foreground">Max: ₹50,000</p>
