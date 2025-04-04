@@ -9,13 +9,13 @@ const Header: React.FC = () => {
     <header className="w-full py-4 px-6 flex flex-col md:flex-row justify-between items-center border-b">
       <div className="flex items-center gap-2">
         <Calculator className="h-6 w-6 text-finance-primary" />
-        <h1 className="text-xl md:text-2xl font-bold bg-gradient-to-r from-finance-primary to-finance-secondary bg-clip-text text-transparent">
-          CTC Calculator
-        </h1>
+        <Link to="/" className="text-xl md:text-2xl font-bold bg-gradient-to-r from-finance-primary to-finance-secondary bg-clip-text text-transparent no-underline">
+          CTC to Take Home Calculator
+        </Link>
       </div>
       
       <nav className="mt-4 md:mt-0">
-        <ul className="flex items-center gap-6 text-sm">
+        <ul className="flex items-center flex-wrap gap-4 md:gap-6 text-sm">
           <li>
             <Link to="/" className="text-foreground hover:text-finance-primary transition-colors">
               Home

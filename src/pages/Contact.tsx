@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
+import { Helmet } from 'react-helmet-async';
 
 const Contact: React.FC = () => {
   const { toast } = useToast();
@@ -70,6 +71,13 @@ const Contact: React.FC = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <Helmet>
+        <title>Contact Us | CTC to Take Home Salary Calculator</title>
+        <meta name="description" content="Have questions about calculating your CTC to take home salary? Contact our salary calculator experts for personalized assistance." />
+        <meta name="keywords" content="contact ctc calculator, salary calculation help, take home salary questions" />
+        <link rel="canonical" href="https://ctc-calculator.com/contact.html" />
+      </Helmet>
+      
       <Header />
       
       <main className="flex-grow container mx-auto px-4 py-8">
@@ -77,7 +85,7 @@ const Contact: React.FC = () => {
           <div className="text-center">
             <h1 className="text-3xl md:text-4xl font-bold">Contact Us</h1>
             <p className="mt-2 text-lg text-muted-foreground">
-              Have questions or feedback? We'd love to hear from you.
+              Have questions about calculating your CTC to take home salary? We'd love to hear from you.
             </p>
           </div>
           

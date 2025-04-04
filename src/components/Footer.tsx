@@ -1,18 +1,40 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
   
+  // Generate JSON-LD schema for rich results
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "CTC to Take Home Salary Calculator",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web",
+    "description": "Calculate your exact in-hand salary from CTC with detailed breakdown of all deductions and taxes.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "INR"
+    }
+  };
+  
   return (
     <footer className="w-full py-8 px-6 border-t mt-8 bg-muted/30">
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify(schemaData)}
+        </script>
+      </Helmet>
+      
       <div className="container flex flex-col space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div>
-            <h3 className="text-base font-medium mb-3">CTC Calculator</h3>
+            <h3 className="text-base font-medium mb-3">CTC to Take Home Calculator</h3>
             <p className="text-sm text-muted-foreground">
-              The trusted tool for understanding your salary breakdown and take-home pay calculation for Indian employees.
+              The trusted tool for understanding your salary breakdown and calculating accurate take-home pay for Indian employees.
             </p>
           </div>
           
@@ -26,7 +48,7 @@ const Footer: React.FC = () => {
               </li>
               <li>
                 <Link to="/about.html" className="text-muted-foreground hover:text-foreground transition-colors">
-                  About Us
+                  About Our Calculator
                 </Link>
               </li>
               <li>
@@ -62,7 +84,7 @@ const Footer: React.FC = () => {
         <div className="pt-4 border-t border-border/40">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-sm text-muted-foreground">
-              © {currentYear} CTC Calculator. All rights reserved.
+              © {currentYear} CTC to Take Home Salary Calculator. All rights reserved.
             </p>
             <div className="text-sm text-muted-foreground mt-2 md:mt-0">
               <span>This calculator is for educational purposes only.</span>
