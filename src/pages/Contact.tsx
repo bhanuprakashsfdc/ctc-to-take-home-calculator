@@ -1,5 +1,6 @@
 
-import React from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Input } from "@/components/ui/input";
@@ -7,11 +8,64 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
+import { useToast } from "@/hooks/use-toast";
 
 const Contact: React.FC = () => {
-  const handleSubmit = (e: React.FormEvent) => {
+  const { toast } = useToast();
+  const navigate = useNavigate();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { id, value } = e.target;
+    setFormData(prev => ({ ...prev, [id]: value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    alert("Thank you for your message! We will get back to you soon.");
+    
+    // Check if form is filled
+    if (!formData.name || !formData.email || !formData.subject || !formData.message) {
+      toast({
+        title: "Error",
+        description: "Please fill in all fields",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      // Send email using mailto link
+      const mailtoLink = `mailto:kollibhanuprakash0@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
+        `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+      )}`;
+      
+      window.open(mailtoLink, '_blank');
+      
+      // Show success message
+      toast({
+        title: "Success!",
+        description: "Thank you for your message! We will get back to you soon.",
+      });
+      
+      // Reset form
+      setFormData({ name: '', email: '', subject: '', message: '' });
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "There was a problem sending your message. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -33,18 +87,37 @@ const Contact: React.FC = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <Label htmlFor="name">Name</Label>
-                    <Input id="name" placeholder="Your name" required />
+                    <Input 
+                      id="name" 
+                      placeholder="Your name" 
+                      value={formData.name}
+                      onChange={handleChange}
+                      required 
+                    />
                   </div>
                   
                   <div className="space-y-2">
                     <Label htmlFor="email">Email</Label>
-                    <Input id="email" type="email" placeholder="Your email address" required />
+                    <Input 
+                      id="email" 
+                      type="email" 
+                      placeholder="Your email address" 
+                      value={formData.email}
+                      onChange={handleChange}
+                      required 
+                    />
                   </div>
                 </div>
                 
                 <div className="space-y-2">
                   <Label htmlFor="subject">Subject</Label>
-                  <Input id="subject" placeholder="What is this regarding?" required />
+                  <Input 
+                    id="subject" 
+                    placeholder="What is this regarding?" 
+                    value={formData.subject}
+                    onChange={handleChange}
+                    required 
+                  />
                 </div>
                 
                 <div className="space-y-2">
@@ -53,12 +126,18 @@ const Contact: React.FC = () => {
                     id="message" 
                     placeholder="Your message..." 
                     className="min-h-[150px]"
+                    value={formData.message}
+                    onChange={handleChange}
                     required
                   />
                 </div>
                 
-                <Button type="submit" className="w-full">
-                  Send Message
+                <Button 
+                  type="submit" 
+                  className="w-full"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
                 </Button>
               </form>
             </CardContent>
@@ -67,7 +146,7 @@ const Contact: React.FC = () => {
           <div className="text-center">
             <h2 className="text-xl font-semibold mb-2">Email Us</h2>
             <p className="text-muted-foreground">
-              support@ctccalculator.com
+              kollibhanuprakash0@gmail.com
             </p>
           </div>
         </div>
