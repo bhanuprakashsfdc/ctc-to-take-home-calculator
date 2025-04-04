@@ -119,7 +119,7 @@ const Footer: React.FC = () => {
         <div className="pt-4 border-t border-border/40">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-sm text-muted-foreground">
-              © {currentYear} CTC to Take Home Salary Calculator India. All rights reserved.
+              © {currentYear} CTC to Take Home Salary Calculator India developed by <a href="https://bhanuprakashsfdc.com/">Bhanu Prakash</a> . All rights reserved.
             </p>
             <div className="text-sm text-muted-foreground mt-2 md:mt-0">
               <span>This calculator is for educational purposes only.</span>
