@@ -58,9 +58,6 @@ const Contact: React.FC = () => {
       
       // Reset form
       setFormData({ name: '', email: '', subject: '', message: '' });
-      
-      // Navigate to the calculator page
-      navigate('/');
     } catch (error) {
       toast({
         title: "Error",

@@ -2,7 +2,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { Coffee } from 'lucide-react';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -43,17 +42,6 @@ const Footer: React.FC = () => {
             <p className="text-sm text-muted-foreground">
               India's most trusted tool for understanding your CTC to in-hand salary breakdown and calculating accurate take-home pay for Indian employees in all sectors.
             </p>
-            <div className="mt-4">
-              <a 
-                href="https://www.buymeacoffee.com/bhanuprakash" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-600 text-white font-medium py-2 px-4 rounded-md transition-colors"
-              >
-                <Coffee size={18} />
-                <span>Buy me a coffee</span>
-              </a>
-            </div>
           </div>
           
           <div>
