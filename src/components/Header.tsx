@@ -1,7 +1,7 @@
 
 import React from 'react';
 import ThemeToggle from './ThemeToggle';
-import { Calculator } from 'lucide-react';
+import { Calculator, Coffee } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 
 const Header: React.FC = () => {
@@ -64,6 +64,17 @@ const Header: React.FC = () => {
             >
               Contact
             </Link>
+          </li>
+          <li>
+            <a 
+              href="https://www.buymeacoffee.com/bhanuprakash" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 bg-amber-500 hover:bg-amber-600 text-white px-3 py-1 rounded-md text-sm transition-colors"
+            >
+              <Coffee size={14} />
+              <span>Support</span>
+            </a>
           </li>
           <li>
             <ThemeToggle />
