@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useRef } from 'react';
 import Header from '@/components/Header';
 import CTCCalculatorForm from '@/components/CTCCalculatorForm';
 import CTCDescription from '@/components/CTCDescription';
@@ -9,6 +9,12 @@ import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 
 const Index: React.FC = () => {
+  const calculatorRef = useRef<HTMLDivElement>(null);
+  
+  const scrollToCalculator = () => {
+    calculatorRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <div className="min-h-screen flex flex-col">
       <Helmet>
@@ -54,7 +60,9 @@ const Index: React.FC = () => {
             </p>
           </div>
           
-          <CTCCalculatorForm />
+          <div ref={calculatorRef} id="calculator-section">
+            <CTCCalculatorForm />
+          </div>
           
           <section className="my-10">
             <h2 className="text-2xl font-bold mb-4">How to Calculate CTC to Take Home Salary in India?</h2>
@@ -149,9 +157,9 @@ const Index: React.FC = () => {
             <h2 className="text-2xl font-bold mb-4">Try Our CTC to Take Home Salary Calculator Now</h2>
             <p className="mb-4">Get a detailed breakdown of your salary components and understand exactly how much you'll receive in your bank account.</p>
             <div className="flex justify-center">
-              <Link to="/" className="bg-finance-primary hover:bg-finance-primary/90 text-white py-3 px-6 rounded-md font-medium transition-colors">
+              <button onClick={scrollToCalculator} className="bg-finance-primary hover:bg-finance-primary/90 text-white py-3 px-6 rounded-md font-medium transition-colors">
                 Calculate Your Take Home Salary
-              </Link>
+              </button>
             </div>
           </section>
         </div>

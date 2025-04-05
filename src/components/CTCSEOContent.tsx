@@ -1,8 +1,14 @@
 
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 const CTCSEOContent: React.FC = () => {
+  const scrollToCalculator = () => {
+    const calculatorSection = document.getElementById('calculator-section');
+    if (calculatorSection) {
+      calculatorSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="space-y-6 py-4">
       <h2 className="text-2xl font-bold">Understanding CTC to Take Home Salary Conversion</h2>
@@ -73,9 +79,9 @@ const CTCSEOContent: React.FC = () => {
       
         <div className="text-center mt-6">
           <h3 className="text-lg font-semibold mb-2">Want to know your exact take home salary?</h3>
-          <Link to="/" className="bg-finance-primary hover:bg-finance-primary/90 text-white py-2 px-4 rounded-md font-medium transition-colors inline-block">
+          <button onClick={scrollToCalculator} className="bg-finance-primary hover:bg-finance-primary/90 text-white py-2 px-4 rounded-md font-medium transition-colors inline-block">
             Use our CTC to Take Home Calculator
-          </Link>
+          </button>
         </div>
       </div>
     </section>
