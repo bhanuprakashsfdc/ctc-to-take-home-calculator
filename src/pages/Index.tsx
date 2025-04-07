@@ -7,6 +7,7 @@ import Footer from '@/components/Footer';
 import InternationalCTCCalculatorForm from '@/components/InternationalCTCCalculatorForm';
 import CTCDescription from '@/components/CTCDescription';
 import CTCSEOContent from '@/components/CTCSEOContent';
+import CTCCalculatorForm from '@/components/CTCCalculatorForm';
 import CurrencyConverter from '@/components/CurrencyConverter';
 import { Link } from 'react-router-dom';
 
@@ -64,6 +65,7 @@ const Index: React.FC = () => {
           
           <div ref={calculatorRef} id="calculator-section">
             <CTCCalculatorForm />
+            <InternationalCTCCalculatorForm />
           </div>
           
           <section className="my-10">
