@@ -64,7 +64,6 @@ const Index: React.FC = () => {
           </div>
           
           <div ref={calculatorRef} id="calculator-section">
-            <CTCCalculatorForm />
             <InternationalCTCCalculatorForm />
           </div>
           
