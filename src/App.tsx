@@ -12,6 +12,10 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Terms from "./pages/Terms";
 import Contact from "./pages/Contact";
 import Disclaimer from "./pages/Disclaimer";
+import CookieConsent from "./components/CookieConsent";
+
+// Import i18n configuration
+import './i18n/i18n';
 
 const queryClient = new QueryClient();
 
@@ -33,6 +37,7 @@ const App = () => (
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
+        <CookieConsent />
       </HelmetProvider>
     </TooltipProvider>
   </QueryClientProvider>

@@ -5,11 +5,14 @@ import { Calculator, Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { Sheet, SheetContent, SheetTrigger } from './ui/sheet';
 import { useIsMobile } from '@/hooks/use-mobile';
+import { useTranslation } from 'react-i18next';
+import LanguageSelector from './LanguageSelector';
 
 const Header: React.FC = () => {
   const location = useLocation();
   const isMobile = useIsMobile();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { t } = useTranslation();
   
   const isActive = (path: string) => {
     return location.pathname === path;
@@ -67,7 +70,10 @@ const Header: React.FC = () => {
       </li>
       {isMobile && (
         <li className="pt-4">
-          <ThemeToggle />
+          <div className="flex items-center space-x-4">
+            <LanguageSelector />
+            <ThemeToggle />
+          </div>
         </li>
       )}
     </ul>
@@ -78,7 +84,7 @@ const Header: React.FC = () => {
       <div className="flex items-center gap-2">
         <Calculator className="h-5 w-5 md:h-6 md:w-6 text-finance-primary" />
         <Link to="/" className="text-lg md:text-xl lg:text-2xl font-bold bg-gradient-to-r from-finance-primary to-finance-secondary bg-clip-text text-transparent no-underline">
-          CTC to Take Home Calculator
+          {t('common.ctcCalculator')}
         </Link>
       </div>
       
@@ -99,13 +105,17 @@ const Header: React.FC = () => {
             </SheetContent>
           </Sheet>
           <div className="ml-2 hidden md:block">
-            <ThemeToggle />
+            <div className="flex items-center space-x-4">
+              <LanguageSelector />
+              <ThemeToggle />
+            </div>
           </div>
         </div>
       ) : (
         <nav className="mt-0">
           <div className="flex items-center gap-4">
             <NavLinks />
+            <LanguageSelector />
             <ThemeToggle />
           </div>
         </nav>

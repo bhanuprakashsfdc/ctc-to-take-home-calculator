@@ -1,11 +1,13 @@
 
 import React, { useRef } from 'react';
+import { Helmet } from 'react-helmet-async';
+import { useTranslation } from 'react-i18next';
 import Header from '@/components/Header';
-import CTCCalculatorForm from '@/components/CTCCalculatorForm';
+import Footer from '@/components/Footer';
+import InternationalCTCCalculatorForm from '@/components/InternationalCTCCalculatorForm';
 import CTCDescription from '@/components/CTCDescription';
 import CTCSEOContent from '@/components/CTCSEOContent';
-import Footer from '@/components/Footer';
-import { Helmet } from 'react-helmet-async';
+import CurrencyConverter from '@/components/CurrencyConverter';
 import { Link } from 'react-router-dom';
 
 const Index: React.FC = () => {
