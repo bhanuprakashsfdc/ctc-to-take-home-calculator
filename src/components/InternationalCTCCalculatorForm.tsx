@@ -28,22 +28,32 @@ const InternationalCTCCalculatorForm: React.FC = () => {
   // Country-specific deductions
   const [deductions, setDeductions] = useState<Record<string, number | "">>({});
 
-  // Auto-detect country based on IP (simplified version)
+  // Auto-detect country based on IP and set appropriate language
   useEffect(() => {
-    // In a real implementation, you would use a geolocation service
-    // For now, we'll just use the browser's language as a hint
-    const userLanguage = navigator.language || '';
-    if (userLanguage.startsWith('hi')) {
-      setCountry('IN');
-    } else if (userLanguage.startsWith('en-US')) {
-      setCountry('US');
-    } else if (userLanguage.startsWith('en-GB')) {
-      setCountry('UK');
-    } else if (userLanguage.startsWith('de')) {
-      setCountry('DE');
-    }
-    // Set default region if available
-    setDefaultRegion(country);
+    const detectCountry = async () => {
+      try {
+        // Import dynamically to avoid SSR issues
+        const { detectUserCountry, validateCountryCode } = await import('@/utils/geoLocationService');
+        const { setLanguageFromCountry } = await import('@/utils/translationService');
+        
+        const detectedCountry = await detectUserCountry();
+        const validCountry = validateCountryCode(detectedCountry);
+        
+        // Set country and region
+        setCountry(validCountry);
+        setDefaultRegion(validCountry);
+        
+        // Set language based on detected country
+        setLanguageFromCountry(validCountry);
+      } catch (error) {
+        console.error('Error detecting country:', error);
+        // Fallback to default country
+        setCountry(DEFAULT_COUNTRY);
+        setDefaultRegion(DEFAULT_COUNTRY);
+      }
+    };
+    
+    detectCountry();
   }, []);
 
   // Set default region when country changes

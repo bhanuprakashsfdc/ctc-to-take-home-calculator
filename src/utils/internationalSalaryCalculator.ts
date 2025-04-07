@@ -83,6 +83,19 @@ export const convertCurrency = (amount: number, fromCurrency: string, toCurrency
   return (amount * fromRate) / toRate;
 };
 
+// Convert salary between currencies using live rates (async version)
+export const convertCurrencyAsync = async (amount: number, fromCurrency: string, toCurrency: string): Promise<number> => {
+  try {
+    // Import dynamically to avoid circular dependencies
+    const { convertCurrencyWithLiveRates } = await import('./currencyService');
+    return await convertCurrencyWithLiveRates(amount, fromCurrency, toCurrency);
+  } catch (error) {
+    console.error('Error converting currency with live rates:', error);
+    // Fallback to static conversion
+    return convertCurrency(amount, fromCurrency, toCurrency);
+  }
+};
+
 // Calculate salary breakdown based on country
 export const calculateInternationalSalaryBreakdown = (
   ctc: number,

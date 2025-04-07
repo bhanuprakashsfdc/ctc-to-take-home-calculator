@@ -5,8 +5,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { SUPPORTED_COUNTRIES, CURRENCY_CONVERSION_RATES } from '@/constants/countryConstants';
-import { convertCurrency, formatInternationalCurrency } from '@/utils/internationalSalaryCalculator';
+import { SUPPORTED_COUNTRIES } from '@/constants/countryConstants';
+import { convertCurrency, convertCurrencyAsync, formatInternationalCurrency } from '@/utils/internationalSalaryCalculator';
 
 interface CurrencyConverterProps {
   className?: string;
@@ -24,9 +24,17 @@ const CurrencyConverter: React.FC<CurrencyConverterProps> = ({ className = "" })
     handleConvert();
   }, [amount, fromCurrency, toCurrency]);
   
-  const handleConvert = () => {
-    const result = convertCurrency(amount, fromCurrency, toCurrency);
-    setConvertedAmount(result);
+  const handleConvert = async () => {
+    try {
+      // Use the async version with live rates
+      const result = await convertCurrencyAsync(amount, fromCurrency, toCurrency);
+      setConvertedAmount(result);
+    } catch (error) {
+      // Fallback to static conversion if live rates fail
+      console.error('Error converting currency:', error);
+      const fallbackResult = convertCurrency(amount, fromCurrency, toCurrency);
+      setConvertedAmount(fallbackResult);
+    }
   };
   
   return (

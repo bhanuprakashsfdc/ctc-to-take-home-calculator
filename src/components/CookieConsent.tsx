@@ -24,21 +24,48 @@ const CookieConsent: React.FC = () => {
     marketing: false
   });
 
-  // Check if user is from EU (simplified version - in production, use a proper IP geolocation service)
-  const checkIfEuUser = (): boolean => {
-    // This is a placeholder. In a real implementation, you would use a geolocation service
-    // to determine if the user is from the EU based on their IP address
-    const userLanguage = navigator.language || '';
-    const euLanguages = ['de', 'fr', 'es', 'it', 'nl', 'pt', 'pl', 'sv', 'da', 'fi', 'el', 'cs', 'hu', 'ro'];
-    return euLanguages.some(lang => userLanguage.startsWith(lang));
+  // Check if user is from EU using geolocation service
+  const [isEuUser, setIsEuUser] = useState<boolean>(false);
+  
+  // Function to check if a country code belongs to an EU country
+  const isEuCountry = (countryCode: string): boolean => {
+    const euCountries = [
+      'AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR',
+      'DE', 'GR', 'HU', 'IE', 'IT', 'LV', 'LT', 'LU', 'MT', 'NL',
+      'PL', 'PT', 'RO', 'SK', 'SI', 'ES', 'SE'
+    ];
+    return euCountries.includes(countryCode);
+  };
+  
+  // Check if user is from EU based on IP address
+  const checkIfEuUser = async (): Promise<boolean> => {
+    try {
+      // Import dynamically to avoid circular dependencies
+      const { detectUserCountry } = await import('@/utils/geoLocationService');
+      const countryCode = await detectUserCountry();
+      return isEuCountry(countryCode);
+    } catch (error) {
+      console.error('Error detecting if user is from EU:', error);
+      // Fallback to browser language check
+      const userLanguage = navigator.language || '';
+      const euLanguages = ['de', 'fr', 'es', 'it', 'nl', 'pt', 'pl', 'sv', 'da', 'fi', 'el', 'cs', 'hu', 'ro'];
+      return euLanguages.some(lang => userLanguage.startsWith(lang));
+    }
   };
 
   useEffect(() => {
     // Check if consent was already given
     const consentGiven = localStorage.getItem('cookieConsent');
-    if (!consentGiven && (checkIfEuUser() || process.env.NODE_ENV === 'development')) {
-      setShowBanner(true);
-    }
+    
+    const checkEuAndShowBanner = async () => {
+      const isEu = await checkIfEuUser();
+      setIsEuUser(isEu);
+      if (!consentGiven && (isEu || process.env.NODE_ENV === 'development')) {
+        setShowBanner(true);
+      }
+    };
+    
+    checkEuAndShowBanner();
   }, []);
 
   const handleAcceptAll = () => {
