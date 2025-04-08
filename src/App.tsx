@@ -40,7 +40,7 @@ const App = () => (
             <Route path="/ppp-calculator.html" element={<PurchasingPowerParity />} />
             <Route path="/salary-to-hourly-calculator.html" element={<SalaryToHourly />} />
             <Route path="/blog.html" element={<Blog />} />
-            <Route path="/blog/:slug(.html)?" element={<BlogPost />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
