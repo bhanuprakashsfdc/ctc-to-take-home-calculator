@@ -40,17 +40,22 @@ i18n
   .init({
     resources,
     fallbackLng: 'en',
-    debug: process.env.NODE_ENV === 'development',
+    debug: true, // Always enable debug to help troubleshoot
     interpolation: {
       escapeValue: false, // not needed for react as it escapes by default
     },
     detection: {
-      order: ['querystring', 'cookie', 'localStorage', 'navigator'],
+      order: ['localStorage', 'navigator', 'querystring', 'cookie'],
       lookupQuerystring: 'lng',
       lookupCookie: 'i18next',
       lookupLocalStorage: 'i18nextLng',
-      caches: ['localStorage', 'cookie'],
+      caches: ['localStorage'],
     }
   });
+
+// Add a language change event listener for debugging
+i18n.on('languageChanged', (lng) => {
+  console.log('Language changed to:', lng);
+});
 
 export default i18n;

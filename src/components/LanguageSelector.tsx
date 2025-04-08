@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { SUPPORTED_LANGUAGES, changeLanguage, getUserPreferredLanguage } from '@/utils/translationService';
@@ -9,18 +9,39 @@ interface LanguageSelectorProps {
 }
 
 const LanguageSelector: React.FC<LanguageSelectorProps> = ({ className = "", countryCode }) => {
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
+  const [currentLang, setCurrentLang] = useState(i18n.language || 'en');
   
   // Initialize with user's preferred language on component mount
   useEffect(() => {
     const preferredLanguage = getUserPreferredLanguage();
+    console.log('Preferred language:', preferredLanguage);
+    console.log('Current i18n language:', i18n.language);
+    
     if (preferredLanguage && preferredLanguage !== i18n.language) {
       changeLanguage(preferredLanguage);
+      setCurrentLang(preferredLanguage);
     }
   }, []);
 
+  // Listen for language changes
+  useEffect(() => {
+    const handleLanguageChanged = (lng: string) => {
+      console.log('Language changed event detected:', lng);
+      setCurrentLang(lng);
+    };
+
+    i18n.on('languageChanged', handleLanguageChanged);
+    
+    return () => {
+      i18n.off('languageChanged', handleLanguageChanged);
+    };
+  }, [i18n]);
+
   const handleLanguageChange = (langCode: string) => {
+    console.log('Language selection changed to:', langCode);
     changeLanguage(langCode);
+    setCurrentLang(langCode);
   };
   
   // Format language names with their native names
@@ -32,7 +53,7 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({ className = "", cou
   return (
     <div className={`${className}`}>
       <Select
-        value={i18n.language}
+        value={currentLang}
         onValueChange={handleLanguageChange}
       >
         <SelectTrigger className="w-[180px]">

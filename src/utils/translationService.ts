@@ -33,11 +33,26 @@ export const SUPPORTED_LANGUAGES = [
  * @param languageCode Language code to set
  */
 export const changeLanguage = (languageCode: string): void => {
-  if (i18n.languages.includes(languageCode)) {
-    i18n.changeLanguage(languageCode);
-    // Store the language preference
-    localStorage.setItem('preferredLanguage', languageCode);
+  console.log('Changing language to:', languageCode);
+  console.log('Available languages:', i18n.languages);
+  
+  // Force reload resources if needed
+  if (i18n.hasResourceBundle(languageCode, 'translation')) {
+    console.log(`Resource bundle for ${languageCode} exists`);
+  } else {
+    console.log(`Resource bundle for ${languageCode} does not exist`);
   }
+  
+  // Change language even if not in i18n.languages list
+  i18n.changeLanguage(languageCode)
+    .then(() => {
+      console.log('Language successfully changed to:', i18n.language);
+      // Store the language preference
+      localStorage.setItem('preferredLanguage', languageCode);
+    })
+    .catch((error) => {
+      console.error('Error changing language:', error);
+    });
 };
 
 /**
