@@ -18,6 +18,12 @@ import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import CookieConsent from "./components/CookieConsent";
 
+// Import Investment Calculator Pages
+import SIPCalculator from "./components/SIPCalculator";
+import LumpsumCalculator from "./components/LumpsumCalculator";
+import FDCalculator from "./components/FDCalculator";
+import SWPCalculator from "./components/SWPCalculator";
+
 // Import Country Specific Pages
 import IndiaPage from "./pages/country/IndiaPage";
 import USPage from "./pages/country/USPage";
@@ -46,6 +52,12 @@ const App = () => (
             <Route path="/salary-to-hourly-calculator.html" element={<SalaryToHourly />} />
             <Route path="/blog.html" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
+
+            {/* Investment Calculator Routes */}
+            <Route path="/sip-calculator.html" element={<SIPCalculator />} />
+            <Route path="/lumpsum-calculator.html" element={<LumpsumCalculator />} />
+            <Route path="/fd-calculator.html" element={<FDCalculator />} />
+            <Route path="/swp-calculator.html" element={<SWPCalculator />} />
 
             {/* Country Specific Routes */}
             <Route path="/in.html" element={<IndiaPage />} />
