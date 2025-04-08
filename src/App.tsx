@@ -18,6 +18,11 @@ import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import CookieConsent from "./components/CookieConsent";
 
+// Import Country Specific Pages
+import IndiaPage from "./pages/country/IndiaPage";
+import USPage from "./pages/country/USPage";
+import UKPage from "./pages/country/UKPage";
+
 // Import i18n configuration
 import './i18n/i18n';
 
@@ -41,6 +46,12 @@ const App = () => (
             <Route path="/salary-to-hourly-calculator.html" element={<SalaryToHourly />} />
             <Route path="/blog.html" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
+
+            {/* Country Specific Routes */}
+            <Route path="/in.html" element={<IndiaPage />} />
+            <Route path="/us.html" element={<USPage />} />
+            <Route path="/uk.html" element={<UKPage />} />
+
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

@@ -16,13 +16,17 @@ import {
 } from '@/utils/internationalSalaryCalculator';
 import { SUPPORTED_COUNTRIES, DEFAULT_COUNTRY, REGION_PRESETS } from '@/constants/countryConstants';
 
-const InternationalCTCCalculatorForm: React.FC = () => {
+interface InternationalCTCCalculatorFormProps {
+  defaultCountry?: string;
+}
+
+const InternationalCTCCalculatorForm: React.FC<InternationalCTCCalculatorFormProps> = ({ defaultCountry }) => {
   const { t } = useTranslation();
   const [ctc, setCtc] = useState<number>(1500000);
   const [showAdvanced, setShowAdvanced] = useState<boolean>(false);
   const [taxRegime, setTaxRegime] = useState<'old' | 'new'>('new');
   const [viewMode, setViewMode] = useState<'monthly' | 'yearly'>('monthly');
-  const [country, setCountry] = useState<string>(DEFAULT_COUNTRY);
+  const [country, setCountry] = useState<string>(defaultCountry || DEFAULT_COUNTRY);
   const [region, setRegion] = useState<string>('');
   
   // Country-specific deductions
