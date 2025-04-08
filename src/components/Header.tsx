@@ -1,15 +1,24 @@
 
 import React, { useState } from 'react';
 import ThemeToggle from './ThemeToggle';
-import { Calculator, Menu, X } from 'lucide-react';
+import { Calculator, Menu, X, ChevronDown } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { Sheet, SheetContent, SheetTrigger } from './ui/sheet';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "./ui/dropdown-menu";
 import { useIsMobile } from '@/hooks/use-mobile';
+import { useTranslation } from 'react-i18next';
+import LanguageSelector from './LanguageSelector';
 
 const Header: React.FC = () => {
   const location = useLocation();
   const isMobile = useIsMobile();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { t } = useTranslation();
   
   const isActive = (path: string) => {
     return location.pathname === path;
@@ -28,6 +37,75 @@ const Header: React.FC = () => {
         </Link>
       </li>
       <li>
+        {isMobile ? (
+          <DropdownMenu>
+            <DropdownMenuTrigger className={`flex items-center gap-1 transition-colors ${isActive('/ppp-calculator.html') || isActive('/salary-to-hourly-calculator.html') ? 'text-finance-primary font-medium' : 'text-foreground hover:text-finance-primary'}`}>
+              Tools <ChevronDown className="h-4 w-4" />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent>
+              <DropdownMenuItem asChild>
+                <Link 
+                  to="/ppp-calculator.html" 
+                  className="w-full"
+                  aria-label="Purchasing Power Parity Calculator"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  PPP Calculator
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link 
+                  to="/salary-to-hourly-calculator.html" 
+                  className="w-full"
+                  aria-label="Salary to Hourly Rate Calculator"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Salary to Hourly Calculator
+                </Link>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+        ) : (
+          <DropdownMenu>
+            <DropdownMenuTrigger className={`flex items-center gap-1 transition-colors ${isActive('/ppp-calculator.html') ? 'text-finance-primary font-medium' : 'text-foreground hover:text-finance-primary'}`}>
+              Tools <ChevronDown className="h-4 w-4" />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent>
+              <DropdownMenuItem asChild>
+                <Link 
+                  to="/ppp-calculator.html" 
+                  className="w-full"
+                  aria-label="Purchasing Power Parity Calculator"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  PPP Calculator
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link 
+                  to="/salary-to-hourly-calculator.html" 
+                  className="w-full"
+                  aria-label="Salary to Hourly Rate Calculator"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Salary to Hourly Calculator
+                </Link>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+        )}
+      </li>
+      <li>
+        <Link 
+          to="/blog.html" 
+          className={`transition-colors ${isActive('/blog.html') ? 'text-finance-primary font-medium' : 'text-foreground hover:text-finance-primary'}`}
+          aria-label="Blog"
+          onClick={() => setIsMenuOpen(false)}
+        >
+          Blog
+        </Link>
+      </li>
+      <li>
         <Link 
           to="/about.html" 
           className={`transition-colors ${isActive('/about.html') ? 'text-finance-primary font-medium' : 'text-foreground hover:text-finance-primary'}`}
@@ -36,25 +114,7 @@ const Header: React.FC = () => {
         >
           About
         </Link>
-      </li>
-      <li>
-        <Link 
-          to="/privacy-policy.html" 
-          className={`transition-colors ${isActive('/privacy-policy.html') ? 'text-finance-primary font-medium' : 'text-foreground hover:text-finance-primary'}`}
-          onClick={() => setIsMenuOpen(false)}
-        >
-          Privacy Policy
-        </Link>
-      </li>
-      <li>
-        <Link 
-          to="/terms.html" 
-          className={`transition-colors ${isActive('/terms.html') ? 'text-finance-primary font-medium' : 'text-foreground hover:text-finance-primary'}`}
-          onClick={() => setIsMenuOpen(false)}
-        >
-          Terms
-        </Link>
-      </li>
+      </li>      
       <li>
         <Link 
           to="/contact.html" 
@@ -67,7 +127,10 @@ const Header: React.FC = () => {
       </li>
       {isMobile && (
         <li className="pt-4">
-          <ThemeToggle />
+          <div className="flex items-center space-x-4">
+            <LanguageSelector />
+            <ThemeToggle />
+          </div>
         </li>
       )}
     </ul>
@@ -78,7 +141,7 @@ const Header: React.FC = () => {
       <div className="flex items-center gap-2">
         <Calculator className="h-5 w-5 md:h-6 md:w-6 text-finance-primary" />
         <Link to="/" className="text-lg md:text-xl lg:text-2xl font-bold bg-gradient-to-r from-finance-primary to-finance-secondary bg-clip-text text-transparent no-underline">
-          CTC to Take Home Calculator
+          {t('common.ctcCalculator')}
         </Link>
       </div>
       
@@ -99,13 +162,17 @@ const Header: React.FC = () => {
             </SheetContent>
           </Sheet>
           <div className="ml-2 hidden md:block">
-            <ThemeToggle />
+            <div className="flex items-center space-x-4">
+              <LanguageSelector />
+              <ThemeToggle />
+            </div>
           </div>
         </div>
       ) : (
         <nav className="mt-0">
           <div className="flex items-center gap-4">
             <NavLinks />
+            <LanguageSelector />
             <ThemeToggle />
           </div>
         </nav>

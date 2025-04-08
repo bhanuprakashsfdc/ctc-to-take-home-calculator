@@ -1,0 +1,90 @@
+{
+  "common": {
+    "ctcCalculator": "CTC to Take Home Salary Calculator",
+    "calculate": "Calculate",
+    "monthly": "Monthly",
+    "yearly": "Yearly",
+    "viewMode": "View Mode",
+    "showAdvanced": "Show Advanced Options",
+    "hideAdvanced": "Hide Advanced Options",
+    "earnings": "Earnings",
+    "deductions": "Deductions",
+    "netTakeHome": "Net Take-Home Salary",
+    "taxOptions": "Tax Options",
+    "country": "Country",
+    "region": "Region",
+    "currency": "Currency"
+  },
+  "form": {
+    "annualCTC": "Annual Cost to Company (CTC)",
+    "basicSalary": "Basic Salary",
+    "hra": "HRA",
+    "specialAllowance": "Special Allowance",
+    "grossSalary": "Gross Salary",
+    "taxRegime": "Tax Regime",
+    "newTaxRegime": "New Tax Regime (Lower rates, no deductions)",
+    "oldTaxRegime": "Old Tax Regime (Higher rates with deductions)",
+    "taxSavingInvestments": "Tax Saving Investments & Deductions",
+    "section80C": "Section 80C (PF, ELSS, LIC, etc.)",
+    "section80D": "Section 80D (Health Insurance)",
+    "housingLoan": "Housing Loan Interest",
+    "nps": "NPS Contribution",
+    "epfEmployee": "EPF (Employee)",
+    "professionalTax": "Professional Tax",
+    "incomeTax": "Income Tax (TDS)",
+    "totalDeductions": "Total Deductions"
+  },
+  "countries": {
+    "IN": "India",
+    "US": "United States",
+    "UK": "United Kingdom",
+    "CA": "Canada",
+    "AU": "Australia",
+    "SG": "Singapore",
+    "DE": "Germany"
+  },
+  "countrySpecific": {
+    "IN": {
+      "epf": "EPF",
+      "professionalTax": "Professional Tax",
+      "section80C": "Section 80C",
+      "section80D": "Section 80D",
+      "hra": "HRA"
+    },
+    "US": {
+      "federalTax": "Federal Income Tax",
+      "stateTax": "State Income Tax",
+      "socialSecurity": "Social Security",
+      "medicare": "Medicare",
+      "401k": "401(k) Contribution"
+    },
+    "UK": {
+      "incomeTax": "Income Tax",
+      "nationalInsurance": "National Insurance",
+      "pensionContribution": "Pension Contribution"
+    }
+  },
+  "description": {
+    "title": "What is CTC to Take Home Salary?",
+    "description": "Cost to Company (CTC) is the total amount of money a company spends on an employee annually. It includes both direct benefits (like basic salary) and indirect benefits. Take home salary is what you actually receive in your bank account after all deductions from your CTC.",
+    "ctcBreakdown": "CTC Breakdown",
+    "ctcBreakdownDesc": "Understand how your CTC is structured with detailed breakdown of all components",
+    "inHandSalary": "In-Hand Salary",
+    "inHandSalaryDesc": "Calculate your actual take home salary after all tax and deductions",
+    "taxOptimization": "Tax Optimization",
+    "taxOptimizationDesc": "Compare tax options to maximize your in-hand salary",
+    "salaryStructure": "Salary Structure",
+    "salaryStructureDesc": "Includes all statutory components based on your country"
+  },
+  "gdpr": {
+    "consentTitle": "Cookie Consent",
+    "consentText": "This website uses cookies to ensure you get the best experience on our website.",
+    "acceptAll": "Accept All",
+    "rejectAll": "Reject All",
+    "customize": "Customize",
+    "necessary": "Necessary",
+    "preferences": "Preferences",
+    "analytics": "Analytics",
+    "marketing": "Marketing"
+  }
+}
