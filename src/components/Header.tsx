@@ -97,6 +97,16 @@ const Header: React.FC = () => {
       </li>
       <li>
         <Link 
+          to="/blog.html" 
+          className={`transition-colors ${isActive('/blog.html') ? 'text-finance-primary font-medium' : 'text-foreground hover:text-finance-primary'}`}
+          aria-label="Blog"
+          onClick={() => setIsMenuOpen(false)}
+        >
+          Blog
+        </Link>
+      </li>
+      <li>
+        <Link 
           to="/about.html" 
           className={`transition-colors ${isActive('/about.html') ? 'text-finance-primary font-medium' : 'text-foreground hover:text-finance-primary'}`}
           aria-label="About CTC to Take Home Calculator"

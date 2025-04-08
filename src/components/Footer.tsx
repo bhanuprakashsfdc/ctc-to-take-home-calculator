@@ -62,6 +62,11 @@ const Footer: React.FC = () => {
                   Contact Us
                 </Link>
               </li>
+              <li>
+                <Link to="/blog.html" className="text-muted-foreground hover:text-foreground transition-colors">
+                  Blog
+                </Link>
+              </li>
             </ul>
           </div>
           
@@ -88,7 +93,27 @@ const Footer: React.FC = () => {
         </div>
         
         <div className="border-t border-border/40 pt-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="text-sm">
+              <h4 className="font-medium mb-2">Blog Posts</h4>
+              <ul className="space-y-1">
+                <li>
+                  <Link to="/blog/gross-vs-net-salary.html" className="text-muted-foreground hover:text-foreground transition-colors">
+                    Gross vs Net Salary
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/blog/hourly-rate-from-annual-salary.html" className="text-muted-foreground hover:text-foreground transition-colors">
+                    Hourly Rate Calculator
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/blog/income-tax-calculation-india.html" className="text-muted-foreground hover:text-foreground transition-colors">
+                    Income Tax Calculation
+                  </Link>
+                </li>
+              </ul>
+            </div>
             <div className="text-sm">
               <h4 className="font-medium mb-2">Popular Searches</h4>
               <ul className="space-y-1">
