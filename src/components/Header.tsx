@@ -1,9 +1,15 @@
 
 import React, { useState } from 'react';
 import ThemeToggle from './ThemeToggle';
-import { Calculator, Menu, X } from 'lucide-react';
+import { Calculator, Menu, X, ChevronDown } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { Sheet, SheetContent, SheetTrigger } from './ui/sheet';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "./ui/dropdown-menu";
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useTranslation } from 'react-i18next';
 import LanguageSelector from './LanguageSelector';
@@ -31,6 +37,65 @@ const Header: React.FC = () => {
         </Link>
       </li>
       <li>
+        {isMobile ? (
+          <DropdownMenu>
+            <DropdownMenuTrigger className={`flex items-center gap-1 transition-colors ${isActive('/ppp-calculator.html') || isActive('/salary-to-hourly-calculator.html') ? 'text-finance-primary font-medium' : 'text-foreground hover:text-finance-primary'}`}>
+              Tools <ChevronDown className="h-4 w-4" />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent>
+              <DropdownMenuItem asChild>
+                <Link 
+                  to="/ppp-calculator.html" 
+                  className="w-full"
+                  aria-label="Purchasing Power Parity Calculator"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  PPP Calculator
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link 
+                  to="/salary-to-hourly-calculator.html" 
+                  className="w-full"
+                  aria-label="Salary to Hourly Rate Calculator"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Salary to Hourly Calculator
+                </Link>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+        ) : (
+          <DropdownMenu>
+            <DropdownMenuTrigger className={`flex items-center gap-1 transition-colors ${isActive('/ppp-calculator.html') ? 'text-finance-primary font-medium' : 'text-foreground hover:text-finance-primary'}`}>
+              Tools <ChevronDown className="h-4 w-4" />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent>
+              <DropdownMenuItem asChild>
+                <Link 
+                  to="/ppp-calculator.html" 
+                  className="w-full"
+                  aria-label="Purchasing Power Parity Calculator"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  PPP Calculator
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link 
+                  to="/salary-to-hourly-calculator.html" 
+                  className="w-full"
+                  aria-label="Salary to Hourly Rate Calculator"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Salary to Hourly Calculator
+                </Link>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+        )}
+      </li>
+      <li>
         <Link 
           to="/about.html" 
           className={`transition-colors ${isActive('/about.html') ? 'text-finance-primary font-medium' : 'text-foreground hover:text-finance-primary'}`}
@@ -39,25 +104,7 @@ const Header: React.FC = () => {
         >
           About
         </Link>
-      </li>
-      <li>
-        <Link 
-          to="/privacy-policy.html" 
-          className={`transition-colors ${isActive('/privacy-policy.html') ? 'text-finance-primary font-medium' : 'text-foreground hover:text-finance-primary'}`}
-          onClick={() => setIsMenuOpen(false)}
-        >
-          Privacy Policy
-        </Link>
-      </li>
-      <li>
-        <Link 
-          to="/terms.html" 
-          className={`transition-colors ${isActive('/terms.html') ? 'text-finance-primary font-medium' : 'text-foreground hover:text-finance-primary'}`}
-          onClick={() => setIsMenuOpen(false)}
-        >
-          Terms
-        </Link>
-      </li>
+      </li>      
       <li>
         <Link 
           to="/contact.html" 

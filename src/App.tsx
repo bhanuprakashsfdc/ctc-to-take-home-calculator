@@ -12,6 +12,8 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Terms from "./pages/Terms";
 import Contact from "./pages/Contact";
 import Disclaimer from "./pages/Disclaimer";
+import PurchasingPowerParity from "./pages/PurchasingPowerParity";
+import SalaryToHourly from "./pages/SalaryToHourly";
 import CookieConsent from "./components/CookieConsent";
 
 // Import i18n configuration
@@ -33,6 +35,8 @@ const App = () => (
             <Route path="/terms.html" element={<Terms />} />
             <Route path="/contact.html" element={<Contact />} />
             <Route path="/disclaimer.html" element={<Disclaimer />} />
+            <Route path="/ppp-calculator.html" element={<PurchasingPowerParity />} />
+            <Route path="/salary-to-hourly-calculator.html" element={<SalaryToHourly />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
