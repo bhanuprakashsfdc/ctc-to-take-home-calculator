@@ -1,70 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 
+                            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
+  <!-- Created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
-<url>
-  <loc>https://www.ctc-calculator.com/</loc>
-  <lastmod>2025-04-04T02:59:35+00:00</lastmod>
-</url>
-<url>
-  <loc>https://www.ctc-calculator.com/about.html</loc>
-  <lastmod>2025-04-04T02:59:35+00:00</lastmod>
-</url>
-<url>
-  <loc>https://www.ctc-calculator.com/privacy-policy.html</loc>
-  <lastmod>2025-04-04T02:59:35+00:00</lastmod>
-</url>
-<url>
-  <loc>https://www.ctc-calculator.com/terms.html</loc>
-  <lastmod>2025-04-04T02:59:35+00:00</lastmod>
-</url>
-<url>
-  <loc>https://www.ctc-calculator.com/contact.html</loc>
-  <lastmod>2025-04-04T02:59:35+00:00</lastmod>
-</url>
-<url>
-  <loc>https://www.ctc-calculator.com/disclaimer.html</loc>
-  <lastmod>2025-04-04T02:59:35+00:00</lastmod>
-</url>
-<url>
-  <loc>https://www.ctc-calculator.com/blog.html</loc>
-  <lastmod>2025-04-04T02:59:35+00:00</lastmod>
-</url>
-<url>
-  <loc>https://www.ctc-calculator.com/blog/gross-vs-net-salary.html</loc>
-  <lastmod>2025-04-04T02:59:35+00:00</lastmod>
-</url>
-<url>
-  <loc>https://www.ctc-calculator.com/blog/hourly-rate-from-annual-salary.html</loc>
-  <lastmod>2025-04-04T02:59:35+00:00</lastmod>
-</url>
-<url>
-  <loc>https://www.ctc-calculator.com/blog/income-tax-calculation-india.html</loc>
-  <lastmod>2025-04-04T02:59:35+00:00</lastmod>
-</url>
-<url>
-  <loc>https://www.ctc-calculator.com/blog/understanding-pay-stub-guide.html</loc>
-  <lastmod>2025-04-04T02:59:35+00:00</lastmod>
-</url>
-<url>
-  <loc>https://www.ctc-calculator.com/blog/self-employment-tax-calculation.html</loc>
-  <lastmod>2025-04-04T02:59:35+00:00</lastmod>
-</url>
-<url>
-  <loc>https://www.ctc-calculator.com/in/</loc>
-  <lastmod>2025-04-04T02:59:35+00:00</lastmod>
-</url>
-<url>
-  <loc>https://www.ctc-calculator.com/us/</loc>
-  <lastmod>2025-04-04T02:59:35+00:00</lastmod>
-</url>
-<url>
-  <loc>https://www.ctc-calculator.com/uk/</loc>
-  <lastmod>2025-04-04T02:59:35+00:00</lastmod>
-</url>
+  <url>
+    <loc>https://www.ctc-calculator.com/</loc>
+    <lastmod>2025-04-04T02:59:35+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://www.ctc-calculator.com/about.html</loc>
+    <lastmod>2025-04-04T02:59:35+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://www.ctc-calculator.com/privacy-policy.html</loc>
+    <lastmod>2025-04-04T02:59:35+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://www.ctc-calculator.com/terms.html</loc>
+    <lastmod>2025-04-04T02:59:35+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://www.ctc-calculator.com/contact.html</loc>
+    <lastmod>2025-04-04T02:59:35+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://www.ctc-calculator.com/disclaimer.html</loc>
+    <lastmod>2025-04-04T02:59:35+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://www.ctc-calculator.com/sip-calculator.html</loc>
+    <lastmod>2025-04-04T02:59:35+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://www.ctc-calculator.com/lumpsum-calculator.html</loc>
+    <lastmod>2025-04-04T02:59:35+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://www.ctc-calculator.com/fd-calculator.html</loc>
+    <lastmod>2025-04-04T02:59:35+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://www.ctc-calculator.com/swp-calculator.html</loc>
+    <lastmod>2025-04-04T02:59:35+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://www.ctc-calculator.com/blog.html</loc>
+    <lastmod>2025-04-04T02:59:35+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://www.ctc-calculator.com/blog/gross-vs-net-salary.html</loc>
+    <lastmod>2025-04-04T02:59:35+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://www.ctc-calculator.com/blog/hourly-rate-from-annual-salary.html</loc>
+    <lastmod>2025-04-04T02:59:35+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://www.ctc-calculator.com/blog/income-tax-calculation-india.html</loc>
+    <lastmod>2025-04-04T02:59:35+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://www.ctc-calculator.com/blog/understanding-pay-stub-guide.html</loc>
+    <lastmod>2025-04-04T02:59:35+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://www.ctc-calculator.com/blog/self-employment-tax-calculation.html</loc>
+    <lastmod>2025-04-04T02:59:35+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://www.ctc-calculator.com/in.html</loc>
+    <lastmod>2025-04-04T02:59:35+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://www.ctc-calculator.com/us.html</loc>
+    <lastmod>2025-04-04T02:59:35+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://www.ctc-calculator.com/uk.html</loc>
+    <lastmod>2025-04-04T02:59:35+00:00</lastmod>
+  </url>
+
 </urlset>
