@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import ThemeToggle from './ThemeToggle';
 import { Calculator, Menu, X, ChevronDown } from 'lucide-react';
@@ -19,165 +18,136 @@ const Header: React.FC = () => {
   const isMobile = useIsMobile();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { t } = useTranslation();
-  
+
   const isActive = (path: string) => {
     return location.pathname === path;
   };
-  
-  const NavLinks = () => (
-    <ul className="flex flex-col md:flex-row items-start md:items-center flex-wrap gap-6 md:gap-6 text-sm">
-      <li>
-        <Link 
-          to="/" 
-          className={`transition-colors ${isActive('/') ? 'text-finance-primary font-medium' : 'text-foreground hover:text-finance-primary'}`}
-          aria-label="CTC to Take Home Calculator"
-          onClick={() => setIsMenuOpen(false)}
-        >
-          Home
-        </Link>
-      </li>
-      <li>
-        {isMobile ? (
-          <DropdownMenu>
-            <DropdownMenuTrigger className={`flex items-center gap-1 transition-colors ${isActive('/ppp-calculator.html') || isActive('/salary-to-hourly-calculator.html') ? 'text-finance-primary font-medium' : 'text-foreground hover:text-finance-primary'}`}>
-              Tools <ChevronDown className="h-4 w-4" />
-            </DropdownMenuTrigger>
-            <DropdownMenuContent>
-              <DropdownMenuItem asChild>
-                <Link 
-                  to="/ppp-calculator.html" 
-                  className="w-full"
-                  aria-label="Purchasing Power Parity Calculator"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  PPP Calculator
-                </Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem asChild>
-                <Link 
-                  to="/salary-to-hourly-calculator.html" 
-                  className="w-full"
-                  aria-label="Salary to Hourly Rate Calculator"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Salary to Hourly Calculator
-                </Link>
-              </DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
-        ) : (
-          <DropdownMenu>
-            <DropdownMenuTrigger className={`flex items-center gap-1 transition-colors ${isActive('/ppp-calculator.html') ? 'text-finance-primary font-medium' : 'text-foreground hover:text-finance-primary'}`}>
-              Tools <ChevronDown className="h-4 w-4" />
-            </DropdownMenuTrigger>
-            <DropdownMenuContent>
-              <DropdownMenuItem asChild>
-                <Link 
-                  to="/ppp-calculator.html" 
-                  className="w-full"
-                  aria-label="Purchasing Power Parity Calculator"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  PPP Calculator
-                </Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem asChild>
-                <Link 
-                  to="/salary-to-hourly-calculator.html" 
-                  className="w-full"
-                  aria-label="Salary to Hourly Rate Calculator"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Salary to Hourly Calculator
-                </Link>
-              </DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
-        )}
-      </li>
-      <li>
-        <Link 
-          to="/blog.html" 
-          className={`transition-colors ${isActive('/blog.html') ? 'text-finance-primary font-medium' : 'text-foreground hover:text-finance-primary'}`}
-          aria-label="Blog"
-          onClick={() => setIsMenuOpen(false)}
-        >
-          Blog
-        </Link>
-      </li>
-      <li>
-        <Link 
-          to="/about.html" 
-          className={`transition-colors ${isActive('/about.html') ? 'text-finance-primary font-medium' : 'text-foreground hover:text-finance-primary'}`}
-          aria-label="About CTC to Take Home Calculator"
-          onClick={() => setIsMenuOpen(false)}
-        >
-          About
-        </Link>
-      </li>      
-      <li>
-        <Link 
-          to="/contact.html" 
-          className={`transition-colors ${isActive('/contact.html') ? 'text-finance-primary font-medium' : 'text-foreground hover:text-finance-primary'}`}
-          aria-label="Contact CTC Calculator Support"
-          onClick={() => setIsMenuOpen(false)}
-        >
-          Contact
-        </Link>
-      </li>
-      {isMobile && (
-        <li className="pt-4">
-          <div className="flex items-center space-x-4">
-            <LanguageSelector />
-            <ThemeToggle />
-          </div>
-        </li>
-      )}
-    </ul>
-  );
-  
+
   return (
-    <header className="w-full py-4 px-4 md:px-6 flex flex-row justify-between items-center border-b">
+    <nav className="flex items-center justify-between w-full px-4 py-3 md:py-4 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="flex items-center gap-2">
         <Calculator className="h-5 w-5 md:h-6 md:w-6 text-finance-primary" />
         <Link to="/" className="text-lg md:text-xl lg:text-2xl font-bold bg-gradient-to-r from-finance-primary to-finance-secondary bg-clip-text text-transparent no-underline">
           {t('common.ctcCalculator')}
         </Link>
       </div>
-      
+
       {isMobile ? (
         <div className="flex items-center">
           <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
             <SheetTrigger asChild>
-              <button className="p-2 text-foreground" aria-label="Menu">
-                <Menu className="h-6 w-6" />
+              <button className="p-2 text-foreground hover:bg-accent rounded-md" aria-label="Menu">
+                {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
               </button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[80%] px-6 py-8">
-              <div className="flex flex-col h-full">
-                <div className="mb-8">
-                  <NavLinks />
-                </div>
+            <SheetContent side="right" className="w-[280px] px-4 py-6">
+              <div className="flex flex-col h-full overflow-y-auto">
+                <NavLinks isMobile={isMobile} isActive={isActive} closeMenu={() => setIsMenuOpen(false)} />
               </div>
             </SheetContent>
           </Sheet>
-          <div className="ml-2 hidden md:block">
-            <div className="flex items-center space-x-4">
-              <LanguageSelector />
-              <ThemeToggle />
-            </div>
-          </div>
         </div>
       ) : (
-        <nav className="mt-0">
-          <div className="flex items-center gap-4">
-            <NavLinks />
+        <div className="flex items-center gap-4">
+          <NavLinks isMobile={isMobile} isActive={isActive} closeMenu={() => setIsMenuOpen(false)} />
+          <LanguageSelector />
+          <ThemeToggle />
+        </div>
+      )}
+    </nav>
+  );
+};
+
+interface NavLinksProps {
+  isMobile: boolean;
+  isActive: (path: string) => boolean;
+  closeMenu: () => void;
+}
+
+const NavLinks: React.FC<NavLinksProps> = ({ isMobile, isActive, closeMenu }) => {
+  const toolsMenuItems = [
+    { path: '/ppp-calculator.html', label: 'PPP Calculator', ariaLabel: 'Purchasing Power Parity Calculator' },
+    { path: '/salary-to-hourly-calculator.html', label: 'Salary to Hourly Calculator', ariaLabel: 'Salary to Hourly Rate Calculator' },
+    { path: '/sip-calculator.html', label: 'SIP Calculator', ariaLabel: 'SIP Calculator' },
+    { path: '/lumpsum-calculator.html', label: 'Lumpsum Calculator', ariaLabel: 'Lumpsum Calculator' },
+    { path: '/fd-calculator.html', label: 'FD Calculator', ariaLabel: 'Fixed Deposit Calculator' },
+    { path: '/swp-calculator.html', label: 'SWP Calculator', ariaLabel: 'Systematic Withdrawal Plan Calculator' },
+  ];
+
+  return (
+    <ul className="flex flex-col md:flex-row items-start md:items-center flex-wrap gap-4 md:gap-6 text-base md:text-sm p-2 md:p-0">
+      <li className="w-full md:w-auto">
+        <Link
+          to="/"
+          className={`block w-full md:w-auto transition-colors ${isActive('/') ? 'text-finance-primary font-medium' : 'text-foreground hover:text-finance-primary'}`}
+          aria-label="CTC to Take Home Calculator"
+          onClick={closeMenu}
+        >
+          Home
+        </Link>
+      </li>
+      <li className="w-full md:w-auto">
+        <DropdownMenu>
+          <DropdownMenuTrigger
+            className={`flex items-center justify-between w-full md:w-auto gap-1 transition-colors ${toolsMenuItems.some(item => isActive(item.path)) ? 'text-finance-primary font-medium' : 'text-foreground hover:text-finance-primary'}`}
+          >
+            Tools <ChevronDown className="h-4 w-4" />
+          </DropdownMenuTrigger>
+          <DropdownMenuContent className="min-w-[200px] w-full md:w-auto">
+            {toolsMenuItems.map((item) => (
+              <DropdownMenuItem key={item.path} asChild>
+                <Link
+                  to={item.path}
+                  className="w-full block py-2"
+                  aria-label={item.ariaLabel}
+                  onClick={closeMenu}
+                >
+                  {item.label}
+                </Link>
+              </DropdownMenuItem>
+            ))}
+          </DropdownMenuContent>
+        </DropdownMenu>
+      </li>
+      <li className="w-full md:w-auto">
+        <Link
+          to="/blog.html"
+          className={`block w-full md:w-auto transition-colors ${isActive('/blog.html') ? 'text-finance-primary font-medium' : 'text-foreground hover:text-finance-primary'}`}
+          aria-label="Blog"
+          onClick={closeMenu}
+        >
+          Blog
+        </Link>
+      </li>
+      <li className="w-full md:w-auto">
+        <Link
+          to="/about.html"
+          className={`block w-full md:w-auto transition-colors ${isActive('/about.html') ? 'text-finance-primary font-medium' : 'text-foreground hover:text-finance-primary'}`}
+          aria-label="About CTC to Take Home Calculator"
+          onClick={closeMenu}
+        >
+          About
+        </Link>
+      </li>
+      <li className="w-full md:w-auto">
+        <Link
+          to="/contact.html"
+          className={`block w-full md:w-auto transition-colors ${isActive('/contact.html') ? 'text-finance-primary font-medium' : 'text-foreground hover:text-finance-primary'}`}
+          aria-label="Contact CTC Calculator Support"
+          onClick={closeMenu}
+        >
+          Contact
+        </Link>
+      </li>
+      {isMobile && (
+        <li className="w-full pt-4 border-t mt-4">
+          <div className="flex items-center justify-start space-x-4 pt-4">
             <LanguageSelector />
             <ThemeToggle />
           </div>
-        </nav>
+        </li>
       )}
-    </header>
+    </ul>
   );
 };
 
