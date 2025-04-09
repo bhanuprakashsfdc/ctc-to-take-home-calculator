@@ -53,6 +53,18 @@ export const fetchExchangeRates = async (): Promise<Record<string, number>> => {
   }
 };
 
+export const formatInternationalCurrency = (
+  amount: number,
+  locale: string = 'en-US',
+  currency: string = 'INR'
+): string => {
+  return new Intl.NumberFormat(locale, {
+    style: 'currency',
+    currency,
+    maximumFractionDigits: 2,
+  }).format(amount);
+};
+
 /**
  * Converts an amount from one currency to another using latest rates
  * @param amount Amount to convert

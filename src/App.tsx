@@ -23,6 +23,7 @@ import SIPCalculator from "./components/SIPCalculator";
 import LumpsumCalculator from "./components/LumpsumCalculator";
 import FDCalculator from "./components/FDCalculator";
 import SWPCalculator from "./components/SWPCalculator";
+import SalaryHike from "./pages/SalaryHike";
 
 // Import Country Specific Pages
 import IndiaPage from "./pages/country/IndiaPage";
@@ -58,6 +59,7 @@ const App = () => (
             <Route path="/lumpsum-calculator.html" element={<LumpsumCalculator />} />
             <Route path="/fd-calculator.html" element={<FDCalculator />} />
             <Route path="/swp-calculator.html" element={<SWPCalculator />} />
+            <Route path="/salary-hike.html" element={<SalaryHike />} />
 
             {/* Country Specific Routes */}
             <Route path="/in.html" element={<IndiaPage />} />
