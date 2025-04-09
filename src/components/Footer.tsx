@@ -71,6 +71,32 @@ const Footer: React.FC = () => {
           </div>
           
           <div>
+            <h3 className="text-base font-medium mb-3">Tools</h3>
+            <ul className="text-sm space-y-2">
+              <li>
+                <Link to="/ppp-calculator.html" className="text-muted-foreground hover:text-foreground transition-colors">
+                  PPP Calculator
+                </Link>
+              </li>
+              <li>
+                <Link to="/salary-to-hourly-calculator.html" className="text-muted-foreground hover:text-foreground transition-colors">
+                  Salary to Hourly Calculator
+                </Link>
+              </li>
+              <li>
+                <Link to="/salary-hike.html" className="text-muted-foreground hover:text-foreground transition-colors">
+                  Salary Hike Calculator
+                </Link>
+              </li>
+              <li>
+                <Link to="/sip-calculator.html" className="text-muted-foreground hover:text-foreground transition-colors">
+                  SIP Calculator
+                </Link>
+              </li>
+            </ul>
+          </div>
+          
+          <div>
             <h3 className="text-base font-medium mb-3">Legal</h3>
             <ul className="text-sm space-y-2">
               <li>

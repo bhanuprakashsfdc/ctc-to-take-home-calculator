@@ -68,6 +68,7 @@ const NavLinks: React.FC<NavLinksProps> = ({ isMobile, isActive, closeMenu }) =>
   const toolsMenuItems = [
     { path: '/ppp-calculator.html', label: 'PPP Calculator', ariaLabel: 'Purchasing Power Parity Calculator' },
     { path: '/salary-to-hourly-calculator.html', label: 'Salary to Hourly Calculator', ariaLabel: 'Salary to Hourly Rate Calculator' },
+    { path: '/salary-hike.html', label: 'Salary Hike Calculator', ariaLabel: 'Salary Hike Calculator' },
     { path: '/sip-calculator.html', label: 'SIP Calculator', ariaLabel: 'SIP Calculator' },
     { path: '/lumpsum-calculator.html', label: 'Lumpsum Calculator', ariaLabel: 'Lumpsum Calculator' },
     { path: '/fd-calculator.html', label: 'FD Calculator', ariaLabel: 'Fixed Deposit Calculator' },
