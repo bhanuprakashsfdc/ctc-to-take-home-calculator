@@ -1,0 +1,90 @@
+{
+  "common": {
+    "ctcCalculator": "CTC zu Nettogehalt Rechner",
+    "calculate": "Berechnen",
+    "monthly": "Monatlich",
+    "yearly": "Jährlich",
+    "viewMode": "Ansichtsmodus",
+    "showAdvanced": "Erweiterte Optionen anzeigen",
+    "hideAdvanced": "Erweiterte Optionen ausblenden",
+    "earnings": "Einkommen",
+    "deductions": "Abzüge",
+    "netTakeHome": "Nettogehalt",
+    "taxOptions": "Steueroptionen",
+    "country": "Land",
+    "region": "Region",
+    "currency": "Währung"
+  },
+  "form": {
+    "annualCTC": "Jährliche CTC (Kosten für das Unternehmen)",
+    "basicSalary": "Grundgehalt",
+    "hra": "Wohnungszuschuss",
+    "specialAllowance": "Sonderzulage",
+    "grossSalary": "Bruttogehalt",
+    "taxRegime": "Steuersystem",
+    "newTaxRegime": "Neues System (niedrige Sätze, keine Abzüge)",
+    "oldTaxRegime": "Altes System (hohe Sätze mit Abzügen)",
+    "taxSavingInvestments": "Steuerspar-Investitionen und Abzüge",
+    "section80C": "Abschnitt 80C (PF, ELSS, LIC usw.)",
+    "section80D": "Abschnitt 80D (Krankenversicherung)",
+    "housingLoan": "Hypothekenzinsen",
+    "nps": "NPS-Beitrag",
+    "epfEmployee": "EPF (Arbeitnehmer)",
+    "professionalTax": "Berufssteuer",
+    "incomeTax": "Einkommensteuer (TDS)",
+    "totalDeductions": "Gesamtabzüge"
+  },
+  "countries": {
+    "IN": "Indien",
+    "US": "Vereinigte Staaten",
+    "UK": "Vereinigtes Königreich",
+    "CA": "Kanada",
+    "AU": "Australien",
+    "SG": "Singapur",
+    "DE": "Deutschland"
+  },
+  "countrySpecific": {
+    "IN": {
+      "epf": "EPF",
+      "professionalTax": "Berufssteuer",
+      "section80C": "Abschnitt 80C",
+      "section80D": "Abschnitt 80D",
+      "hra": "Wohnungszuschuss"
+    },
+    "US": {
+      "federalTax": "Bundessteuer",
+      "stateTax": "Staatssteuer",
+      "socialSecurity": "Sozialversicherung",
+      "medicare": "Medicare",
+      "401k": "401(k) Beitrag"
+    },
+    "UK": {
+      "incomeTax": "Einkommensteuer",
+      "nationalInsurance": "Nationale Versicherung",
+      "pensionContribution": "Rentenbeitrag"
+    }
+  },
+  "description": {
+    "title": "Was ist Nettogehalt aus CTC?",
+    "description": "CTC (Cost to Company) ist der Gesamtbetrag, den ein Unternehmen jährlich für einen Mitarbeiter ausgibt. Es umfasst direkte und indirekte Leistungen. Das Nettogehalt ist das, was Sie nach allen Abzügen tatsächlich auf Ihr Bankkonto erhalten.",
+    "ctcBreakdown": "CTC-Aufschlüsselung",
+    "ctcBreakdownDesc": "Verstehen Sie die Struktur Ihres CTC mit einer detaillierten Aufschlüsselung",
+    "inHandSalary": "Nettogehalt",
+    "inHandSalaryDesc": "Berechnen Sie Ihr tatsächliches Nettogehalt nach Steuern und Abzügen",
+    "taxOptimization": "Steueroptimierung",
+    "taxOptimizationDesc": "Vergleichen Sie Steueroptionen, um Ihr Nettogehalt zu maximieren",
+    "salaryStructure": "Gehaltstruktur",
+    "salaryStructureDesc": "Beinhaltet alle gesetzlichen Bestandteile entsprechend Ihrem Land"
+  },
+  "gdpr": {
+    "consentTitle": "Cookie-Zustimmung",
+    "consentText": "Diese Website verwendet Cookies, um Ihnen die bestmögliche Erfahrung zu bieten.",
+    "acceptAll": "Alle akzeptieren",
+    "rejectAll": "Alle ablehnen",
+    "customize": "Anpassen",
+    "necessary": "Notwendig",
+    "preferences": "Einstellungen",
+    "analytics": "Analytik",
+    "marketing": "Marketing"
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "common": {
+    "ctcCalculator": "CTC 到实发工资计算器",
+    "calculate": "计算",
+    "monthly": "月度",
+    "yearly": "年度",
+    "viewMode": "查看模式",
+    "showAdvanced": "显示高级选项",
+    "hideAdvanced": "隐藏高级选项",
+    "earnings": "收入",
+    "deductions": "扣除",
+    "netTakeHome": "实发工资",
+    "taxOptions": "税务选项",
+    "country": "国家",
+    "region": "地区",
+    "currency": "货币"
+  },
+  "form": {
+    "annualCTC": "年度CTC（公司总支出）",
+    "basicSalary": "基本工资",
+    "hra": "住房补贴",
+    "specialAllowance": "特别津贴",
+    "grossSalary": "总工资",
+    "taxRegime": "税制",
+    "newTaxRegime": "新税制（低税率，无扣除）",
+    "oldTaxRegime": "旧税制（高税率，有扣除）",
+    "taxSavingInvestments": "节税投资与扣除",
+    "section80C": "第80C条（公积金、ELSS、人寿保险等）",
+    "section80D": "第80D条（健康保险）",
+    "housingLoan": "房贷利息",
+    "nps": "国家养老金计划 (NPS) 缴纳",
+    "epfEmployee": "雇员公积金 (EPF)",
+    "professionalTax": "职业税",
+    "incomeTax": "所得税（TDS）",
+    "totalDeductions": "总扣除"
+  },
+  "countries": {
+    "IN": "印度",
+    "US": "美国",
+    "UK": "英国",
+    "CA": "加拿大",
+    "AU": "澳大利亚",
+    "SG": "新加坡",
+    "DE": "德国"
+  },
+  "countrySpecific": {
+    "IN": {
+      "epf": "公积金",
+      "professionalTax": "职业税",
+      "section80C": "第80C条",
+      "section80D": "第80D条",
+      "hra": "住房补贴"
+    },
+    "US": {
+      "federalTax": "联邦税",
+      "stateTax": "州税",
+      "socialSecurity": "社会保险",
+      "medicare": "医疗保险",
+      "401k": "401(k) 缴纳"
+    },
+    "UK": {
+      "incomeTax": "所得税",
+      "nationalInsurance": "国家保险",
+      "pensionContribution": "养老金缴纳"
+    }
+  },
+  "description": {
+    "title": "什么是从CTC到实发工资？",
+    "description": "CTC（公司总支出）是公司每年在员工身上的总开支，包括直接和间接福利。实发工资是扣除所有税费后的最终收入。",
+    "ctcBreakdown": "CTC明细",
+    "ctcBreakdownDesc": "通过详细分类了解您的CTC结构",
+    "inHandSalary": "实发工资",
+    "inHandSalaryDesc": "计算扣税后的实际收入",
+    "taxOptimization": "税务优化",
+    "taxOptimizationDesc": "比较税制选项，最大化实发工资",
+    "salaryStructure": "工资结构",
+    "salaryStructureDesc": "根据您的国家包括所有法定组成部分"
+  },
+  "gdpr": {
+    "consentTitle": "Cookie 同意",
+    "consentText": "本网站使用Cookies以确保您获得最佳体验。",
+    "acceptAll": "全部接受",
+    "rejectAll": "全部拒绝",
+    "customize": "自定义",
+    "necessary": "必要",
+    "preferences": "偏好",
+    "analytics": "分析",
+    "marketing": "营销"
+  }
+}

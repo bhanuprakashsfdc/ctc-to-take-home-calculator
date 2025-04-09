@@ -1,11 +1,14 @@
 
 import React, { useRef } from 'react';
+import { Helmet } from 'react-helmet-async';
+import { useTranslation } from 'react-i18next';
 import Header from '@/components/Header';
-import CTCCalculatorForm from '@/components/CTCCalculatorForm';
+import Footer from '@/components/Footer';
+import InternationalCTCCalculatorForm from '@/components/InternationalCTCCalculatorForm';
 import CTCDescription from '@/components/CTCDescription';
 import CTCSEOContent from '@/components/CTCSEOContent';
-import Footer from '@/components/Footer';
-import { Helmet } from 'react-helmet-async';
+import CTCCalculatorForm from '@/components/CTCCalculatorForm';
+import CurrencyConverter from '@/components/CurrencyConverter';
 import { Link } from 'react-router-dom';
 
 const Index: React.FC = () => {
@@ -18,15 +21,15 @@ const Index: React.FC = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Helmet>
-        <title>CTC to Take Home Salary Calculator India | Calculate Actual In-Hand Pay</title>
-        <meta name="description" content="Best free CTC to take home calculator for Indian employees. Calculate your in-hand salary with detailed breakdown of PF, tax & other deductions from your CTC package." />
-        <meta name="keywords" content="ctc to take home calculator, salary calculator india, in-hand salary, cost to company, net salary, take home pay calculator, salary calculator india, ctc breakdown" />
+        <title>CTC to Take Home Salary Calculator | Global In-Hand Pay Calculation</title>
+        <meta name="description" content="Free global CTC to take home calculator. Calculate your in-hand salary with a detailed breakdown of taxes and deductions for various countries." />
+        <meta name="keywords" content="ctc to take home calculator, salary calculator, in-hand salary, cost to company, net salary, take home pay calculator, global salary calculator, ctc breakdown" />
         <link rel="canonical" href="https://www.ctc-calculator.com/" />
-        <meta property="og:title" content="CTC to Take Home Salary Calculator India | Calculate Actual In-Hand Pay" />
-        <meta property="og:description" content="Best free CTC to take home calculator for Indian employees. Calculate your in-hand salary with detailed breakdown of PF, tax & other deductions from your CTC package." />
+        <meta property="og:title" content="CTC to Take Home Salary Calculator | Global In-Hand Pay Calculation" />
+        <meta property="og:description" content="Free global CTC to take home calculator. Calculate your in-hand salary with a detailed breakdown of taxes and deductions for various countries." />
         <meta property="og:type" content="website" />
-        <meta name="twitter:title" content="CTC to Take Home Salary Calculator India | Calculate Actual In-Hand Pay" />
-        <meta name="twitter:description" content="Best free CTC to take home calculator for Indian employees. Calculate your in-hand salary with detailed breakdown of PF, tax & other deductions from your CTC package." />
+        <meta name="twitter:title" content="CTC to Take Home Salary Calculator | Global In-Hand Pay Calculation" />
+        <meta name="twitter:description" content="Free global CTC to take home calculator. Calculate your in-hand salary with a detailed breakdown of taxes and deductions for various countries." />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
@@ -34,11 +37,10 @@ const Index: React.FC = () => {
             "name": "CTC to Take Home Salary Calculator",
             "url": "https://www.ctc-calculator.com/",
             "applicationCategory": "FinanceApplication",
-            "description": "Free CTC to take home calculator that helps Indian employees calculate their in-hand salary with detailed breakdown of all components.",
+            "description": "Free global CTC to take home calculator that helps employees calculate their in-hand salary with detailed breakdown of all components for various countries.",
             "offers": {
               "@type": "Offer",
-              "price": "0",
-              "priceCurrency": "INR"
+              "price": "0"
             },
             "aggregateRating": {
               "@type": "AggregateRating",
@@ -54,34 +56,34 @@ const Index: React.FC = () => {
       <main className="flex-grow container mx-auto px-4 py-8">
         <div className="max-w-4xl mx-auto space-y-12">
           <div className="text-center space-y-4">
-            <h1 className="text-3xl md:text-4xl font-bold">CTC to Take Home Salary Calculator India</h1>
+            <h1 className="text-3xl md:text-4xl font-bold">Global CTC to Take Home Salary Calculator</h1>
             <p className="text-xl text-muted-foreground">
-              The most accurate calculator to convert your CTC to actual in-hand salary
+              Accurately convert your Cost-to-Company (CTC) to your actual in-hand salary across different countries.
             </p>
           </div>
           
           <div ref={calculatorRef} id="calculator-section">
-            <CTCCalculatorForm />
+            <InternationalCTCCalculatorForm />
           </div>
           
           <section className="my-10">
-            <h2 className="text-2xl font-bold mb-4">How to Calculate CTC to Take Home Salary in India?</h2>
+            <h2 className="text-2xl font-bold mb-4">How to Calculate Your Take Home Salary?</h2>
             <p className="mb-4">
-              Converting your CTC (Cost to Company) to take home salary involves understanding various deductions such as:
+              Converting your CTC (Cost to Company) to your take home salary involves understanding various country-specific deductions, including:
             </p>
             <ul className="list-disc pl-5 mb-4 space-y-2">
-              <li>Income Tax based on your tax slab (old or new regime)</li>
-              <li>Employee Provident Fund (EPF) contributions (12% of basic salary)</li>
-              <li>Professional Tax (varies by state in India)</li>
-              <li>Health Insurance premiums (ESI or company provided)</li>
-              <li>Other company-specific deductions like meal vouchers</li>
+              <li>Income Tax based on local tax laws and brackets</li>
+              <li>Social Security / Pension contributions (e.g., EPF, 401k)</li>
+              <li>State or Provincial Taxes (where applicable)</li>
+              <li>Health Insurance premiums</li>
+              <li>Other statutory or company-specific deductions</li>
             </ul>
             <p className="mb-4">
-              Our CTC to take home calculator automatically computes these deductions to show you the exact amount you'll receive in your bank account each month as an Indian employee.
+              Our calculator automatically factors in these deductions based on the selected country to show you the estimated amount you'll receive in your bank account each month.
             </p>
-            <h3 className="text-xl font-semibold mb-3">Why Trust Our CTC to Take Home Calculator?</h3>
+            <h3 className="text-xl font-semibold mb-3">Why Trust Our Calculator?</h3>
             <p>
-              Our calculator is updated with the latest Indian tax regulations for 2023-24 and provides accurate calculations based on current financial year rules. Simply enter your CTC amount to get a detailed breakdown of your in-hand salary.
+              Our calculator uses up-to-date information for supported countries to provide accurate estimations. Simply select your country and enter your CTC to get a detailed salary breakdown.
             </p>
           </section>
           
@@ -94,30 +96,30 @@ const Index: React.FC = () => {
             
             <div className="space-y-6">
               <div>
-                <h3 className="text-lg font-semibold">What is the difference between CTC and take home salary in India?</h3>
+                <h3 className="text-lg font-semibold">What is the difference between CTC and take home salary?</h3>
                 <p className="text-muted-foreground">
-                  CTC (Cost to Company) is the total expense a company incurs for an employee annually in India. It includes both direct benefits (like basic salary) and indirect benefits (like employer's PF contribution, gratuity). Take home salary is the actual amount an employee receives after all deductions like income tax, provident fund, and professional tax.
+                  CTC (Cost to Company) is the total expense a company incurs for an employee annually. It includes direct benefits (like salary) and indirect benefits (like employer pension contributions, insurance). Take home salary (or net pay) is the actual amount an employee receives after all mandatory deductions like taxes and social contributions.
                 </p>
               </div>
               
               <div>
-                <h3 className="text-lg font-semibold">How is in-hand salary calculated from CTC in India?</h3>
+                <h3 className="text-lg font-semibold">How is in-hand salary calculated from CTC?</h3>
                 <p className="text-muted-foreground">
-                  To calculate in-hand salary in India, subtract all deductions (taxes, EPF, professional tax, etc.) from your monthly gross salary. The typical formula is: In-hand salary = Monthly Gross - (Income Tax + Employee PF + Professional Tax + Other Deductions). Our CTC to take home calculator does this automatically.
+                  To calculate in-hand salary, subtract all applicable deductions (income tax, social security/pension contributions, mandatory insurance, etc.) from your gross salary (derived from CTC). The exact formula varies by country. Our calculator handles these country-specific calculations automatically when you select a location.
                 </p>
               </div>
               
               <div>
-                <h3 className="text-lg font-semibold">What percentage of CTC is take home salary typically in India?</h3>
+                <h3 className="text-lg font-semibold">What percentage of CTC is typically take home salary?</h3>
                 <p className="text-muted-foreground">
-                  Generally, take home salary in India ranges between 65-85% of your CTC, depending on your salary structure, tax regime choice, and eligible deductions. Higher CTC packages may have a lower percentage as take-home due to progressive tax rates.
+                  The percentage of CTC that becomes take home pay varies significantly by country due to different tax rates, social security systems, and mandatory deductions. It can range broadly, often between 60% to 85%, but depends heavily on the specific country's regulations and the individual's salary level.
                 </p>
               </div>
               
               <div>
-                <h3 className="text-lg font-semibold">Does this CTC to take home calculator work for both old and new tax regimes in India?</h3>
+                <h3 className="text-lg font-semibold">Does this calculator support different tax systems within a country?</h3>
                 <p className="text-muted-foreground">
-                  Yes, our CTC to take home calculator supports both old and new tax regimes in India as per the latest budget updates, giving you the flexibility to compare and choose the best option for your financial situation.
+                  Where applicable (like India's old vs. new tax regimes), the calculator aims to support relevant tax systems. Select the country and check the available options or assumptions noted in the results.
                 </p>
               </div>
             </div>
@@ -128,15 +130,15 @@ const Index: React.FC = () => {
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <li className="flex items-start">
                 <span className="text-finance-primary font-bold mr-2">✓</span>
-                <span>Most accurate in-hand salary calculations for Indian employees</span>
+                <span>Accurate in-hand salary calculations for multiple countries</span>
               </li>
               <li className="flex items-start">
                 <span className="text-finance-primary font-bold mr-2">✓</span>
-                <span>Updated with latest 2023-24 tax slabs and rules</span>
+                <span>Uses up-to-date tax information for supported regions</span>
               </li>
               <li className="flex items-start">
                 <span className="text-finance-primary font-bold mr-2">✓</span>
-                <span>Compares old vs new tax regime benefits</span>
+                <span>Handles country-specific tax systems and deductions</span>
               </li>
               <li className="flex items-start">
                 <span className="text-finance-primary font-bold mr-2">✓</span>
@@ -148,7 +150,7 @@ const Index: React.FC = () => {
               </li>
               <li className="flex items-start">
                 <span className="text-finance-primary font-bold mr-2">✓</span>
-                <span>100% accurate PF and tax calculations</span>
+                <span>Reliable estimation of social security and tax deductions</span>
               </li>
             </ul>
           </section>

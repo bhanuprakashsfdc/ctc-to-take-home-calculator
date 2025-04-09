@@ -1,0 +1,90 @@
+{
+  "common": {
+    "ctcCalculator": "Calculateur de CTC au salaire net",
+    "calculate": "Calculer",
+    "monthly": "Mensuel",
+    "yearly": "Annuel",
+    "viewMode": "Mode d'affichage",
+    "showAdvanced": "Afficher les options avancées",
+    "hideAdvanced": "Masquer les options avancées",
+    "earnings": "Revenus",
+    "deductions": "Déductions",
+    "netTakeHome": "Salaire net",
+    "taxOptions": "Options fiscales",
+    "country": "Pays",
+    "region": "Région",
+    "currency": "Devise"
+  },
+  "form": {
+    "annualCTC": "CTC annuel (Coût pour l'entreprise)",
+    "basicSalary": "Salaire de base",
+    "hra": "Allocation logement",
+    "specialAllowance": "Indemnité spéciale",
+    "grossSalary": "Salaire brut",
+    "taxRegime": "Régime fiscal",
+    "newTaxRegime": "Nouveau régime (taux faibles, pas de déductions)",
+    "oldTaxRegime": "Ancien régime (taux élevés avec déductions)",
+    "taxSavingInvestments": "Investissements d'épargne fiscale et déductions",
+    "section80C": "Section 80C (PF, ELSS, LIC, etc.)",
+    "section80D": "Section 80D (Assurance santé)",
+    "housingLoan": "Intérêts de prêt immobilier",
+    "nps": "Contribution NPS",
+    "epfEmployee": "EPF (Employé)",
+    "professionalTax": "Taxe professionnelle",
+    "incomeTax": "Impôt sur le revenu (TDS)",
+    "totalDeductions": "Total des déductions"
+  },
+  "countries": {
+    "IN": "Inde",
+    "US": "États-Unis",
+    "UK": "Royaume-Uni",
+    "CA": "Canada",
+    "AU": "Australie",
+    "SG": "Singapour",
+    "DE": "Allemagne"
+  },
+  "countrySpecific": {
+    "IN": {
+      "epf": "EPF",
+      "professionalTax": "Taxe professionnelle",
+      "section80C": "Section 80C",
+      "section80D": "Section 80D",
+      "hra": "Allocation logement"
+    },
+    "US": {
+      "federalTax": "Impôt fédéral",
+      "stateTax": "Impôt d'État",
+      "socialSecurity": "Sécurité sociale",
+      "medicare": "Medicare",
+      "401k": "Contribution 401(k)"
+    },
+    "UK": {
+      "incomeTax": "Impôt sur le revenu",
+      "nationalInsurance": "Assurance nationale",
+      "pensionContribution": "Contribution à la retraite"
+    }
+  },
+  "description": {
+    "title": "Qu'est-ce que le salaire net à partir du CTC ?",
+    "description": "Le CTC (Coût pour l'entreprise) est le montant total qu'une entreprise dépense annuellement pour un employé. Il comprend les avantages directs et indirects. Le salaire net est ce que vous recevez réellement sur votre compte bancaire après toutes les déductions.",
+    "ctcBreakdown": "Répartition du CTC",
+    "ctcBreakdownDesc": "Comprenez comment votre CTC est structuré avec une répartition détaillée",
+    "inHandSalary": "Salaire net",
+    "inHandSalaryDesc": "Calculez votre vrai salaire net après impôts et déductions",
+    "taxOptimization": "Optimisation fiscale",
+    "taxOptimizationDesc": "Comparez les options fiscales pour maximiser votre salaire net",
+    "salaryStructure": "Structure salariale",
+    "salaryStructureDesc": "Inclut tous les composants légaux selon votre pays"
+  },
+  "gdpr": {
+    "consentTitle": "Consentement aux cookies",
+    "consentText": "Ce site utilise des cookies pour vous garantir la meilleure expérience sur notre site.",
+    "acceptAll": "Tout accepter",
+    "rejectAll": "Tout refuser",
+    "customize": "Personnaliser",
+    "necessary": "Nécessaire",
+    "preferences": "Préférences",
+    "analytics": "Analytique",
+    "marketing": "Marketing"
+  }
+}

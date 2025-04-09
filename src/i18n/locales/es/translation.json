@@ -1,0 +1,90 @@
+{
+  "common": {
+    "ctcCalculator": "Calculadora de CTC a salario neto",
+    "calculate": "Calcular",
+    "monthly": "Mensual",
+    "yearly": "Anual",
+    "viewMode": "Modo de vista",
+    "showAdvanced": "Mostrar opciones avanzadas",
+    "hideAdvanced": "Ocultar opciones avanzadas",
+    "earnings": "Ingresos",
+    "deductions": "Deducciones",
+    "netTakeHome": "Salario neto",
+    "taxOptions": "Opciones fiscales",
+    "country": "País",
+    "region": "Región",
+    "currency": "Moneda"
+  },
+  "form": {
+    "annualCTC": "CTC anual (Costo para la empresa)",
+    "basicSalary": "Salario básico",
+    "hra": "Subsidio de vivienda",
+    "specialAllowance": "Asignación especial",
+    "grossSalary": "Salario bruto",
+    "taxRegime": "Régimen fiscal",
+    "newTaxRegime": "Nuevo régimen (tasas bajas, sin deducciones)",
+    "oldTaxRegime": "Antiguo régimen (tasas altas con deducciones)",
+    "taxSavingInvestments": "Inversiones de ahorro fiscal y deducciones",
+    "section80C": "Sección 80C (PF, ELSS, LIC, etc.)",
+    "section80D": "Sección 80D (Seguro médico)",
+    "housingLoan": "Interés del préstamo hipotecario",
+    "nps": "Contribución NPS",
+    "epfEmployee": "EPF (Empleado)",
+    "professionalTax": "Impuesto profesional",
+    "incomeTax": "Impuesto sobre la renta (TDS)",
+    "totalDeductions": "Deducciones totales"
+  },
+  "countries": {
+    "IN": "India",
+    "US": "Estados Unidos",
+    "UK": "Reino Unido",
+    "CA": "Canadá",
+    "AU": "Australia",
+    "SG": "Singapur",
+    "DE": "Alemania"
+  },
+  "countrySpecific": {
+    "IN": {
+      "epf": "EPF",
+      "professionalTax": "Impuesto profesional",
+      "section80C": "Sección 80C",
+      "section80D": "Sección 80D",
+      "hra": "Subsidio de vivienda"
+    },
+    "US": {
+      "federalTax": "Impuesto federal",
+      "stateTax": "Impuesto estatal",
+      "socialSecurity": "Seguridad Social",
+      "medicare": "Medicare",
+      "401k": "Contribución 401(k)"
+    },
+    "UK": {
+      "incomeTax": "Impuesto sobre la renta",
+      "nationalInsurance": "Seguro nacional",
+      "pensionContribution": "Contribución a pensión"
+    }
+  },
+  "description": {
+    "title": "¿Qué es el salario neto a partir del CTC?",
+    "description": "CTC (Costo para la empresa) es el monto total que una empresa gasta anualmente en un empleado. Incluye beneficios directos e indirectos. El salario neto es lo que realmente recibes en tu cuenta bancaria después de todas las deducciones.",
+    "ctcBreakdown": "Desglose del CTC",
+    "ctcBreakdownDesc": "Entiende cómo está estructurado tu CTC con un desglose detallado",
+    "inHandSalary": "Salario neto",
+    "inHandSalaryDesc": "Calcula tu salario neto real después de impuestos y deducciones",
+    "taxOptimization": "Optimización fiscal",
+    "taxOptimizationDesc": "Compara opciones fiscales para maximizar tu salario neto",
+    "salaryStructure": "Estructura salarial",
+    "salaryStructureDesc": "Incluye todos los componentes legales según tu país"
+  },
+  "gdpr": {
+    "consentTitle": "Consentimiento de cookies",
+    "consentText": "Este sitio utiliza cookies para garantizar que obtenga la mejor experiencia en nuestro sitio web.",
+    "acceptAll": "Aceptar todo",
+    "rejectAll": "Rechazar todo",
+    "customize": "Personalizar",
+    "necessary": "Necesario",
+    "preferences": "Preferencias",
+    "analytics": "Analítica",
+    "marketing": "Marketing"
+  }
+}
