@@ -32,6 +32,7 @@ import UKPage from "./pages/country/UKPage";
 
 // Import i18n configuration
 import './i18n/i18n';
+import CurrencyConverter from "./components/CurrencyConverter";
 
 const queryClient = new QueryClient();
 
@@ -60,6 +61,7 @@ const App = () => (
             <Route path="/fd-calculator.html" element={<FDCalculator />} />
             <Route path="/swp-calculator.html" element={<SWPCalculator />} />
             <Route path="/salary-hike.html" element={<SalaryHike />} />
+            <Route path="/currency-converter.html" element={<CurrencyConverter />} />
 
             {/* Country Specific Routes */}
             <Route path="/in.html" element={<IndiaPage />} />

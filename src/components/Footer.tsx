@@ -93,6 +93,11 @@ const Footer: React.FC = () => {
                   SIP Calculator
                 </Link>
               </li>
+              <li>
+                <Link to="/currency-converter.html" className="text-muted-foreground hover:text-foreground transition-colors">
+                  Currency Converter
+                </Link>
+              </li>
             </ul>
           </div>
           

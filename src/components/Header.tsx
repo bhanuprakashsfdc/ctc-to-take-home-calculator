@@ -73,6 +73,7 @@ const NavLinks: React.FC<NavLinksProps> = ({ isMobile, isActive, closeMenu }) =>
     { path: '/lumpsum-calculator.html', label: 'Lumpsum Calculator', ariaLabel: 'Lumpsum Calculator' },
     { path: '/fd-calculator.html', label: 'FD Calculator', ariaLabel: 'Fixed Deposit Calculator' },
     { path: '/swp-calculator.html', label: 'SWP Calculator', ariaLabel: 'Systematic Withdrawal Plan Calculator' },
+    { path: '/currency-converter.html', label: 'Currency Converter', ariaLabel: 'Currency Converter Calculator' },
   ];
 
   return (
