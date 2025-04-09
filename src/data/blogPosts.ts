@@ -160,7 +160,7 @@ export const blogPosts: BlogPost[] = [
         
         <p>Converting annual salary to hourly rate involves more than simple division. Consider work hours, benefits, and other factors for accurate calculations. Use this knowledge for better career decisions and financial planning. Remember that online calculators can help, but understanding the underlying principles ensures you make informed decisions about your compensation.</p>
       `,
-      coverImage: "https://images.unsplash.com/photo-1554224154-26032ffc0d07?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1011&q=80",
+      coverImage: "/images/blog/converting-annual-salary-to-hourly-rate-complete-guide.jpg",
       readTime: 12,
       keywords: ["hourly rate calculator", "salary to hourly", "annual salary calculator", "hourly wage calculator", "salary conversion", "hourly pay calculator", "wage calculator", "45000 a year is how much an hour", "60k a year is how much an hour", "75000 a year is how much an hour", "80000 a year is how much an hour"]
     },
@@ -292,7 +292,7 @@ export const blogPosts: BlogPost[] = [
       
       <p>Managing self-employment taxes requires careful planning and the right tools. Using tax calculators effectively can help you estimate your tax obligations accurately and avoid surprises. Remember to keep good records, stay informed about tax laws, and consider consulting with tax professionals for complex situations.</p>
     `,
-    coverImage: "https://images.unsplash.com/photo-1554224155-1696413565d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1011&q=80",
+    coverImage: "/images/blog/self-employment-tax-calculator.jpg",
     readTime: 15,
     keywords: ["self employment tax calculator", "tax calculator", "quarterly tax calculator", "income tax calculator", "freelance tax calculator", "self employed tax estimation"]
   },  
@@ -412,7 +412,7 @@ export const blogPosts: BlogPost[] = [
       
       <p>Salary calculators are powerful tools for financial planning and decision-making. By understanding how to use them effectively and being aware of their limitations, you can make more informed decisions about your career and finances. Remember to use them as guides and consult with financial professionals for important decisions.</p>
     `,
-    coverImage: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1011&q=80",
+    coverImage: "/images/blog/self-employment-tax-calculator.jpg",
     readTime: 12,
     keywords: ["salary calculator", "take home pay calculator", "income tax calculator", "paycheck calculator", "CTC calculator", "gross to net calculator", "salary calculation guide"]
   },  
@@ -476,7 +476,7 @@ export const blogPosts: BlogPost[] = [
       
       <p>The difference between gross and net salary is significant and has a direct impact on your financial planning. While your gross salary might look impressive on paper, it's your net salary that determines your actual purchasing power and financial flexibility. By understanding this difference, you can make more informed decisions about your career, finances, and future.</p>
     `,
-    coverImage: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1011&q=80",
+    coverImage: "/images/blog/self-employment-tax-calculator.jpg",
     readTime: 8,
     keywords: ["gross salary", "net salary", "take home pay", "salary calculator", "income tax"]
   },
@@ -561,7 +561,7 @@ export const blogPosts: BlogPost[] = [
       
       <p>Remember that while the basic formula provides a good approximation, factors like paid time off, overtime, and additional compensation can affect your actual hourly earnings. Consider these factors when calculating your hourly rate for a more accurate picture of your compensation.</p>
     `,
-    coverImage: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+    coverImage: "/images/blog/how-to-calculate-your-hourly-rate-from-annual-salary.jpg",
     readTime: 7,
     keywords: ["hourly rate", "annual salary", "salary calculator", "hourly to salary", "wage calculator"]
   },
@@ -734,7 +734,7 @@ export const blogPosts: BlogPost[] = [
       
       <p>For personalized tax advice, it's always recommended to consult with a qualified tax professional who can guide you based on your specific financial situation.</p>
     `,
-    coverImage: "https://images.unsplash.com/photo-1586486855514-8c633cc6fd29?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+    coverImage: "/images/blog/understanding-income-tax-calculation-in-india.jpg",
     readTime: 10,
     keywords: ["income tax", "tax calculation", "tax slabs", "tax deductions", "tax exemptions", "income tax calculator"]
   },
@@ -871,7 +871,7 @@ export const blogPosts: BlogPost[] = [
       
       <p>Remember that pay stub formats and specific deductions can vary by employer, industry, and location. If you have questions about your specific pay stub, don't hesitate to reach out to your HR or payroll department for clarification.</p>
     `,
-    coverImage: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+    coverImage: "/images/blog/understanding-your-pay-stub-a-complete-guide.jpg",
     readTime: 9,
     keywords: ["pay stub", "paycheck", "salary breakdown", "payroll", "deductions", "take home pay", "pay stub calculator"]
   },
@@ -981,7 +981,7 @@ export const blogPosts: BlogPost[] = [
       
       <p>Remember that tax laws change frequently, and individual situations vary. It's always advisable to consult with a qualified tax professional for personalized advice on managing your self-employment tax obligations.</p>
     `,
-    coverImage: "https://images.unsplash.com/photo-1554224155-1696413565d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+    coverImage: "/images/blog/self-employment-tax-what-it-is-and-how-to-calculate-it.jpg",
     readTime: 9,
     keywords: ["self-employment tax", "freelancer taxes", "independent contractor", "tax deductions", "quarterly taxes"]
   },
@@ -1099,7 +1099,7 @@ export const blogPosts: BlogPost[] = [
       
       <p>Understanding your military compensation is crucial for financial planning. Use military pay calculators and keep track of changes in pay tables and allowance rates. Consider the total value of your compensation package, including both direct pay and benefits.</p>
     `,
-    coverImage: "https://images.unsplash.com/photo-1579912437766-7896df6d3cd6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1011&q=80",
+    coverImage: "/images/blog/military-pay-calculator.jpg",
     readTime: 10,
     keywords: ["military pay calculator", "military salary calculator", "military compensation calculator", "military benefits calculator", "military bah calculator", "military retirement calculator"]
   },
@@ -1157,8 +1157,7 @@ export const blogPosts: BlogPost[] = [
       <h2>Conclusion</h2>
       <p>A salary calculator is a powerful tool for gaining control over your finances. By understanding your real income, you can make smarter budgeting and career decisions.</p>
     `,
-    coverImage:
-      "https://images.unsplash.com/photo-1565372146444-b70a0e0f2a3d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1012&q=80",
+    coverImage:"/images/blog/salary-calculator-how-to-estimate-your-real-earnings.jpg",
     readTime: 6,
     keywords: [
       "salary calculator",
@@ -1224,7 +1223,7 @@ export const blogPosts: BlogPost[] = [
       <p>Using an income tax calculator simplifies tax planning. It helps you stay informed, optimize your deductions, and avoid last-minute confusion during tax season.</p>
     `,
     coverImage:
-      "https://images.unsplash.com/photo-1607083206173-8d6c3a04b62e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1052&q=80",
+      "/images/blog/income-tax-calculator-calculate-your-tax-liability-easily.jpg",
     readTime: 5,
     keywords: [
       "income tax calculator",
@@ -1282,8 +1281,7 @@ export const blogPosts: BlogPost[] = [
     <h2>Conclusion</h2>
     <p>A tax calculator is not just for tax season—it’s a year-round ally that helps you take control of your finances. Make it part of your budgeting and investment planning process to stay ahead.</p>
   `,
-  coverImage:
-    "https://images.unsplash.com/photo-1588776814546-ec7d5aa1c94c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1052&q=80",
+  coverImage:"/images/blog/tax-calculator-simplify-your-financial-planning.jpg",
   readTime: 4,
   keywords: [
     "tax calculator",
@@ -1339,7 +1337,7 @@ export const blogPosts: BlogPost[] = [
     <p>With a good salary calculator, you no longer need to guess what’s coming into your bank account every month. It’s a smart move for financial clarity and better budgeting.</p>
   `,
   coverImage:
-    "https://images.unsplash.com/photo-1605902711622-cfb43c4437d9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1052&q=80",
+    "/images/blog/salary-calculator-know-your-exact-take-home-pay.jpg",
   readTime: 4,
   keywords: [
     "salary calculator",
@@ -1394,7 +1392,7 @@ export const blogPosts: BlogPost[] = [
       <p>With an income tax calculator, you can stop guessing and start planning. It's the fastest way to figure out your tax burden—and how to reduce it legally.</p>
     `,
     coverImage:
-      "https://images.unsplash.com/photo-1611162617213-f373dd63f02f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1052&q=80",
+      "/images/blog/income-tax-calculator-simplify-your-tax-planning.jpg",
     readTime: 4,
     keywords: [
       "income tax calculator",
@@ -1448,7 +1446,7 @@ export const blogPosts: BlogPost[] = [
     <p>An in-hand salary calculator is essential to avoid salary surprises. Whether you’re job hunting or planning finances, it gives you the clarity you need.</p>
   `,
   coverImage:
-    "https://images.unsplash.com/photo-1605902711622-cfb43c4437f9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1052&q=80",
+    "/images/blog/in-hand-salary-calculator-know-what-you-really-take-home.jpg",
   readTime: 4,
   keywords: [
     "in hand salary calculator",
@@ -1498,7 +1496,7 @@ export const blogPosts: BlogPost[] = [
     <p>Don’t just negotiate on CTC—understand your real earnings. Use a take home salary calculator to stay informed and financially smart.</p>
   `,
   coverImage:
-    "https://images.unsplash.com/photo-1581092581911-aee60b0f6de0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1052&q=80",
+    "/images/blog/take-home-salary-calculator-your-ctc-decoded.jpg",
   readTime: 4,
   keywords: [
     "take home salary calculator",
@@ -1556,7 +1554,7 @@ export const blogPosts: BlogPost[] = [
     <p>Don't leave tax planning till the last minute. Try our free income tax calculator to estimate your tax liability and plan your year smarter!</p>
   `,
   coverImage:
-    "https://images.unsplash.com/photo-1600250902735-395e7f71b429?ixlib=rb-4.0.3&auto=format&fit=crop&w=1050&q=80",
+    "/images/blog/income-tax-calculator-india-smart-planning-for-smarter-saving.jpg",
   readTime: 4,
   keywords: [
     "income tax calculator",
@@ -1612,7 +1610,7 @@ export const blogPosts: BlogPost[] = [
       <p>Use our free monthly salary calculator at <a href="https://www.ctc-calculator.com/">CTC Calculator</a> and make smarter career and money decisions today!</p>
     `,
     coverImage:
-      "https://images.unsplash.com/photo-1554224155-570fcf2c79a4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1050&q=80",
+      "/images/blog/monthly-salary-calculator-know-your-take-home-pay-instantly.jpg",
     readTime: 4,
     keywords: [
       "monthly salary calculator",
@@ -1671,7 +1669,7 @@ export const blogPosts: BlogPost[] = [
     <p>Try the free <a href="https://www.ctc-calculator.com/">gratuity calculator</a> to know your retirement or exit benefits in seconds.</p>
   `,
   coverImage:
-    "https://images.unsplash.com/photo-1603366615917-1fa6dad5c4af?ixlib=rb-4.0.3&auto=format&fit=crop&w=1050&q=80",
+    "/images/blog/gratuity-calculator-calculate-your-end-of-service-benefits.jpg",
   readTime: 4,
   keywords: [
     "gratuity calculator",
@@ -1729,7 +1727,7 @@ export const blogPosts: BlogPost[] = [
     <p>Check your PF savings using our fast and easy <a href="https://www.ctc-calculator.com/">PF calculator</a>. Make your retirement planning smarter!</p>
   `,
   coverImage:
-    "https://images.unsplash.com/photo-1554224154-22dec7ec8818?ixlib=rb-4.0.3&auto=format&fit=crop&w=1052&q=80",
+    "/images/blog/pf-calculator-know-your-provident-fund-contributions-instantly.jpg",
   readTime: 3,
   keywords: [
     "pf calculator",
@@ -1784,7 +1782,7 @@ export const blogPosts: BlogPost[] = [
     <p>Save more with our intuitive <a href="https://www.ctc-calculator.com/">income tax calculator</a>. See where your money goes and make informed choices this financial year!</p>
   `,
   coverImage:
-    "https://images.unsplash.com/photo-1588382191191-f91cf0e1f201?ixlib=rb-4.0.3&auto=format&fit=crop&w=1052&q=80",
+    "/images/blog/income-tax-calculator-instantly-calculate-your-tax-liability.jpg",
   readTime: 3,
   keywords: [
     "income tax calculator",
