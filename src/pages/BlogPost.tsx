@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet-async';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { blogPosts } from '../data/blogPosts';
+import InternationalCTCCalculatorForm from '@/components/InternationalCTCCalculatorForm';
 
 const BlogPost: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -120,6 +121,7 @@ const BlogPost: React.FC = () => {
               />
             </div>
           </div>
+          <InternationalCTCCalculatorForm />
           
           {/* Blog post content */}
           <div className="prose prose-lg max-w-none">
