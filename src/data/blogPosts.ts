@@ -160,7 +160,7 @@ export const blogPosts: BlogPost[] = [
         
         <p>Converting annual salary to hourly rate involves more than simple division. Consider work hours, benefits, and other factors for accurate calculations. Use this knowledge for better career decisions and financial planning. Remember that online calculators can help, but understanding the underlying principles ensures you make informed decisions about your compensation.</p>
       `,
-      coverImage: "https://images.unsplash.com/photo-1554224154-26032ffc0d07?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1011&q=80",
+      coverImage: "/images/blog/converting-annual-salary-to-hourly-rate-complete-guide.jpg",
       readTime: 12,
       keywords: ["hourly rate calculator", "salary to hourly", "annual salary calculator", "hourly wage calculator", "salary conversion", "hourly pay calculator", "wage calculator", "45000 a year is how much an hour", "60k a year is how much an hour", "75000 a year is how much an hour", "80000 a year is how much an hour"]
     },
