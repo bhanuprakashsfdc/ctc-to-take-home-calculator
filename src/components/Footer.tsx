@@ -36,7 +36,7 @@ const Footer: React.FC = () => {
       </Helmet>
       
       <div className="container flex flex-col space-y-6">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           <div>
             <h3 className="text-base font-medium mb-3">CTC to Take Home Calculator</h3>
             <p className="text-sm text-muted-foreground">
