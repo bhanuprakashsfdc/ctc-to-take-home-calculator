@@ -292,7 +292,7 @@ export const blogPosts: BlogPost[] = [
       
       <p>Managing self-employment taxes requires careful planning and the right tools. Using tax calculators effectively can help you estimate your tax obligations accurately and avoid surprises. Remember to keep good records, stay informed about tax laws, and consider consulting with tax professionals for complex situations.</p>
     `,
-    coverImage: "https://images.unsplash.com/photo-1554224155-1696413565d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1011&q=80",
+    coverImage: "/images/blog/self-employment-tax-calculator.jpg",
     readTime: 15,
     keywords: ["self employment tax calculator", "tax calculator", "quarterly tax calculator", "income tax calculator", "freelance tax calculator", "self employed tax estimation"]
   },  
@@ -412,7 +412,7 @@ export const blogPosts: BlogPost[] = [
       
       <p>Salary calculators are powerful tools for financial planning and decision-making. By understanding how to use them effectively and being aware of their limitations, you can make more informed decisions about your career and finances. Remember to use them as guides and consult with financial professionals for important decisions.</p>
     `,
-    coverImage: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1011&q=80",
+    coverImage: "/images/blog/self-employment-tax-calculator.jpg",
     readTime: 12,
     keywords: ["salary calculator", "take home pay calculator", "income tax calculator", "paycheck calculator", "CTC calculator", "gross to net calculator", "salary calculation guide"]
   },  
@@ -476,7 +476,7 @@ export const blogPosts: BlogPost[] = [
       
       <p>The difference between gross and net salary is significant and has a direct impact on your financial planning. While your gross salary might look impressive on paper, it's your net salary that determines your actual purchasing power and financial flexibility. By understanding this difference, you can make more informed decisions about your career, finances, and future.</p>
     `,
-    coverImage: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1011&q=80",
+    coverImage: "/images/blog/self-employment-tax-calculator.jpg",
     readTime: 8,
     keywords: ["gross salary", "net salary", "take home pay", "salary calculator", "income tax"]
   },
@@ -561,7 +561,7 @@ export const blogPosts: BlogPost[] = [
       
       <p>Remember that while the basic formula provides a good approximation, factors like paid time off, overtime, and additional compensation can affect your actual hourly earnings. Consider these factors when calculating your hourly rate for a more accurate picture of your compensation.</p>
     `,
-    coverImage: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+    coverImage: "/images/blog/how-to-calculate-your-hourly-rate-from-annual-salary.jpg",
     readTime: 7,
     keywords: ["hourly rate", "annual salary", "salary calculator", "hourly to salary", "wage calculator"]
   },
@@ -734,7 +734,7 @@ export const blogPosts: BlogPost[] = [
       
       <p>For personalized tax advice, it's always recommended to consult with a qualified tax professional who can guide you based on your specific financial situation.</p>
     `,
-    coverImage: "https://images.unsplash.com/photo-1586486855514-8c633cc6fd29?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+    coverImage: "/images/blog/understanding-income-tax-calculation-in-india.jpg",
     readTime: 10,
     keywords: ["income tax", "tax calculation", "tax slabs", "tax deductions", "tax exemptions", "income tax calculator"]
   },
@@ -871,7 +871,7 @@ export const blogPosts: BlogPost[] = [
       
       <p>Remember that pay stub formats and specific deductions can vary by employer, industry, and location. If you have questions about your specific pay stub, don't hesitate to reach out to your HR or payroll department for clarification.</p>
     `,
-    coverImage: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+    coverImage: "/images/blog/understanding-your-pay-stub-a-complete-guide.jpg",
     readTime: 9,
     keywords: ["pay stub", "paycheck", "salary breakdown", "payroll", "deductions", "take home pay", "pay stub calculator"]
   },
