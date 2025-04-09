@@ -120,6 +120,16 @@ const BlogPost: React.FC = () => {
                 className="w-full h-full object-cover"
               />
             </div>
+            <div className="aspect-video bg-muted relative overflow-hidden rounded-lg">
+              <img 
+                src={post.coverImage} 
+                alt={post.title} 
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute bottom-2 right-2 bg-black bg-opacity-50 text-white text-xs px-2 py-1 rounded">
+                Image courtesy of <a href="https://www.pexels.com" target="_blank" rel="noopener noreferrer" className="underline">Pexels</a>
+              </div>
+            </div>
           </div>
           <InternationalCTCCalculatorForm />
           
