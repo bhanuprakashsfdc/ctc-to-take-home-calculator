@@ -1,0 +1,90 @@
+{
+  "common": {
+    "ctcCalculator": "CTC から手取り給与計算機",
+    "calculate": "計算",
+    "monthly": "月次",
+    "yearly": "年次",
+    "viewMode": "表示モード",
+    "showAdvanced": "詳細オプションを表示",
+    "hideAdvanced": "詳細オプションを非表示",
+    "earnings": "収入",
+    "deductions": "控除",
+    "netTakeHome": "手取り給与",
+    "taxOptions": "税金オプション",
+    "country": "国",
+    "region": "地域",
+    "currency": "通貨"
+  },
+  "form": {
+    "annualCTC": "年間コスト・トゥ・カンパニー（CTC）",
+    "basicSalary": "基本給",
+    "hra": "住宅手当",
+    "specialAllowance": "特別手当",
+    "grossSalary": "総給与",
+    "taxRegime": "税制",
+    "newTaxRegime": "新税制（低税率、控除なし）",
+    "oldTaxRegime": "旧税制（高税率、控除あり）",
+    "taxSavingInvestments": "節税投資と控除",
+    "section80C": "セクション80C（PF、ELSS、LICなど）",
+    "section80D": "セクション80D（健康保険）",
+    "housingLoan": "住宅ローン利息",
+    "nps": "NPS拠出金",
+    "epfEmployee": "EPF（従業員）",
+    "professionalTax": "職業税",
+    "incomeTax": "所得税（TDS）",
+    "totalDeductions": "総控除額"
+  },
+  "countries": {
+    "IN": "インド",
+    "US": "アメリカ合衆国",
+    "UK": "イギリス",
+    "CA": "カナダ",
+    "AU": "オーストラリア",
+    "SG": "シンガポール",
+    "DE": "ドイツ"
+  },
+  "countrySpecific": {
+    "IN": {
+      "epf": "EPF",
+      "professionalTax": "職業税",
+      "section80C": "セクション80C",
+      "section80D": "セクション80D",
+      "hra": "住宅手当"
+    },
+    "US": {
+      "federalTax": "連邦所得税",
+      "stateTax": "州所得税",
+      "socialSecurity": "社会保障",
+      "medicare": "メディケア",
+      "401k": "401(k)拠出金"
+    },
+    "UK": {
+      "incomeTax": "所得税",
+      "nationalInsurance": "国民保険",
+      "pensionContribution": "年金拠出金"
+    }
+  },
+  "description": {
+    "title": "CTCから手取り給与とは何ですか？",
+    "description": "コスト・トゥ・カンパニー（CTC）は、企業が従業員に年間で支出する総額です。基本給などの直接給付と間接給付の両方が含まれます。手取り給与は、CTCからすべての控除が差し引かれた後、実際に銀行口座に受け取る金額です。",
+    "ctcBreakdown": "CTC内訳",
+    "ctcBreakdownDesc": "すべてのコンポーネントの詳細な内訳でCTCの構造を理解する",
+    "inHandSalary": "手取り給与",
+    "inHandSalaryDesc": "すべての税金と控除後の実際の手取り給与を計算する",
+    "taxOptimization": "税金最適化",
+    "taxOptimizationDesc": "手取り給与を最大化するために税金オプションを比較する",
+    "salaryStructure": "給与構造",
+    "salaryStructureDesc": "あなたの国に基づくすべての法定コンポーネントを含む"
+  },
+  "gdpr": {
+    "consentTitle": "Cookieの同意",
+    "consentText": "このウェブサイトでは、当サイトでの最高の体験を確保するためにCookieを使用しています。",
+    "acceptAll": "すべて受け入れる",
+    "rejectAll": "すべて拒否する",
+    "customize": "カスタマイズ",
+    "necessary": "必要",
+    "preferences": "設定",
+    "analytics": "分析",
+    "marketing": "マーケティング"
+  }
+}

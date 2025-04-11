@@ -44,10 +44,11 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({ className = "", cou
     setCurrentLang(langCode);
   };
   
-  // Format language names with their native names
+  // Format language names to display only the native name
   const languages = SUPPORTED_LANGUAGES.map(lang => ({
     ...lang,
-    name: lang.name + (lang.code !== 'en' ? ` (${lang.name})` : '')
+    // Keep the name as is - already in native language
+    name: lang.name
   }));
 
   return (
