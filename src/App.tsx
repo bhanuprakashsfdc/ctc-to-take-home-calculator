@@ -24,15 +24,17 @@ import LumpsumCalculator from "./components/LumpsumCalculator";
 import FDCalculator from "./components/FDCalculator";
 import SWPCalculator from "./components/SWPCalculator";
 import SalaryHike from "./pages/SalaryHike";
+import CurrencyConverter from "./pages/CurrencyConverter";
 
 // Import Country Specific Pages
 import IndiaPage from "./pages/country/IndiaPage";
 import USPage from "./pages/country/USPage";
 import UKPage from "./pages/country/UKPage";
 
+
 // Import i18n configuration
 import './i18n/i18n';
-import CurrencyConverter from "./components/CurrencyConverter";
+
 
 const queryClient = new QueryClient();
 

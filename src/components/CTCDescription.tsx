@@ -2,6 +2,7 @@
 import React from 'react';
 import { Card, CardContent } from "@/components/ui/card";
 import { Calculator, DollarSign, PieChart, FileText } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const CTCDescription: React.FC = () => {
   return (
@@ -16,37 +17,45 @@ const CTCDescription: React.FC = () => {
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        <Card className="card-highlight">
-          <CardContent className="pt-6 flex flex-col items-center text-center">
-            <Calculator className="h-8 w-8 text-finance-primary mb-4" />
-            <h3 className="font-semibold">CTC Breakdown</h3>
-            <p className="text-sm text-muted-foreground">Understand how your CTC is structured with detailed breakdown of all components</p>
-          </CardContent>
-        </Card>
+        <Link to="/" className="no-underline">
+          <Card className="card-highlight hover:shadow-md transition-shadow">
+            <CardContent className="pt-6 flex flex-col items-center text-center">
+              <Calculator className="h-8 w-8 text-finance-primary mb-4" />
+              <h3 className="font-semibold">CTC Breakdown</h3>
+              <p className="text-sm text-muted-foreground">Understand how your CTC is structured with detailed breakdown of all components</p>
+            </CardContent>
+          </Card>
+        </Link>
         
-        <Card className="card-highlight">
-          <CardContent className="pt-6 flex flex-col items-center text-center">
-            <DollarSign className="h-8 w-8 text-finance-primary mb-4" />
-            <h3 className="font-semibold">In-Hand Salary</h3>
-            <p className="text-sm text-muted-foreground">Calculate your actual take home salary after all tax and PF deductions</p>
-          </CardContent>
-        </Card>
+        <Link to="/in.html" className="no-underline">
+          <Card className="card-highlight hover:shadow-md transition-shadow">
+            <CardContent className="pt-6 flex flex-col items-center text-center">
+              <DollarSign className="h-8 w-8 text-finance-primary mb-4" />
+              <h3 className="font-semibold">In-Hand Salary</h3>
+              <p className="text-sm text-muted-foreground">Calculate your actual take home salary after all tax and PF deductions</p>
+            </CardContent>
+          </Card>
+        </Link>
         
-        <Card className="card-highlight">
-          <CardContent className="pt-6 flex flex-col items-center text-center">
-            <PieChart className="h-8 w-8 text-finance-primary mb-4" />
-            <h3 className="font-semibold">Tax Optimization</h3>
-            <p className="text-sm text-muted-foreground">Compare old vs new tax regime to maximize your in-hand salary</p>
-          </CardContent>
-        </Card>
+        <Link to="/blog/income-tax-calculation-india.html" className="no-underline">
+          <Card className="card-highlight hover:shadow-md transition-shadow">
+            <CardContent className="pt-6 flex flex-col items-center text-center">
+              <PieChart className="h-8 w-8 text-finance-primary mb-4" />
+              <h3 className="font-semibold">Tax Optimization</h3>
+              <p className="text-sm text-muted-foreground">Compare old vs new tax regime to maximize your in-hand salary</p>
+            </CardContent>
+          </Card>
+        </Link>
         
-        <Card className="card-highlight">
-          <CardContent className="pt-6 flex flex-col items-center text-center">
-            <FileText className="h-8 w-8 text-finance-primary mb-4" />
-            <h3 className="font-semibold">Salary Structure</h3>
-            <p className="text-sm text-muted-foreground">Includes EPF, income tax, HRA and all statutory components</p>
-          </CardContent>
-        </Card>
+        <Link to="/blog/gross-vs-net-salary.html" className="no-underline">
+          <Card className="card-highlight hover:shadow-md transition-shadow">
+            <CardContent className="pt-6 flex flex-col items-center text-center">
+              <FileText className="h-8 w-8 text-finance-primary mb-4" />
+              <h3 className="font-semibold">Salary Structure</h3>
+              <p className="text-sm text-muted-foreground">Includes EPF, income tax, HRA and all statutory components</p>
+            </CardContent>
+          </Card>
+        </Link>
       </div>
       
       <div className="mt-6 space-y-4">
@@ -64,7 +73,10 @@ const CTCDescription: React.FC = () => {
         </ul>
         <p>
           To calculate your take home salary from CTC, you need to subtract all deductions including income tax, employee's PF contribution, 
-          and professional tax from your monthly gross salary. Our CTC to take home calculator automates this process for accurate results.
+          and professional tax from your monthly gross salary. Our <Link to="/" className="text-finance-primary hover:underline">CTC to take home calculator</Link> automates this process for accurate results.
+        </p>
+        <p className="mt-4">
+          Looking for other salary calculators? Try our <Link to="/salary-to-hourly-calculator.html" className="text-finance-primary hover:underline">Salary to Hourly Calculator</Link> or <Link to="/salary-hike.html" className="text-finance-primary hover:underline">Salary Hike Calculator</Link> to better understand your compensation.
         </p>
       </div>
     </div>

@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { formatInternationalCurrency } from '@/utils/internationalSalaryCalculator';
 import { SUPPORTED_COUNTRIES } from '@/constants/countryConstants';
+import { Link } from 'react-router-dom';
 
 interface SalaryToHourlyCalculatorProps {
   className?: string;
@@ -156,7 +157,47 @@ const SalaryToHourlyCalculator: React.FC<SalaryToHourlyCalculatorProps> = ({ cla
             </p>
           </div>
         </div>
+
+        {/* Additional Information Section */}
+        <div className="mt-4 pt-4 border-t">
+          <h3 className="text-md font-semibold mb-2">Working Across Currencies?</h3>
+          <p className="text-sm text-muted-foreground mb-3">
+            If you're comparing job offers or freelance rates across different countries, 
+            you may need to convert your hourly rate between currencies or understand the 
+            purchasing power in different regions.
+          </p>
+          <div className="flex flex-wrap gap-2">
+            <Link to="/currency-converter.html" className="text-xs px-3 py-1 bg-muted hover:bg-muted/80 rounded-full text-muted-foreground hover:text-finance-primary transition-colors">
+              Convert Currencies →
+            </Link>
+            <Link to="/purchasing-power-parity.html" className="text-xs px-3 py-1 bg-muted hover:bg-muted/80 rounded-full text-muted-foreground hover:text-finance-primary transition-colors">
+              Compare Purchasing Power →
+            </Link>
+          </div>
+        </div>
       </CardContent>
+      
+      {/* Related Calculators Section */}
+      <div className="mt-6 pt-4 border-t border-border/40">
+        <h3 className="text-sm font-medium mb-3">Related Calculators:</h3>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm">
+          <Link to="/" className="text-muted-foreground hover:text-finance-primary transition-colors">
+            → CTC to Take Home Calculator
+          </Link>
+          <Link to="/salary-hike.html" className="text-muted-foreground hover:text-finance-primary transition-colors">
+            → Salary Hike Calculator
+          </Link>
+          <Link to="/sip-calculator.html" className="text-muted-foreground hover:text-finance-primary transition-colors">
+            → SIP Calculators
+          </Link>
+          <Link to="/blog/hourly-rate-from-annual-salary.html" className="text-muted-foreground hover:text-finance-primary transition-colors">
+            → Hourly Rate Guide
+          </Link>
+          <Link to="/purchasing-power-parity.html" className="text-muted-foreground hover:text-finance-primary transition-colors">
+            → Purchasing Power Calculator
+          </Link>
+        </div>
+      </div>
     </Card>
   );
 };

@@ -9,6 +9,7 @@ import { SUPPORTED_COUNTRIES } from '@/constants/countryConstants';
 import { convertCurrencyWithLiveRates, formatInternationalCurrency } from '@/utils/currencyService';
 import { ArrowLeftRight } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import { Link } from 'react-router-dom';
 
 interface CurrencyConverterProps {
   className?: string;
@@ -24,21 +25,11 @@ const CurrencyConverterNew: React.FC<CurrencyConverterProps> = ({ className = ""
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [lastUpdated, setLastUpdated] = useState<Date | null>(null);
   
-  // Update converted amount when inputs change
-  useEffect(() => {
-    const debounceTimer = setTimeout(() => {
-      handleConvert();
-    }, 500); // Debounce API calls
-    
-    return () => clearTimeout(debounceTimer);
-  }, [amount, fromCurrency, handleConvert, toCurrency]);
-  
   const handleConvert = useCallback(async () => {
     if (amount <= 0) {
       setConvertedAmount(0);
       return;
-    }
-    
+    }    
     setIsLoading(true);
     try {
       const result = await convertCurrencyWithLiveRates(amount, fromCurrency, toCurrency);
@@ -54,6 +45,16 @@ const CurrencyConverterNew: React.FC<CurrencyConverterProps> = ({ className = ""
       setIsLoading(false);
     }
   }, [amount, fromCurrency, toCurrency, toast]);
+
+  // Update converted amount when inputs change
+  useEffect(() => {
+    const debounceTimer = setTimeout(() => {
+      handleConvert();
+    }, 500); // Debounce API calls
+    
+    return () => clearTimeout(debounceTimer);
+  }, [amount, fromCurrency, handleConvert, toCurrency]); 
+
   
   useEffect(() => {
     const debounceTimer = setTimeout(() => {
@@ -90,7 +91,7 @@ const CurrencyConverterNew: React.FC<CurrencyConverterProps> = ({ className = ""
               placeholder="Enter amount"
             />
           </div>
-          
+          <br/>
           <div className="space-y-2">
             <Label htmlFor="from-currency">From</Label>
             <Select
@@ -165,6 +166,25 @@ const CurrencyConverterNew: React.FC<CurrencyConverterProps> = ({ className = ""
           </p>
         </div>
       </CardContent>
+      
+      {/* Related Calculators Section */}
+      <div className="mt-6 pt-4 border-t border-border/40">
+        <h3 className="text-sm font-medium mb-3">Related Calculators:</h3>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm">
+          <Link to="/" className="text-muted-foreground hover:text-finance-primary transition-colors">
+            → CTC to Take Home Calculator
+          </Link>
+          <Link to="/salary-to-hourly.html" className="text-muted-foreground hover:text-finance-primary transition-colors">
+            → Salary to Hourly Calculator
+          </Link>
+          <Link to="/salary-hike.html" className="text-muted-foreground hover:text-finance-primary transition-colors">
+            → Salary Hike Calculator
+          </Link>
+          <Link to="/ppp-calculator.html" className="text-muted-foreground hover:text-finance-primary transition-colors">
+            → Purchasing Power Calculator
+          </Link>
+        </div>
+      </div>
     </Card>
   );
 };
