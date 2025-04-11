@@ -63,7 +63,7 @@ const App = () => (
             <Route path="/fd-calculator.html" element={<FDCalculator />} />
             <Route path="/swp-calculator.html" element={<SWPCalculator />} />
             <Route path="/salary-hike.html" element={<SalaryHike />} />
-            <Route path="/currency-converter.html" element={<CurrencyConverter />} />
+            <Route path="/currency-converter.html" element={<Index />} />
 
             {/* Country Specific Routes */}
             <Route path="/in.html" element={<IndiaPage />} />
