@@ -24,14 +24,17 @@ import LumpsumCalculator from "./components/LumpsumCalculator";
 import FDCalculator from "./components/FDCalculator";
 import SWPCalculator from "./components/SWPCalculator";
 import SalaryHike from "./pages/SalaryHike";
+import CurrencyConverter from "./pages/CurrencyConverter";
 
 // Import Country Specific Pages
 import IndiaPage from "./pages/country/IndiaPage";
 import USPage from "./pages/country/USPage";
 import UKPage from "./pages/country/UKPage";
 
+
 // Import i18n configuration
 import './i18n/i18n';
+
 
 const queryClient = new QueryClient();
 
@@ -60,6 +63,7 @@ const App = () => (
             <Route path="/fd-calculator.html" element={<FDCalculator />} />
             <Route path="/swp-calculator.html" element={<SWPCalculator />} />
             <Route path="/salary-hike.html" element={<SalaryHike />} />
+            <Route path="/currency-converter.html" element={<CurrencyConverter />} />
 
             {/* Country Specific Routes */}
             <Route path="/in.html" element={<IndiaPage />} />

@@ -8,6 +8,7 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { formatInternationalCurrency } from '@/utils/currencyService';
+import { Link } from 'react-router-dom';
 
 interface HikeCalculatorProps {
   className?: string;
@@ -146,6 +147,25 @@ const HikeCalculator: React.FC<HikeCalculatorProps> = ({ className = "" }) => {
           </div>
         </div>
       </CardContent>
+      
+      {/* Related Calculators Section */}
+      <div className="mt-6 pt-4 border-t border-border/40">
+        <h3 className="text-sm font-medium mb-3">Related Calculators:</h3>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm">
+          <Link to="/" className="text-muted-foreground hover:text-finance-primary transition-colors">
+            → CTC to Take Home Calculator
+          </Link>
+          <Link to="/salary-to-hourly.html" className="text-muted-foreground hover:text-finance-primary transition-colors">
+            → Salary to Hourly Calculator
+          </Link>
+          <Link to="/swp-calculator.html" className="text-muted-foreground hover:text-finance-primary transition-colors">
+            → SWP Calculator
+          </Link>
+          <Link to="/ppp-calculator.html" className="text-muted-foreground hover:text-finance-primary transition-colors">
+            → PPP Converter
+          </Link>
+        </div>
+      </div>
     </Card>
   );
 };

@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const CTCSEOContent: React.FC = () => {
   const scrollToCalculator = () => {
@@ -52,8 +53,8 @@ const CTCSEOContent: React.FC = () => {
           The primary deductions that reduce your take home pay vary significantly by country but often include:
         </p>
         <ul className="list-disc pl-5 space-y-1">
-          <li><strong>Income Tax:</strong> Federal/National and sometimes State/Provincial taxes based on local laws.</li>
-          <li><strong>Social Security / Pension Contributions:</strong> Mandatory contributions (e.g., EPF, 401k, National Insurance).</li>
+          <li><strong>Income Tax:</strong> Federal/National and sometimes State/Provincial taxes based on local laws. Learn more in our <Link to="/blog/income-tax-calculation-india.html" className="text-finance-primary hover:underline">Income Tax Calculation Guide</Link>.</li>
+          <li><strong>Social Security / Pension Contributions:</strong> Mandatory contributions (e.g., EPF, 401k, National Insurance). Check our <Link to="/blog/pf-calculator.html" className="text-finance-primary hover:underline">PF Calculator Guide</Link>.</li>
           <li><strong>Mandatory Health Insurance:</strong> Premiums or related taxes for public/private health systems.</li>
           <li><strong>Other Statutory Deductions:</strong> Country or region-specific mandatory deductions.</li>
           <li><strong>Voluntary Deductions:</strong> Optional deductions like loan repayments, additional insurance, etc.</li>
@@ -62,13 +63,13 @@ const CTCSEOContent: React.FC = () => {
         <h3 className="text-xl font-semibold">Example Calculation (Simplified)</h3>
         <div className="bg-muted p-4 rounded-lg">
           <p>
-            Calculating take-home pay involves subtracting country-specific deductions from gross salary (which is derived from CTC).
+            Calculating take-home pay involves subtracting country-specific deductions from gross salary (which is derived from CTC). Learn more about the <Link to="/blog/gross-vs-net-salary.html" className="text-finance-primary hover:underline">difference between gross and net salary</Link>.
           </p>
           <p className="mt-2">
             For instance, if your gross monthly salary is $5,000 in a specific country, deductions might include income tax (e.g., $800), social security (e.g., $300), and health insurance contributions (e.g., $100), resulting in a take-home pay of $3,800.
           </p>
           <p className="mt-2 italic text-sm">
-            Note: This is a generic example. Tax rates, contribution percentages, and types of deductions vary greatly by country. Use the calculator and select your country for a more accurate estimation.
+            Note: This is a generic example. Tax rates, contribution percentages, and types of deductions vary greatly by country. Use the calculator and select your country for a more accurate estimation. For international comparisons, try our <Link to="/ppp-calculator.html" className="text-finance-primary hover:underline">Purchasing Power Parity Calculator</Link>.
           </p>
         </div>
       

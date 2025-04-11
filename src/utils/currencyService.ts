@@ -11,12 +11,15 @@ interface ExchangeRateResponse {
     code?: string;
     message?: string;
   };
+  base_code?: string;
+  time_last_update_unix?: number;
 }
 
 // Cache for exchange rates to avoid excessive API calls
 let cachedRates: Record<string, number> | null = null;
 let cacheTimestamp: number = 0;
-const CACHE_DURATION = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
+let lastUpdateTime: number = 0;
+const CACHE_DURATION = 60 * 60 * 1000; // 1 hour in milliseconds
 
 /**
  * Fetches the latest exchange rates from an external API
@@ -31,21 +34,33 @@ export const fetchExchangeRates = async (): Promise<Record<string, number>> => {
   }
   
   try {
-    // Free API from exchangerate-api.com (limited to 1500 requests/month)
-    const response = await fetch('https://open.er-api.com/v6/latest/USD');
-    
-    if (response.ok) {
-      const data: ExchangeRateResponse = await response.json();
-      
-      if (data.rates && data.success) {
-        // Cache the rates
-        cachedRates = data.rates;
-        cacheTimestamp = now;
-        return data.rates;
+    // Free API from exchangerate-api.com
+    const response = await fetch('https://open.er-api.com/v6/latest/USD', {
+      headers: {
+        'Accept': 'application/json',
+        'User-Agent': 'CTC Calculator Currency Converter'
       }
+    });
+    
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
     }
     
-    // Fallback to hardcoded rates if API fails
+    const data: ExchangeRateResponse = await response.json();
+    
+    if (data.rates && data.success) {
+      // Cache the rates
+      cachedRates = data.rates;
+      cacheTimestamp = now;
+      lastUpdateTime = data.time_last_update_unix || now;
+      return data.rates;
+    }
+    
+    if (data.error) {
+      throw new Error(data.error.message || 'Unknown API error');
+    }
+    
+    // Fallback to hardcoded rates if API response is invalid
     return getHardcodedRates();
   } catch (error) {
     console.error('Error fetching exchange rates:', error);
