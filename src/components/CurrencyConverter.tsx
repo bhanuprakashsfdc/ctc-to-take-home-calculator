@@ -77,7 +77,7 @@ const CurrencyConverterNew: React.FC<CurrencyConverterProps> = ({ className = ""
           {isLoading && <span className="text-sm text-muted-foreground">Converting...</span>}
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 gap-4">
           <div className="space-y-2">
             <Label htmlFor="amount">Amount</Label>
             <Input
@@ -91,60 +91,62 @@ const CurrencyConverterNew: React.FC<CurrencyConverterProps> = ({ className = ""
               placeholder="Enter amount"
             />
           </div>
-          <br/>
-          <div className="space-y-2">
-            <Label htmlFor="from-currency">From</Label>
-            <Select
-              value={fromCurrency}
-              onValueChange={setFromCurrency}
-            >
-              <SelectTrigger id="from-currency" className="w-full">
-                <SelectValue placeholder="Select currency" />
-              </SelectTrigger>
-              <SelectContent>
-                {SUPPORTED_COUNTRIES.map((country) => (
-                  <SelectItem key={country.currency} value={country.currency}>
-                    <div className="flex items-center">
-                      <span className="mr-2">{country.currencySymbol}</span>
-                      <span>{country.currency} - {country.name}</span>
-                    </div>
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-          </div>
           
-          <div className="md:col-span-2 flex justify-center">
-            <Button
-              variant="outline"
-              size="icon"
-              onClick={handleSwapCurrencies}
-              className="rounded-full"
-            >
-              <ArrowLeftRight className="h-4 w-4" />
-            </Button>
-          </div>
-          
-          <div className="space-y-2">
-            <Label htmlFor="to-currency">To</Label>
-            <Select
-              value={toCurrency}
-              onValueChange={setToCurrency}
-            >
-              <SelectTrigger id="to-currency" className="w-full">
-                <SelectValue placeholder="Select currency" />
-              </SelectTrigger>
-              <SelectContent>
-                {SUPPORTED_COUNTRIES.map((country) => (
-                  <SelectItem key={country.currency} value={country.currency}>
-                    <div className="flex items-center">
-                      <span className="mr-2">{country.currencySymbol}</span>
-                      <span>{country.currency} - {country.name}</span>
-                    </div>
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
+          <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4">
+            <div className="w-full md:w-5/12 space-y-2">
+              <Label htmlFor="from-currency">From</Label>
+              <Select
+                value={fromCurrency}
+                onValueChange={setFromCurrency}
+              >
+                <SelectTrigger id="from-currency" className="w-full">
+                  <SelectValue placeholder="Select currency" />
+                </SelectTrigger>
+                <SelectContent>
+                  {SUPPORTED_COUNTRIES.map((country) => (
+                    <SelectItem key={country.currency} value={country.currency}>
+                      <div className="flex items-center">
+                        <span className="mr-2">{country.currencySymbol}</span>
+                        <span>{country.currency} - {country.name}</span>
+                      </div>
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+            
+            <div className="flex items-end justify-center my-2 md:my-0 md:pb-0.5">
+              <Button
+                variant="outline"
+                size="icon"
+                onClick={handleSwapCurrencies}
+                className="rounded-full"
+              >
+                <ArrowLeftRight className="h-4 w-4" />
+              </Button>
+            </div>
+            
+            <div className="w-full md:w-5/12 space-y-2">
+              <Label htmlFor="to-currency">To</Label>
+              <Select
+                value={toCurrency}
+                onValueChange={setToCurrency}
+              >
+                <SelectTrigger id="to-currency" className="w-full">
+                  <SelectValue placeholder="Select currency" />
+                </SelectTrigger>
+                <SelectContent>
+                  {SUPPORTED_COUNTRIES.map((country) => (
+                    <SelectItem key={country.currency} value={country.currency}>
+                      <div className="flex items-center">
+                        <span className="mr-2">{country.currencySymbol}</span>
+                        <span>{country.currency} - {country.name}</span>
+                      </div>
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
           </div>
         </div>
         
