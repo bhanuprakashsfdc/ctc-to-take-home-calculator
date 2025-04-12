@@ -150,3 +150,11 @@
     margin-top: 0;
   }
 }
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+  .footer {
+    background-color: var(--background-dark);
+    border-color: var(--border-color);
+  }
+}
