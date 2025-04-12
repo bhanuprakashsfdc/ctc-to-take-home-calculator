@@ -33,6 +33,11 @@ const PurchasingPowerParityCalculator: React.FC = () => {
   useEffect(() => {
     setDefaultCity(toCountry, setToCity);
   }, [toCountry]);
+  
+  // Automatically calculate when any input changes
+  useEffect(() => {
+    handleCalculate();
+  }, [salary, fromCountry, fromCity, toCountry, toCity, viewMode]);
 
   const setDefaultCity = (countryCode: string, setCityFn: React.Dispatch<React.SetStateAction<string>>) => {
     const cities = PPP_CITY_PRESETS[countryCode as keyof typeof PPP_CITY_PRESETS] || [];
@@ -185,13 +190,10 @@ const PurchasingPowerParityCalculator: React.FC = () => {
             </div>
           </div>
 
-          {/* Calculate Button */}
-          <Button 
-            onClick={handleCalculate} 
-            className="w-full bg-finance-primary hover:bg-finance-primary/90"
-          >
-            Calculate Equivalent Salary
-          </Button>
+          {/* Calculation happens automatically when inputs change */}
+          <div className="text-center text-sm text-muted-foreground">
+            Results update automatically as you change values
+          </div>
 
           {/* Results Section */}
           {hasCalculated && calculationResult && (
