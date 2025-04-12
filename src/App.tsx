@@ -72,10 +72,10 @@ const App = () => (
             <Route path="/fd-calculator.html" element={<FDCalculator />} />
             <Route path="/swp-calculator.html" element={<SWPCalculator />} />
              {/* Loan Calculator Routes */}
-             <Route path="/homeloan-calculator.html" element={<HomeLoanCalculatorPage />} />
-            <Route path="/carloan-calculator.html" element={<CarLoanCalculatorPage />} />
-            <Route path="/personalloan-calculator.html" element={<PersonalLoanCalculatorPage />} />
-            <Route path="/educationloan-calculator.html" element={<EducationLoanCalculatorPage />} />
+             <Route path="/home-loan-calculator.html" element={<HomeLoanCalculatorPage />} />
+            <Route path="/car-loan-calculator.html" element={<CarLoanCalculatorPage />} />
+            <Route path="/personal-loan-calculator.html" element={<PersonalLoanCalculatorPage />} />
+            <Route path="/education-loan-calculator.html" element={<EducationLoanCalculatorPage />} />
             {/* Country Specific Routes */}
             <Route path="/in.html" element={<IndiaPage />} />
             <Route path="/us.html" element={<USPage />} />

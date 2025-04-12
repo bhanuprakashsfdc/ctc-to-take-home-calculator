@@ -22,10 +22,7 @@ const CarLoanCalculator: React.FC = () => {
   const [totalPayment, setTotalPayment] = useState<number>(0);
   const [totalInterest, setTotalInterest] = useState<number>(0);
 
-  // Calculate loan details whenever inputs change
-  useEffect(() => {
-    calculateLoan();
-  }, [carPrice, interestRate, loanTerm, downPayment]);
+
 
   const calculateLoan = () => {
     try {
@@ -48,6 +45,10 @@ const CarLoanCalculator: React.FC = () => {
     }
   };
 
+    // Calculate loan details whenever inputs change
+    useEffect(() => {
+      calculateLoan();
+    }, [carPrice, interestRate, loanTerm, downPayment]);
   // Format currency based on selected country
   const formatCurrency = (value: number) => {
     const countryInfo = SUPPORTED_COUNTRIES.find(c => c.code === country);

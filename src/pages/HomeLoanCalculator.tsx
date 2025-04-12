@@ -9,7 +9,7 @@ const HomeLoanCalculatorPage: React.FC = () => {
         <title>Home Loan Calculator | CTC Calculator</title>
         <meta name="description" content="Calculate your monthly mortgage payments, total interest, and more with our easy-to-use home loan calculator." />
         <meta name="keywords" content="home loan calculator, mortgage calculator, home loan EMI, mortgage payment calculator" />
-        <link rel="canonical" href="https://ctccalculator.com/home-loan-calculator.html" />
+        <link rel="canonical" href="https://www.ctccalculator.com/home-loan-calculator.html" />
       </Helmet>
       
       <div className="max-w-4xl mx-auto space-y-8">

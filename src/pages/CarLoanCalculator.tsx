@@ -9,7 +9,7 @@ const CarLoanCalculatorPage: React.FC = () => {
         <title>Car Loan Calculator | CTC Calculator</title>
         <meta name="description" content="Calculate your monthly car loan payments, total interest, and more with our easy-to-use car loan calculator." />
         <meta name="keywords" content="car loan calculator, auto loan calculator, vehicle loan EMI, car finance calculator" />
-        <link rel="canonical" href="https://ctccalculator.com/car-loan-calculator.html" />
+        <link rel="canonical" href="https://www.ctccalculator.com/car-loan-calculator.html" />
       </Helmet>
       
       <div className="max-w-4xl mx-auto space-y-8">

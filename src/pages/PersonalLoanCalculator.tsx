@@ -9,7 +9,7 @@ const PersonalLoanCalculatorPage: React.FC = () => {
         <title>Personal Loan Calculator | CTC Calculator</title>
         <meta name="description" content="Calculate your monthly personal loan payments, total interest, and more with our easy-to-use personal loan calculator." />
         <meta name="keywords" content="personal loan calculator, personal loan EMI, loan payment calculator, unsecured loan calculator" />
-        <link rel="canonical" href="https://ctccalculator.com/personal-loan-calculator.html" />
+        <link rel="canonical" href="https://www.ctccalculator.com/personal-loan-calculator.html" />
       </Helmet>
       
       <div className="max-w-4xl mx-auto space-y-8">

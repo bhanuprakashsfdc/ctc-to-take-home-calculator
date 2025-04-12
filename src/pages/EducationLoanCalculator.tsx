@@ -9,7 +9,7 @@ const EducationLoanCalculatorPage: React.FC = () => {
         <title>Education Loan Calculator | CTC Calculator</title>
         <meta name="description" content="Calculate your student loan payments, total interest, and more with our easy-to-use education loan calculator." />
         <meta name="keywords" content="education loan calculator, student loan calculator, student loan EMI, education finance calculator" />
-        <link rel="canonical" href="https://ctccalculator.com/education-loan-calculator.html" />
+        <link rel="canonical" href="https://www.ctccalculator.com/education-loan-calculator.html" />
       </Helmet>
       
       <div className="max-w-4xl mx-auto space-y-8">
