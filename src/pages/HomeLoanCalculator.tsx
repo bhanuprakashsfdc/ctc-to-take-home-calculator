@@ -1,10 +1,12 @@
+
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import HomeLoanCalculator from '@/components/HomeLoanCalculator';
+import './HomeLoanCalculator.css';
 
 const HomeLoanCalculatorPage: React.FC = () => {
   return (
-    <div className="container mx-auto py-8 px-4">
+    <div className="container">
       <Helmet>
         <title>Home Loan Calculator | CTC Calculator</title>
         <meta name="description" content="Calculate your monthly mortgage payments, total interest, and more with our easy-to-use home loan calculator." />
@@ -12,17 +14,17 @@ const HomeLoanCalculatorPage: React.FC = () => {
         <link rel="canonical" href="https://ctccalculator.com/home-loan-calculator.html" />
       </Helmet>
       
-      <div className="max-w-4xl mx-auto space-y-8">
-        <div className="text-center space-y-2">
-          <h1 className="text-3xl md:text-4xl font-bold">Home Loan Calculator</h1>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+      <div className="calculator-wrapper">
+        <div className="header-section">
+          <h1 className="page-title">Home Loan Calculator</h1>
+          <p className="page-description">
             Calculate your monthly mortgage payments, total interest, and more with our easy-to-use home loan calculator.
           </p>
         </div>
         
         <HomeLoanCalculator />
         
-        <div className="prose dark:prose-invert max-w-none">
+        <div className="content-section">
           <h2>How to Use the Home Loan Calculator</h2>
           <p>
             Our home loan calculator helps you estimate your monthly mortgage payments and understand the total cost of your loan. 
