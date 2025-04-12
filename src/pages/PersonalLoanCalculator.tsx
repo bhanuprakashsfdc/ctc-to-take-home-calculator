@@ -1,15 +1,19 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import PersonalLoanCalculator from '@/components/PersonalLoanCalculator';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 const PersonalLoanCalculatorPage: React.FC = () => {
   return (
-    <div className="container mx-auto py-8 px-4">
+    <>
+      <Header />
+      <div className="container mx-auto py-8 px-4">
       <Helmet>
         <title>Personal Loan Calculator | CTC Calculator</title>
         <meta name="description" content="Calculate your monthly personal loan payments, total interest, and more with our easy-to-use personal loan calculator." />
         <meta name="keywords" content="personal loan calculator, personal loan EMI, loan payment calculator, unsecured loan calculator" />
-        <link rel="canonical" href="https://ctccalculator.com/personal-loan-calculator.html" />
+        <link rel="canonical" href="https://www.ctccalculator.com/personal-loan-calculator.html" />
       </Helmet>
       
       <div className="max-w-4xl mx-auto space-y-8">
@@ -72,9 +76,20 @@ const PersonalLoanCalculatorPage: React.FC = () => {
             income, and the lender's policies. It's always a good idea to shop around and compare offers from multiple lenders before 
             making a decision.
           </p>
+
+          <h2>Related Calculators</h2>
+          <p>Explore our other financial calculators that can help with your financial planning:</p>
+          <ul>
+            <li><a href="/home-loan-calculator" className="text-primary hover:underline">Home Loan Calculator</a> - For calculating mortgage payments if you're considering home ownership</li>
+            <li><a href="/car-loan-calculator" className="text-primary hover:underline">Car Loan Calculator</a> - Compare car loan options with personal loan rates</li>
+            <li><a href="/investment-calculators" className="text-primary hover:underline">Investment Calculators</a> - Plan your investments while managing your loan payments</li>
+            <li><a href="/education-loan-calculator" className="text-primary hover:underline">Education Loan Calculator</a> - Compare education financing options</li>
+          </ul>
         </div>
       </div>
-    </div>
+      </div>
+      <Footer />
+    </>
   );
 };
 

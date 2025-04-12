@@ -1,15 +1,19 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import CarLoanCalculator from '@/components/CarLoanCalculator';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 const CarLoanCalculatorPage: React.FC = () => {
   return (
-    <div className="container mx-auto py-8 px-4">
+    <>
+      <Header />
+      <div className="container mx-auto py-8 px-4">
       <Helmet>
         <title>Car Loan Calculator | CTC Calculator</title>
         <meta name="description" content="Calculate your monthly car loan payments, total interest, and more with our easy-to-use car loan calculator." />
         <meta name="keywords" content="car loan calculator, auto loan calculator, vehicle loan EMI, car finance calculator" />
-        <link rel="canonical" href="https://ctccalculator.com/car-loan-calculator.html" />
+        <link rel="canonical" href="https://www.ctccalculator.com/car-loan-calculator.html" />
       </Helmet>
       
       <div className="max-w-4xl mx-auto space-y-8">
@@ -62,9 +66,20 @@ const CarLoanCalculatorPage: React.FC = () => {
             such as taxes, registration fees, and insurance. It's always a good idea to shop around for the best auto loan rates 
             before making a purchase decision.
           </p>
+
+          <h2>Related Calculators</h2>
+          <p>Explore our other financial calculators that might be helpful in your car buying journey:</p>
+          <ul>
+            <li><a href="/personal-loan-calculator" className="text-primary hover:underline">Personal Loan Calculator</a> - Compare personal loan options for vehicle financing</li>
+            <li><a href="/investment-calculators" className="text-primary hover:underline">Investment Calculators</a> - Plan your savings strategy for a car down payment</li>
+            <li><a href="/home-loan-calculator" className="text-primary hover:underline">Home Loan Calculator</a> - If you're considering both car and home financing</li>
+            <li><a href="/salary-hike" className="text-primary hover:underline">Salary Hike Calculator</a> - Understand how income changes could affect your car loan affordability</li>
+          </ul>
         </div>
       </div>
-    </div>
+      </div>
+      <Footer />
+    </>
   );
 };
 

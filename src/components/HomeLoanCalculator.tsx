@@ -5,6 +5,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import CountrySelector from './CountrySelector';
+import Header from './Header';
+import Footer from './Footer';
 import { SUPPORTED_COUNTRIES } from '@/constants/countryConstants';
 
 const HomeLoanCalculator: React.FC = () => {
