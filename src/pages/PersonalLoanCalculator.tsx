@@ -76,6 +76,15 @@ const PersonalLoanCalculatorPage: React.FC = () => {
             income, and the lender's policies. It's always a good idea to shop around and compare offers from multiple lenders before 
             making a decision.
           </p>
+
+          <h2>Related Calculators</h2>
+          <p>Explore our other financial calculators that can help with your financial planning:</p>
+          <ul>
+            <li><a href="/home-loan-calculator" className="text-primary hover:underline">Home Loan Calculator</a> - For calculating mortgage payments if you're considering home ownership</li>
+            <li><a href="/car-loan-calculator" className="text-primary hover:underline">Car Loan Calculator</a> - Compare car loan options with personal loan rates</li>
+            <li><a href="/investment-calculators" className="text-primary hover:underline">Investment Calculators</a> - Plan your investments while managing your loan payments</li>
+            <li><a href="/education-loan-calculator" className="text-primary hover:underline">Education Loan Calculator</a> - Compare education financing options</li>
+          </ul>
         </div>
       </div>
       </div>

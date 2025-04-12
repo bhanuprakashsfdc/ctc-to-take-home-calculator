@@ -66,6 +66,15 @@ const CarLoanCalculatorPage: React.FC = () => {
             such as taxes, registration fees, and insurance. It's always a good idea to shop around for the best auto loan rates 
             before making a purchase decision.
           </p>
+
+          <h2>Related Calculators</h2>
+          <p>Explore our other financial calculators that might be helpful in your car buying journey:</p>
+          <ul>
+            <li><a href="/personal-loan-calculator" className="text-primary hover:underline">Personal Loan Calculator</a> - Compare personal loan options for vehicle financing</li>
+            <li><a href="/investment-calculators" className="text-primary hover:underline">Investment Calculators</a> - Plan your savings strategy for a car down payment</li>
+            <li><a href="/home-loan-calculator" className="text-primary hover:underline">Home Loan Calculator</a> - If you're considering both car and home financing</li>
+            <li><a href="/salary-hike" className="text-primary hover:underline">Salary Hike Calculator</a> - Understand how income changes could affect your car loan affordability</li>
+          </ul>
         </div>
       </div>
       </div>
