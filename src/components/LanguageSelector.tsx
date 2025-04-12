@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { SUPPORTED_LANGUAGES, changeLanguage, getUserPreferredLanguage } from '@/utils/translationService';
+import { SearchableSelect } from '@/components/ui/searchable-select';
 
 interface LanguageSelectorProps {
   className?: string;
@@ -53,21 +53,16 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({ className = "", cou
 
   return (
     <div className={`${className}`}>
-      <Select
+      <SearchableSelect
         value={currentLang}
         onValueChange={handleLanguageChange}
-      >
-        <SelectTrigger className="w-[180px]">
-          <SelectValue placeholder="Select language" />
-        </SelectTrigger>
-        <SelectContent>
-          {languages.map((lang) => (
-            <SelectItem key={lang.code} value={lang.code}>
-              {lang.name}
-            </SelectItem>
-          ))}
-        </SelectContent>
-      </Select>
+        placeholder="Select language"
+        triggerClassName="w-[180px]"
+        options={languages.map((lang) => ({
+          value: lang.code,
+          label: lang.name
+        }))}
+      />
     </div>
   );
 };
