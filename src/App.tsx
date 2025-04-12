@@ -23,14 +23,22 @@ import SIPCalculator from "./components/SIPCalculator";
 import LumpsumCalculator from "./components/LumpsumCalculator";
 import FDCalculator from "./components/FDCalculator";
 import SWPCalculator from "./components/SWPCalculator";
+import SalaryHike from "./pages/SalaryHike";
+import CurrencyConverter from "./pages/CurrencyConverter";
 
 // Import Country Specific Pages
 import IndiaPage from "./pages/country/IndiaPage";
 import USPage from "./pages/country/USPage";
 import UKPage from "./pages/country/UKPage";
 
+
 // Import i18n configuration
 import './i18n/i18n';
+import HomeLoanCalculatorPage from "./pages/HomeLoanCalculator";
+import CarLoanCalculatorPage from "./pages/CarLoanCalculator";
+import PersonalLoanCalculatorPage from "./pages/PersonalLoanCalculator";
+import EducationLoanCalculatorPage from "./pages/EducationLoanCalculator";
+
 
 const queryClient = new QueryClient();
 
@@ -42,23 +50,32 @@ const App = () => (
       <HelmetProvider>
         <BrowserRouter>
           <Routes>
+            {/* Basic Routes */}
             <Route path="/" element={<Index />} />
             <Route path="/about.html" element={<About />} />
+            <Route path="/blog.html" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
+             {/* Google adsense Routes */}
             <Route path="/privacy-policy.html" element={<PrivacyPolicy />} />
             <Route path="/terms.html" element={<Terms />} />
             <Route path="/contact.html" element={<Contact />} />
             <Route path="/disclaimer.html" element={<Disclaimer />} />
+             {/* Finance Calculator Routes */}
             <Route path="/ppp-calculator.html" element={<PurchasingPowerParity />} />
             <Route path="/salary-to-hourly-calculator.html" element={<SalaryToHourly />} />
-            <Route path="/blog.html" element={<Blog />} />
-            <Route path="/blog/:slug" element={<BlogPost />} />
+            <Route path="/salary-hike.html" element={<SalaryHike />} />
+            <Route path="/currency-converter.html" element={<CurrencyConverter />} />
 
             {/* Investment Calculator Routes */}
             <Route path="/sip-calculator.html" element={<SIPCalculator />} />
             <Route path="/lumpsum-calculator.html" element={<LumpsumCalculator />} />
             <Route path="/fd-calculator.html" element={<FDCalculator />} />
             <Route path="/swp-calculator.html" element={<SWPCalculator />} />
-
+             {/* Loan Calculator Routes */}
+             <Route path="/homeloan-calculator.html" element={<HomeLoanCalculatorPage />} />
+            <Route path="/carloan-calculator.html" element={<CarLoanCalculatorPage />} />
+            <Route path="/personalloan-calculator.html" element={<PersonalLoanCalculatorPage />} />
+            <Route path="/educationloan-calculator.html" element={<EducationLoanCalculatorPage />} />
             {/* Country Specific Routes */}
             <Route path="/in.html" element={<IndiaPage />} />
             <Route path="/us.html" element={<USPage />} />

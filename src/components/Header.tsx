@@ -1,17 +1,13 @@
 import React, { useState } from 'react';
 import ThemeToggle from './ThemeToggle';
-import { Calculator, Menu, X, ChevronDown } from 'lucide-react';
+import { Calculator, Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { Sheet, SheetContent, SheetTrigger } from './ui/sheet';
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "./ui/dropdown-menu";
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useTranslation } from 'react-i18next';
 import LanguageSelector from './LanguageSelector';
+import MegaMenu from './MegaMenu';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from './ui/accordion';
 
 const Header: React.FC = () => {
   const location = useLocation();
@@ -65,13 +61,35 @@ interface NavLinksProps {
 }
 
 const NavLinks: React.FC<NavLinksProps> = ({ isMobile, isActive, closeMenu }) => {
-  const toolsMenuItems = [
-    { path: '/ppp-calculator.html', label: 'PPP Calculator', ariaLabel: 'Purchasing Power Parity Calculator' },
-    { path: '/salary-to-hourly-calculator.html', label: 'Salary to Hourly Calculator', ariaLabel: 'Salary to Hourly Rate Calculator' },
-    { path: '/sip-calculator.html', label: 'SIP Calculator', ariaLabel: 'SIP Calculator' },
-    { path: '/lumpsum-calculator.html', label: 'Lumpsum Calculator', ariaLabel: 'Lumpsum Calculator' },
-    { path: '/fd-calculator.html', label: 'FD Calculator', ariaLabel: 'Fixed Deposit Calculator' },
-    { path: '/swp-calculator.html', label: 'SWP Calculator', ariaLabel: 'Systematic Withdrawal Plan Calculator' },
+  // Define calculator categories for mobile view
+  const calculatorCategories = [
+    {
+      title: "Finance",
+      items: [
+        { path: '/ppp-calculator.html', label: 'PPP Calculator' },
+        { path: '/salary-to-hourly-calculator.html', label: 'Salary to Hour' },
+        { path: '/salary-hike.html', label: 'Salary Hike' },
+        { path: '/currency-converter.html', label: 'Currency Converter' },
+      ]
+    },
+    {
+      title: "Investment",
+      items: [
+        { path: '/sip-calculator.html', label: 'SIP Calculator' },
+        { path: '/lumpsum-calculator.html', label: 'Lumpsum Calculator' },
+        { path: '/fd-calculator.html', label: 'FD Calculator' },
+        { path: '/swp-calculator.html', label: 'SWP Calculator' },
+      ]
+    },
+    {
+      title: "Loan",
+      items: [
+        { path: '/home-loan-calculator.html', label: 'Home Loan' },
+        { path: '/car-loan-calculator.html', label: 'Car Loan' },
+        { path: '/personal-loan-calculator.html', label: 'Personal Loan' },
+        { path: '/education-loan-calculator.html', label: 'Education Loan' },
+      ]
+    }
   ];
 
   return (
@@ -87,27 +105,39 @@ const NavLinks: React.FC<NavLinksProps> = ({ isMobile, isActive, closeMenu }) =>
         </Link>
       </li>
       <li className="w-full md:w-auto">
-        <DropdownMenu>
-          <DropdownMenuTrigger
-            className={`flex items-center justify-between w-full md:w-auto gap-1 transition-colors ${toolsMenuItems.some(item => isActive(item.path)) ? 'text-finance-primary font-medium' : 'text-foreground hover:text-finance-primary'}`}
-          >
-            Tools <ChevronDown className="h-4 w-4" />
-          </DropdownMenuTrigger>
-          <DropdownMenuContent className="min-w-[200px] w-full md:w-auto">
-            {toolsMenuItems.map((item) => (
-              <DropdownMenuItem key={item.path} asChild>
-                <Link
-                  to={item.path}
-                  className="w-full block py-2"
-                  aria-label={item.ariaLabel}
-                  onClick={closeMenu}
-                >
-                  {item.label}
-                </Link>
-              </DropdownMenuItem>
-            ))}
-          </DropdownMenuContent>
-        </DropdownMenu>
+        {isMobile ? (
+          <Accordion type="single" collapsible className="w-full">
+            <AccordionItem value="tools" className="border-b-0">
+              <AccordionTrigger className="py-2 hover:no-underline">
+                <span className="text-base">Tools</span>
+              </AccordionTrigger>
+              <AccordionContent>
+                <div className="space-y-4 pl-2">
+                  {calculatorCategories.map((category) => (
+                    <div key={category.title} className="space-y-2">
+                      <h3 className="font-medium text-sm">{category.title}</h3>
+                      <ul className="space-y-2 pl-2">
+                        {category.items.map((item) => (
+                          <li key={item.path}>
+                            <Link
+                              to={item.path}
+                              className={`block text-sm py-1 transition-colors ${isActive(item.path) ? 'text-finance-primary font-medium' : 'text-foreground hover:text-finance-primary'}`}
+                              onClick={closeMenu}
+                            >
+                              {item.label}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+        ) : (
+          <MegaMenu isActive={isActive} closeMenu={closeMenu} />
+        )}
       </li>
       <li className="w-full md:w-auto">
         <Link

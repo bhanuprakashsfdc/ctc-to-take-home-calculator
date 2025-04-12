@@ -1,0 +1,90 @@
+{
+  "common": {
+    "ctcCalculator": "آلة حاسبة من CTC إلى الراتب المستلم",
+    "calculate": "حساب",
+    "monthly": "شهري",
+    "yearly": "سنوي",
+    "viewMode": "وضع العرض",
+    "showAdvanced": "إظهار الخيارات المتقدمة",
+    "hideAdvanced": "إخفاء الخيارات المتقدمة",
+    "earnings": "الأرباح",
+    "deductions": "الخصومات",
+    "netTakeHome": "صافي الراتب المستلم",
+    "taxOptions": "خيارات الضرائب",
+    "country": "البلد",
+    "region": "المنطقة",
+    "currency": "العملة"
+  },
+  "form": {
+    "annualCTC": "التكلفة السنوية للشركة (CTC)",
+    "basicSalary": "الراتب الأساسي",
+    "hra": "بدل السكن",
+    "specialAllowance": "بدل خاص",
+    "grossSalary": "الراتب الإجمالي",
+    "taxRegime": "نظام الضرائب",
+    "newTaxRegime": "نظام الضرائب الجديد (معدلات أقل، بدون خصومات)",
+    "oldTaxRegime": "نظام الضرائب القديم (معدلات أعلى مع خصومات)",
+    "taxSavingInvestments": "استثمارات وخصومات توفير الضرائب",
+    "section80C": "القسم 80C (PF، ELSS، LIC، إلخ)",
+    "section80D": "القسم 80D (التأمين الصحي)",
+    "housingLoan": "فائدة قرض السكن",
+    "nps": "مساهمة NPS",
+    "epfEmployee": "EPF (الموظف)",
+    "professionalTax": "الضريبة المهنية",
+    "incomeTax": "ضريبة الدخل (TDS)",
+    "totalDeductions": "إجمالي الخصومات"
+  },
+  "countries": {
+    "IN": "الهند",
+    "US": "الولايات المتحدة",
+    "UK": "المملكة المتحدة",
+    "CA": "كندا",
+    "AU": "أستراليا",
+    "SG": "سنغافورة",
+    "DE": "ألمانيا"
+  },
+  "countrySpecific": {
+    "IN": {
+      "epf": "EPF",
+      "professionalTax": "الضريبة المهنية",
+      "section80C": "القسم 80C",
+      "section80D": "القسم 80D",
+      "hra": "بدل السكن"
+    },
+    "US": {
+      "federalTax": "ضريبة الدخل الفيدرالية",
+      "stateTax": "ضريبة الدخل الولائية",
+      "socialSecurity": "الضمان الاجتماعي",
+      "medicare": "الرعاية الطبية",
+      "401k": "مساهمة 401(k)"
+    },
+    "UK": {
+      "incomeTax": "ضريبة الدخل",
+      "nationalInsurance": "التأمين الوطني",
+      "pensionContribution": "مساهمة المعاش"
+    }
+  },
+  "description": {
+    "title": "ما هو تحويل CTC إلى الراتب المستلم؟",
+    "description": "تكلفة الشركة (CTC) هي إجمالي المبلغ الذي تنفقه الشركة على الموظف سنويًا. وتشمل المزايا المباشرة (مثل الراتب الأساسي) والمزايا غير المباشرة. الراتب المستلم هو ما تتلقاه فعليًا في حسابك المصرفي بعد جميع الخصومات من CTC الخاص بك.",
+    "ctcBreakdown": "تفصيل CTC",
+    "ctcBreakdownDesc": "فهم كيفية هيكلة CTC الخاص بك مع تفصيل مفصل لجميع المكونات",
+    "inHandSalary": "الراتب المستلم",
+    "inHandSalaryDesc": "حساب راتبك الفعلي المستلم بعد جميع الضرائب والخصومات",
+    "taxOptimization": "تحسين الضرائب",
+    "taxOptimizationDesc": "مقارنة خيارات الضرائب لزيادة راتبك المستلم",
+    "salaryStructure": "هيكل الراتب",
+    "salaryStructureDesc": "يشمل جميع المكونات القانونية بناءً على بلدك"
+  },
+  "gdpr": {
+    "consentTitle": "موافقة على ملفات تعريف الارتباط",
+    "consentText": "يستخدم هذا الموقع ملفات تعريف الارتباط لضمان حصولك على أفضل تجربة على موقعنا.",
+    "acceptAll": "قبول الكل",
+    "rejectAll": "رفض الكل",
+    "customize": "تخصيص",
+    "necessary": "ضروري",
+    "preferences": "التفضيلات",
+    "analytics": "التحليلات",
+    "marketing": "التسويق"
+  }
+}

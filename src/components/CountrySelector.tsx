@@ -1,58 +1,72 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
 import { SUPPORTED_COUNTRIES } from '@/constants/countryConstants';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { SearchableSelect } from '@/components/ui/searchable-select';
 
 interface CountrySelectorProps {
-  selectedCountry: string;
-  onCountryChange: (country: string) => void;
+  selectedCountry?: string;
+  onCountryChange?: (country: string) => void;
   className?: string;
+  disableNavigation?: boolean;
+  // Additional props for compatibility with PurchasingPowerParityCalculator
+  id?: string;
+  value?: string;
+  onChange?: (country: string) => void;
 }
 
 const CountrySelector: React.FC<CountrySelectorProps> = ({
   selectedCountry,
-  onCountryChange, // Keep this prop for potential non-navigation scenarios
+  onCountryChange,
   className = "",
+  disableNavigation = false,
+  id,
+  value,
+  onChange,
 }) => {
   const { t } = useTranslation();
   const navigate = useNavigate(); // Initialize useNavigate
+  
+  // Use the appropriate value and change handler based on props provided
+  const effectiveValue = value || selectedCountry || "";
+  const effectiveChangeHandler = onChange || onCountryChange;
 
-  // Handle country selection: Navigate for specific countries
-  const handleValueChange = (value: string) => {
-    const countryCodeLower = value.toLowerCase();
-    const dedicatedPages = ['in', 'us', 'uk']; // Countries with dedicated pages
+  // Handle country selection: Navigate for specific countries only if navigation is not disabled
+  const handleValueChange = (newValue: string) => {
+    if (effectiveChangeHandler) {
+      effectiveChangeHandler(newValue);
+    }
+    
+    // Only navigate if navigation is not disabled and we're changing to a country with a dedicated page
+    if (!disableNavigation) {
+      const countryCodeLower = newValue.toLowerCase();
+      const dedicatedPages = ['in', 'us', 'uk']; // Countries with dedicated pages
 
-    if (dedicatedPages.includes(countryCodeLower)) {
-      navigate(`/${countryCodeLower}.html`);
-    } else {
-      // For other countries, use the existing callback to update state
-      onCountryChange(value);
+      if (dedicatedPages.includes(countryCodeLower)) {
+        navigate(`/${countryCodeLower}.html`);
+      }
     }
   };
 
   return (
     <div className={`space-y-2 ${className}`}>
-      <Label htmlFor="country-select">{t('common.country')}</Label>
-      <Select
-        value={selectedCountry} // Still reflect the current selection visually
-        onValueChange={handleValueChange} // Use the new handler
-      >
-        <SelectTrigger id="country-select" className="w-full">
-          <SelectValue placeholder={t('common.country')} />
-        </SelectTrigger>
-        <SelectContent>
-          {SUPPORTED_COUNTRIES.map((country) => (
-            <SelectItem key={country.code} value={country.code}>
-              <div className="flex items-center">
-                <span className="mr-2">{country.code}</span>
-                <span>{t(`countries.${country.code}`)}</span>
-              </div>
-            </SelectItem>
-          ))}
-        </SelectContent>
-      </Select>
+      <Label htmlFor={id || "country-select"}>{t('common.country')}</Label>
+      <SearchableSelect
+        id={id || "country-select"}
+        value={effectiveValue}
+        onValueChange={handleValueChange}
+        placeholder={t('common.country')}
+        options={SUPPORTED_COUNTRIES.map((country) => ({
+          value: country.code,
+          label: (
+            <div className="flex items-center">
+              <span className="mr-2">{country.code}</span>
+              <span>{t(`countries.${country.code}`)}</span>
+            </div>
+          )
+        }))}
+      />
     </div>
   );
 };

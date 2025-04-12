@@ -15,7 +15,12 @@ const COUNTRY_TO_LANGUAGE: Record<string, string> = {
   'SG': 'en', // Singapore - English
   'DE': 'de', // Germany - German
   'FR': 'fr', // France - French
-  'ES': 'es'  // Spain - Spanish
+  'ES': 'es', // Spain - Spanish
+  'SA': 'ar', // Saudi Arabia - Arabic
+  'AE': 'ar', // UAE - Arabic
+  'EG': 'ar', // Egypt - Arabic
+  'RU': 'ru', // Russia - Russian
+  'JP': 'ja'  // Japan - Japanese
 };
 
 // Languages supported by the application
@@ -25,7 +30,10 @@ export const SUPPORTED_LANGUAGES = [
   { code: 'de', name: 'Deutsch' }, // German
   { code: 'fr', name: 'Français' }, // French
   { code: 'es', name: 'Español' }, // Spanish
-  { code: 'zh', name: '中文' } // Chinese
+  { code: 'zh', name: '中文' }, // Chinese
+  { code: 'ar', name: 'العربية' }, // Arabic
+  { code: 'ru', name: 'Русский' }, // Russian
+  { code: 'ja', name: '日本語' } // Japanese
 ];
 
 /**

@@ -36,7 +36,7 @@ const Footer: React.FC = () => {
       </Helmet>
       
       <div className="container flex flex-col space-y-6">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           <div>
             <h3 className="text-base font-medium mb-3">CTC to Take Home Calculator</h3>
             <p className="text-sm text-muted-foreground">
@@ -65,6 +65,37 @@ const Footer: React.FC = () => {
               <li>
                 <Link to="/blog.html" className="text-muted-foreground hover:text-foreground transition-colors">
                   Blog
+                </Link>
+              </li>
+            </ul>
+          </div>
+          
+          <div>
+            <h3 className="text-base font-medium mb-3">Tools</h3>
+            <ul className="text-sm space-y-2">
+              <li>
+                <Link to="/ppp-calculator.html" className="text-muted-foreground hover:text-foreground transition-colors">
+                  PPP Calculator
+                </Link>
+              </li>
+              <li>
+                <Link to="/salary-to-hourly-calculator.html" className="text-muted-foreground hover:text-foreground transition-colors">
+                  Salary to Hourly Calculator
+                </Link>
+              </li>
+              <li>
+                <Link to="/salary-hike.html" className="text-muted-foreground hover:text-foreground transition-colors">
+                  Salary Hike Calculator
+                </Link>
+              </li>
+              <li>
+                <Link to="/sip-calculator.html" className="text-muted-foreground hover:text-foreground transition-colors">
+                  SIP Calculator
+                </Link>
+              </li>
+              <li>
+                <Link to="/currency-converter.html" className="text-muted-foreground hover:text-foreground transition-colors">
+                  Currency Converter
                 </Link>
               </li>
             </ul>

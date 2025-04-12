@@ -1,73 +1,56 @@
-# Welcome to your Lovable project
+# CTC to Take Home Salary Calculator
 
-## Project info
+## Overview
 
-**URL**: https://lovable.dev/projects/8f856934-dd69-473d-a11f-8e9cb6a8a9a9
+This application is a comprehensive financial calculator suite focused on salary conversion and financial planning. The primary feature is a global CTC (Cost to Company) to take-home salary calculator that helps users understand their actual in-hand salary after all deductions across different countries.
 
-## How can I edit this code?
+## Features
 
-There are several ways of editing your application.
+- **CTC to Take Home Calculator**: Convert your gross salary to net salary with detailed breakdown of taxes and deductions
+- **International Salary Comparison**: Compare salaries across different countries with accurate tax calculations
+- **Currency Converter**: Real-time currency conversion with up-to-date exchange rates
+- **Purchasing Power Parity (PPP) Calculator**: Compare the real value of salaries across different countries and cities
+- **Salary to Hourly Calculator**: Convert annual/monthly salary to hourly rates
+- **Salary Hike Calculator**: Calculate the impact of salary increases
+- **Investment Calculators**: Tools for SIP, FD, Lumpsum, and SWP calculations
 
-**Use Lovable**
+## Technology Stack
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/8f856934-dd69-473d-a11f-8e9cb6a8a9a9) and start prompting.
+This project is built with modern web technologies:
 
-Changes made via Lovable will be committed automatically to this repo.
+- **React**: Frontend library for building user interfaces
+- **TypeScript**: Type-safe JavaScript for better developer experience
+- **Vite**: Next-generation frontend tooling for faster development
+- **Tailwind CSS**: Utility-first CSS framework for rapid UI development
+- **shadcn/ui**: High-quality UI components built with Radix UI and Tailwind CSS
+- **i18next**: Internationalization framework for multi-language support
+- **React Router**: For navigation between different calculators
+- **React Query**: For efficient data fetching and state management
 
-**Use your preferred IDE**
+## Getting Started
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+This application is for authorized users only. Installation steps have been removed.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## Usage
 
-Follow these steps:
+The application provides various calculators accessible through the navigation menu:
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+1. **CTC to Take Home Calculator**: Enter your CTC, select your country, and get a detailed breakdown of your in-hand salary
+2. **Currency Converter**: Convert amounts between different currencies with real-time exchange rates
+3. **PPP Calculator**: Compare the purchasing power of salaries between different locations
+4. **Salary to Hourly Calculator**: Convert your annual or monthly salary to hourly rates
+5. **Salary Hike Calculator**: Calculate the impact of percentage or absolute salary increases
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## Contributing
 
-# Step 3: Install the necessary dependencies.
-npm i
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+## License
 
-**Edit a file directly in GitHub**
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Acknowledgments
 
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/8f856934-dd69-473d-a11f-8e9cb6a8a9a9) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes it is!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+- Financial data and tax calculations are based on publicly available information
+- Currency conversion rates are fetched from reliable financial data providers
+- PPP data is derived from international economic databases

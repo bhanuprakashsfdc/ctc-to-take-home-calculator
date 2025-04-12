@@ -322,6 +322,7 @@ const InternationalCTCCalculatorForm: React.FC<InternationalCTCCalculatorFormPro
               <CountrySelector 
                 selectedCountry={country} 
                 onCountryChange={setCountry} 
+                disableNavigation={true}
               />
               
               {region && (
