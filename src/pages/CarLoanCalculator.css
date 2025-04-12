@@ -15,44 +15,63 @@
 
 .header-section {
   text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 2rem;
+  background: var(--gradient-primary);
+  color: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
 }
 
 .page-title {
   font-size: 2rem;
   font-weight: 700;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
 }
 
 .page-description {
   font-size: 1rem;
-  color: #666;
+  opacity: 0.9;
   max-width: 600px;
   margin: 0 auto;
 }
 
 .content-section {
   line-height: 1.6;
+  background-color: var(--card-bg);
+  padding: 2rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
 }
 
 .content-section h2 {
   font-size: 1.5rem;
   font-weight: 600;
   margin: 1.5rem 0 1rem 0;
+  color: var(--text-dark);
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.5rem;
 }
 
 .content-section p {
   margin-bottom: 1rem;
+  color: var(--text-medium);
 }
 
 .content-section ul, 
 .content-section ol {
   margin-left: 1.5rem;
   margin-bottom: 1.5rem;
+  color: var(--text-medium);
 }
 
 .content-section li {
   margin-bottom: 0.5rem;
+}
+
+.content-section strong {
+  color: var(--primary-color);
+  font-weight: 600;
 }
 
 @media (max-width: 768px) {
@@ -63,20 +82,8 @@
   .content-section h2 {
     font-size: 1.25rem;
   }
-}
-
-/* Dark mode styles */
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: #121212;
-    color: #e0e0e0;
-  }
   
-  .page-description {
-    color: #a0a0a0;
-  }
-  
-  .content-section {
-    color: #e0e0e0;
+  .header-section {
+    padding: 1.5rem;
   }
 }

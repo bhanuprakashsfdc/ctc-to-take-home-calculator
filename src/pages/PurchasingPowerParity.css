@@ -3,8 +3,8 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  color: #212529;
-  background-color: #f8f9fa;
+  color: var(--text-dark);
+  background-color: var(--background-light);
 }
 
 .ppp-main {
@@ -21,18 +21,22 @@
 .ppp-header {
   text-align: center;
   margin-bottom: 40px;
+  padding: 30px 20px;
+  background: var(--gradient-primary);
+  color: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
 }
 
 .ppp-header h1 {
   font-size: 2.5rem;
   font-weight: 700;
-  margin-bottom: 10px;
-  color: #1a1f2c;
+  margin-bottom: 15px;
 }
 
 .ppp-subtitle {
   font-size: 1.25rem;
-  color: #6c757d;
+  opacity: 0.9;
   max-width: 700px;
   margin: 0 auto;
 }
@@ -54,8 +58,8 @@
   font-size: 1.75rem;
   font-weight: 600;
   margin-bottom: 20px;
-  color: #1a1f2c;
-  border-bottom: 2px solid #e9ecef;
+  color: var(--text-dark);
+  border-bottom: 2px solid var(--border-color);
   padding-bottom: 10px;
 }
 
@@ -63,7 +67,7 @@
   font-size: 1rem;
   line-height: 1.6;
   margin-bottom: 16px;
-  color: #495057;
+  color: var(--text-medium);
 }
 
 .ppp-two-columns {
@@ -92,7 +96,7 @@
 
 .ppp-list li::before {
   content: "•";
-  color: #8B5CF6;
+  color: var(--primary-color);
   font-weight: bold;
   position: absolute;
   left: -15px;
@@ -106,28 +110,34 @@
 
 .ppp-faq-item {
   padding: 20px;
-  background-color: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  background-color: var(--card-bg);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.ppp-faq-item:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
 }
 
 .ppp-faq-item h3 {
   font-size: 1.2rem;
   margin-bottom: 12px;
-  color: #1a1f2c;
+  color: var(--text-dark);
   font-weight: 600;
 }
 
 .ppp-faq-item p {
   font-size: 0.95rem;
-  color: #6c757d;
+  color: var(--text-light);
   margin: 0;
 }
 
 .ppp-benefits-section {
-  background-color: #f0f4ff;
+  background-color: rgba(139, 92, 246, 0.1);
   padding: 30px;
-  border-radius: 12px;
+  border-radius: var(--radius-lg);
   margin-bottom: 40px;
 }
 
@@ -152,7 +162,7 @@
 }
 
 .ppp-checkmark {
-  color: #8B5CF6;
+  color: var(--primary-color);
   font-weight: bold;
   font-size: 1.1rem;
 }
@@ -170,45 +180,11 @@
 
 /* Dark mode styles */
 @media (prefers-color-scheme: dark) {
-  .ppp-page {
-    background-color: #121212;
-    color: #e0e0e0;
-  }
-  
-  .ppp-header h1 {
-    color: #f8f9fa;
-  }
-  
-  .ppp-subtitle {
-    color: #adb5bd;
-  }
-  
-  .ppp-section h2 {
-    color: #f8f9fa;
-    border-bottom-color: #2d3748;
-  }
-  
-  .ppp-section p {
-    color: #ced4da;
+  .ppp-benefits-section {
+    background-color: rgba(123, 58, 237, 0.15);
   }
   
   .ppp-faq-item {
-    background-color: #1e1e1e;
-  }
-  
-  .ppp-faq-item h3 {
-    color: #f8f9fa;
-  }
-  
-  .ppp-faq-item p {
-    color: #adb5bd;
-  }
-  
-  .ppp-benefits-section {
-    background-color: #1a1c2d;
-  }
-  
-  .ppp-checkmark {
-    color: #a78bfa;
+    background-color: var(--card-bg-dark);
   }
 }
