@@ -1,10 +1,14 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import PersonalLoanCalculator from '@/components/PersonalLoanCalculator';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 const PersonalLoanCalculatorPage: React.FC = () => {
   return (
-    <div className="container mx-auto py-8 px-4">
+    <>
+      <Header />
+      <div className="container mx-auto py-8 px-4">
       <Helmet>
         <title>Personal Loan Calculator | CTC Calculator</title>
         <meta name="description" content="Calculate your monthly personal loan payments, total interest, and more with our easy-to-use personal loan calculator." />
@@ -74,7 +78,9 @@ const PersonalLoanCalculatorPage: React.FC = () => {
           </p>
         </div>
       </div>
-    </div>
+      </div>
+      <Footer />
+    </>
   );
 };
 

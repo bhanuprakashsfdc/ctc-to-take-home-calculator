@@ -1,10 +1,14 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import HomeLoanCalculator from '@/components/HomeLoanCalculator';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 const HomeLoanCalculatorPage: React.FC = () => {
   return (
-    <div className="container mx-auto py-8 px-4">
+    <>
+      <Header />
+      <div className="container mx-auto py-8 px-4">
       <Helmet>
         <title>Home Loan Calculator | CTC Calculator</title>
         <meta name="description" content="Calculate your monthly mortgage payments, total interest, and more with our easy-to-use home loan calculator." />
@@ -46,9 +50,7 @@ const HomeLoanCalculatorPage: React.FC = () => {
           </ul>
           
           <h2>Factors That Affect Your Mortgage Payment</h2>
-          <p>
-            Several factors can impact your monthly mortgage payment:
-          </p>
+          <p>Several factors can impact your monthly mortgage payment:</p>
           <ul>
             <li><strong>Loan Amount</strong> - A higher loan amount results in higher monthly payments.</li>
             <li><strong>Interest Rate</strong> - Higher interest rates increase your monthly payment and total interest paid.</li>
@@ -62,7 +64,9 @@ const HomeLoanCalculatorPage: React.FC = () => {
           </p>
         </div>
       </div>
-    </div>
+      </div>
+      <Footer />
+    </>
   );
 };
 
