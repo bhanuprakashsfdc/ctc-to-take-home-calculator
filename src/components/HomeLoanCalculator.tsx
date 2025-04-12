@@ -8,6 +8,7 @@ import { SUPPORTED_COUNTRIES } from '@/constants/countryConstants';
 import LoanFormField from './calculators/LoanFormField';
 import LoanSummary from './calculators/LoanSummary';
 import LoanInfoSection from './calculators/LoanInfoSection';
+import { calculateLoanDetails } from '@/utils/loanCalculator';
 
 const HomeLoanCalculator: React.FC = () => {
   const { t } = useTranslation();
@@ -32,15 +33,11 @@ const HomeLoanCalculator: React.FC = () => {
   const calculateLoan = () => {
     try {
       const principal = loanAmount - downPayment;
-      const monthlyRate = interestRate / 100 / 12;
-      const numberOfPayments = loanTerm * 12;
-      
-      // Calculate monthly payment using the formula: P * r * (1 + r)^n / ((1 + r)^n - 1)
-      const monthlyPayment = principal * monthlyRate * Math.pow(1 + monthlyRate, numberOfPayments) / 
-                           (Math.pow(1 + monthlyRate, numberOfPayments) - 1);
-      
-      const totalPayment = monthlyPayment * numberOfPayments;
-      const totalInterest = totalPayment - principal;
+      const { monthlyPayment, totalPayment, totalInterest } = calculateLoanDetails(
+        principal,
+        interestRate,
+        loanTerm
+      );
       
       setMonthlyPayment(monthlyPayment);
       setTotalPayment(totalPayment);
@@ -91,6 +88,7 @@ const HomeLoanCalculator: React.FC = () => {
               max={1000000}
               step={10000}
               formatValue={formatCurrency}
+              tooltip="The total purchase price of the home"
             />
 
             <LoanFormField
@@ -102,6 +100,7 @@ const HomeLoanCalculator: React.FC = () => {
               max={loanAmount * 0.5}
               step={5000}
               formatValue={formatCurrency}
+              tooltip="Initial payment made upfront. Typically 20% of home price for best rates"
             />
 
             <LoanFormField
@@ -113,6 +112,7 @@ const HomeLoanCalculator: React.FC = () => {
               max={15}
               step={0.1}
               unit="%"
+              tooltip="Annual interest rate charged by the lender"
             />
 
             <LoanFormField
@@ -124,6 +124,7 @@ const HomeLoanCalculator: React.FC = () => {
               max={30}
               step={1}
               unit="years"
+              tooltip="Length of time to repay the loan. Common terms are 15 or 30 years"
             />
           </div>
 
