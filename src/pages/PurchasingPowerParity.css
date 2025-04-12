@@ -1,0 +1,214 @@
+
+.ppp-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: #212529;
+  background-color: #f8f9fa;
+}
+
+.ppp-main {
+  flex: 1;
+  padding: 40px 0;
+}
+
+.ppp-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.ppp-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.ppp-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #1a1f2c;
+}
+
+.ppp-subtitle {
+  font-size: 1.25rem;
+  color: #6c757d;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.ppp-calculator-container {
+  margin-bottom: 60px;
+}
+
+.ppp-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.ppp-section {
+  margin-bottom: 40px;
+}
+
+.ppp-section h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #1a1f2c;
+  border-bottom: 2px solid #e9ecef;
+  padding-bottom: 10px;
+}
+
+.ppp-section p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 16px;
+  color: #495057;
+}
+
+.ppp-two-columns {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+@media (min-width: 768px) {
+  .ppp-two-columns {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.ppp-list {
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.ppp-list li {
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 5px;
+}
+
+.ppp-list li::before {
+  content: "•";
+  color: #8B5CF6;
+  font-weight: bold;
+  position: absolute;
+  left: -15px;
+}
+
+.ppp-faq {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.ppp-faq-item {
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.ppp-faq-item h3 {
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+  color: #1a1f2c;
+  font-weight: 600;
+}
+
+.ppp-faq-item p {
+  font-size: 0.95rem;
+  color: #6c757d;
+  margin: 0;
+}
+
+.ppp-benefits-section {
+  background-color: #f0f4ff;
+  padding: 30px;
+  border-radius: 12px;
+  margin-bottom: 40px;
+}
+
+.ppp-benefits-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+  padding: 15px 0;
+}
+
+@media (min-width: 768px) {
+  .ppp-benefits-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.ppp-benefits-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+}
+
+.ppp-checkmark {
+  color: #8B5CF6;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.ppp-related-tools {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ppp-currency-converter {
+  height: 100%;
+}
+
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
+  .ppp-page {
+    background-color: #121212;
+    color: #e0e0e0;
+  }
+  
+  .ppp-header h1 {
+    color: #f8f9fa;
+  }
+  
+  .ppp-subtitle {
+    color: #adb5bd;
+  }
+  
+  .ppp-section h2 {
+    color: #f8f9fa;
+    border-bottom-color: #2d3748;
+  }
+  
+  .ppp-section p {
+    color: #ced4da;
+  }
+  
+  .ppp-faq-item {
+    background-color: #1e1e1e;
+  }
+  
+  .ppp-faq-item h3 {
+    color: #f8f9fa;
+  }
+  
+  .ppp-faq-item p {
+    color: #adb5bd;
+  }
+  
+  .ppp-benefits-section {
+    background-color: #1a1c2d;
+  }
+  
+  .ppp-checkmark {
+    color: #a78bfa;
+  }
+}

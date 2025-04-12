@@ -1,0 +1,380 @@
+
+.ppp-calculator {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.ppp-calculator-header {
+  text-align: center;
+  padding: 25px 20px;
+  background: linear-gradient(135deg, #8B5CF6 0%, #6366F1 100%);
+  color: white;
+}
+
+.ppp-calculator-header h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.ppp-calculator-description {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.ppp-calculator-form {
+  padding: 30px;
+}
+
+.ppp-calculator-section {
+  margin-bottom: 30px;
+}
+
+.ppp-calculator-locations {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media (min-width: 768px) {
+  .ppp-calculator-locations {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.ppp-calculator-location {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.ppp-calculator-location h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.ppp-form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.ppp-form-group label {
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+  color: #555;
+  font-weight: 500;
+}
+
+.ppp-select {
+  height: 42px;
+  padding: 0 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  color: #333;
+  background-color: #fff;
+  width: 100%;
+  transition: border-color 0.2s;
+}
+
+.ppp-select:focus {
+  border-color: #8B5CF6;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.2);
+}
+
+.ppp-calculator-salary {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+.ppp-salary-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.ppp-salary-header label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.ppp-view-toggle {
+  display: flex;
+  gap: 15px;
+}
+
+.ppp-view-toggle label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.ppp-view-toggle input {
+  margin: 0;
+}
+
+.ppp-salary-input {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.ppp-salary-input input {
+  height: 48px;
+  width: 100%;
+  padding: 0 12px 0 30px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.ppp-salary-input input:focus {
+  border-color: #8B5CF6;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.2);
+}
+
+.ppp-currency-symbol {
+  position: absolute;
+  left: 12px;
+  font-size: 1rem;
+  color: #666;
+}
+
+.ppp-calculator-results {
+  background-color: #f8f9fa;
+  padding: 25px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.ppp-calculator-results h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.ppp-result-comparison {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+@media (min-width: 768px) {
+  .ppp-result-comparison {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.ppp-result-card {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.ppp-result-location {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.ppp-result-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.ppp-result-value.highlight {
+  color: #8B5CF6;
+}
+
+.ppp-result-description {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #555;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.ppp-result-factors {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.ppp-factor {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.ppp-factor-label {
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.ppp-factor-value {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.ppp-calculator-footer {
+  border-top: 1px solid #eee;
+  padding-top: 20px;
+}
+
+.ppp-calculator-footer h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+.ppp-calculator-footer p {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
+  .ppp-calculator {
+    background-color: #1e1e1e;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .ppp-calculator-header {
+    background: linear-gradient(135deg, #7c3aed 0%, #4f46e5 100%);
+  }
+  
+  .ppp-calculator-location h3 {
+    color: #e0e0e0;
+  }
+  
+  .ppp-form-group label {
+    color: #adb5bd;
+  }
+  
+  .ppp-select {
+    border-color: #444;
+    color: #e0e0e0;
+    background-color: #2d3748;
+  }
+  
+  .ppp-select:focus {
+    border-color: #a78bfa;
+    box-shadow: 0 0 0 2px rgba(167, 139, 250, 0.2);
+  }
+  
+  .ppp-calculator-salary {
+    background-color: #2d3748;
+  }
+  
+  .ppp-salary-header label {
+    color: #e0e0e0;
+  }
+  
+  .ppp-view-toggle label {
+    color: #adb5bd;
+  }
+  
+  .ppp-salary-input input {
+    border-color: #444;
+    color: #e0e0e0;
+    background-color: #1e1e1e;
+  }
+  
+  .ppp-salary-input input:focus {
+    border-color: #a78bfa;
+    box-shadow: 0 0 0 2px rgba(167, 139, 250, 0.2);
+  }
+  
+  .ppp-currency-symbol {
+    color: #adb5bd;
+  }
+  
+  .ppp-calculator-results {
+    background-color: #2d3748;
+  }
+  
+  .ppp-calculator-results h3 {
+    color: #e0e0e0;
+  }
+  
+  .ppp-result-card {
+    background-color: #1e1e1e;
+  }
+  
+  .ppp-result-location {
+    color: #adb5bd;
+  }
+  
+  .ppp-result-value {
+    color: #e0e0e0;
+  }
+  
+  .ppp-result-value.highlight {
+    color: #a78bfa;
+  }
+  
+  .ppp-result-description {
+    background-color: #1e1e1e;
+    color: #ced4da;
+  }
+  
+  .ppp-factor {
+    background-color: #1e1e1e;
+  }
+  
+  .ppp-factor-label {
+    color: #adb5bd;
+  }
+  
+  .ppp-factor-value {
+    color: #e0e0e0;
+  }
+  
+  .ppp-calculator-footer {
+    border-top-color: #444;
+  }
+  
+  .ppp-calculator-footer h3 {
+    color: #e0e0e0;
+  }
+  
+  .ppp-calculator-footer p {
+    color: #adb5bd;
+  }
+}

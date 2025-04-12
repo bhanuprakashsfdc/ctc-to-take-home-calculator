@@ -31,11 +31,28 @@ footer, header, hgroup, menu, nav, section {
   display: block;
 }
 
+:root {
+  --primary-color: #8B5CF6;
+  --primary-hover: #7c3aed;
+  --primary-light: #ddd6fe;
+  --secondary-color: #6366F1;
+  --text-dark: #1a1f2c;
+  --text-medium: #495057;
+  --text-light: #6c757d;
+  --background-light: #f8f9fa;
+  --background-dark: #121212;
+  --border-color: #e9ecef;
+  --success-color: #10b981;
+  --error-color: #ef4444;
+  --warning-color: #f59e0b;
+  --info-color: #3b82f6;
+}
+
 body {
   line-height: 1.5;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  color: #212529;
-  background-color: #ffffff;
+  color: var(--text-dark);
+  background-color: var(--background-light);
 }
 
 ol, ul {
@@ -71,11 +88,13 @@ p {
 }
 
 a {
-  color: #0066cc;
+  color: var(--primary-color);
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 a:hover {
+  color: var(--primary-hover);
   text-decoration: underline;
 }
 
@@ -91,11 +110,54 @@ button, input, select, textarea {
   margin: 0;
 }
 
-button {
-  cursor: pointer;
+input, select, textarea {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 8px 12px;
+  width: 100%;
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
 
-/* Legacy Tailwind utility classes converted to standard CSS */
+input:focus, select:focus, textarea:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.2);
+}
+
+button {
+  cursor: pointer;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--primary-hover);
+}
+
+/* Common Card Styles */
+.card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.card-highlight {
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 20px rgba(0, 102, 204, 0.1);
+}
+
+.card-highlight:hover {
+  box-shadow: 0 8px 30px rgba(0, 102, 204, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Result styles */
 .result-row {
   display: flex;
   justify-content: space-between;
@@ -114,33 +176,69 @@ button {
 }
 
 .deduction {
-  color: #dc3545;
+  color: var(--error-color);
 }
 
 .addition {
-  color: #28a745;
+  color: var(--success-color);
 }
 
-/* Common Card Styles */
-.card-highlight {
-  transition: all 0.2s ease;
-  box-shadow: 0 4px 20px rgba(0, 102, 204, 0.1);
+/* Responsive utilities */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
 }
 
-.card-highlight:hover {
-  box-shadow: 0 8px 30px rgba(0, 102, 204, 0.15);
-  transform: translateY(-2px);
+/* Animation classes */
+.fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
 }
 
 /* Dark mode */
 @media (prefers-color-scheme: dark) {
-  body {
-    background-color: #121212;
-    color: #e0e0e0;
+  :root {
+    --primary-color: #a78bfa;
+    --primary-hover: #8b5cf6;
+    --primary-light: #4c1d95;
+    --text-dark: #f8f9fa;
+    --text-medium: #ced4da;
+    --text-light: #adb5bd;
+    --background-light: #121212;
+    --border-color: #2d3748;
   }
   
-  a {
-    color: #66b0ff;
+  body {
+    background-color: var(--background-dark);
+    color: var(--text-dark);
+  }
+  
+  .card {
+    background-color: #1e1e1e;
+  }
+  
+  .card-highlight {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .card-highlight:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
   }
   
   .result-row {
@@ -151,13 +249,15 @@ button {
     color: #a0a0a0;
   }
   
-  .card-highlight {
-    background-color: #1e1e1e;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  input, select, textarea {
+    border-color: #444;
+    background-color: #2d3748;
+    color: #e0e0e0;
   }
   
-  .card-highlight:hover {
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  input:focus, select:focus, textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(167, 139, 250, 0.2);
   }
   
   .deduction {
