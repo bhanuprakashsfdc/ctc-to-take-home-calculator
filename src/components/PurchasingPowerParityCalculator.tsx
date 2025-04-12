@@ -97,6 +97,7 @@ const PurchasingPowerParityCalculator: React.FC = () => {
                   id="fromCountry"
                   value={fromCountry}
                   onChange={setFromCountry}
+                  disableNavigation={true}
                 />
               </div>
               
@@ -127,6 +128,7 @@ const PurchasingPowerParityCalculator: React.FC = () => {
                   id="toCountry"
                   value={toCountry}
                   onChange={setToCountry}
+                  disableNavigation={true}
                 />
               </div>
               

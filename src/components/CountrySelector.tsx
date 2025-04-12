@@ -6,38 +6,55 @@ import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import { SearchableSelect } from '@/components/ui/searchable-select';
 
 interface CountrySelectorProps {
-  selectedCountry: string;
-  onCountryChange: (country: string) => void;
+  selectedCountry?: string;
+  onCountryChange?: (country: string) => void;
   className?: string;
+  disableNavigation?: boolean;
+  // Additional props for compatibility with PurchasingPowerParityCalculator
+  id?: string;
+  value?: string;
+  onChange?: (country: string) => void;
 }
 
 const CountrySelector: React.FC<CountrySelectorProps> = ({
   selectedCountry,
-  onCountryChange, // Keep this prop for potential non-navigation scenarios
+  onCountryChange,
   className = "",
+  disableNavigation = false,
+  id,
+  value,
+  onChange,
 }) => {
   const { t } = useTranslation();
   const navigate = useNavigate(); // Initialize useNavigate
+  
+  // Use the appropriate value and change handler based on props provided
+  const effectiveValue = value || selectedCountry || "";
+  const effectiveChangeHandler = onChange || onCountryChange;
 
-  // Handle country selection: Navigate for specific countries
-  const handleValueChange = (value: string) => {
-    const countryCodeLower = value.toLowerCase();
-    const dedicatedPages = ['in', 'us', 'uk']; // Countries with dedicated pages
+  // Handle country selection: Navigate for specific countries only if navigation is not disabled
+  const handleValueChange = (newValue: string) => {
+    if (effectiveChangeHandler) {
+      effectiveChangeHandler(newValue);
+    }
+    
+    // Only navigate if navigation is not disabled and we're changing to a country with a dedicated page
+    if (!disableNavigation) {
+      const countryCodeLower = newValue.toLowerCase();
+      const dedicatedPages = ['in', 'us', 'uk']; // Countries with dedicated pages
 
-    if (dedicatedPages.includes(countryCodeLower)) {
-      navigate(`/${countryCodeLower}.html`);
-    } else {
-      // For other countries, use the existing callback to update state
-      onCountryChange(value);
+      if (dedicatedPages.includes(countryCodeLower)) {
+        navigate(`/${countryCodeLower}.html`);
+      }
     }
   };
 
   return (
     <div className={`space-y-2 ${className}`}>
-      <Label htmlFor="country-select">{t('common.country')}</Label>
+      <Label htmlFor={id || "country-select"}>{t('common.country')}</Label>
       <SearchableSelect
-        id="country-select"
-        value={selectedCountry}
+        id={id || "country-select"}
+        value={effectiveValue}
         onValueChange={handleValueChange}
         placeholder={t('common.country')}
         options={SUPPORTED_COUNTRIES.map((country) => ({
