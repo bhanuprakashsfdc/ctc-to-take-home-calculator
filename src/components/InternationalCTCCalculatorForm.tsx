@@ -15,6 +15,7 @@ import {
   convertCurrency
 } from '@/utils/internationalSalaryCalculator';
 import { SUPPORTED_COUNTRIES, DEFAULT_COUNTRY, REGION_PRESETS } from '@/constants/countryConstants';
+import "@/megamenu.css";
 
 interface InternationalCTCCalculatorFormProps {
   defaultCountry?: string;
@@ -314,7 +315,7 @@ const InternationalCTCCalculatorForm: React.FC<InternationalCTCCalculatorFormPro
   };
 
   return (
-    <div className="space-y-6 ctc-calculator">
+    <div className="space-y-6 ctc-calculator pushback backsidepush">
       <Card className="card-highlight">
         <CardContent className="pt-6">
           <div className="space-y-4">
