@@ -1,10 +1,8 @@
 .megamenufix{
-    z-index: 100;
+    z-index: -1;
     left: -800px !important;
   }
 .pushback{
-   /* z-index: 10; */
+   z-index: -10 !important;
 }
-.backsidepush{
-  z-index: -10;
-}
+

@@ -57,7 +57,7 @@ export function SearchableSelect({
   };
 
   return (
-    <div className="backsidepush">
+    <div className="">
      <div className={cn("relative", className)}>
       <Select
         value={value}

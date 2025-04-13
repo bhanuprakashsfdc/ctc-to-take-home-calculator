@@ -8,7 +8,7 @@ import { useTranslation } from 'react-i18next';
 import LanguageSelector from './LanguageSelector';
 import MegaMenu from './MegaMenu';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from './ui/accordion';
-
+import "@/megamenu.css";
 const Header: React.FC = () => {
   const location = useLocation();
   const isMobile = useIsMobile();

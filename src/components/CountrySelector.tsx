@@ -53,6 +53,7 @@ const CountrySelector: React.FC<CountrySelectorProps> = ({
     <div className={`space-y-2 ${className}`}>
       <Label htmlFor={id || "country-select"}>{t('common.country')}</Label>
       <SearchableSelect
+        className="pushback"
         id={id || "country-select"}
         value={effectiveValue}
         onValueChange={handleValueChange}
