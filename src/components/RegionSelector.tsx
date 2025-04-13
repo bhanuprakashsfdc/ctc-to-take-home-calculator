@@ -28,6 +28,7 @@ const RegionSelector: React.FC<RegionSelectorProps> = ({
     <div className={`space-y-2 ${className}`}>
       <Label htmlFor="region-select">{t('common.region')}</Label>
       <SearchableSelect
+        className="pushback"
         id="region-select"
         value={selectedRegion}
         onValueChange={onRegionChange}
