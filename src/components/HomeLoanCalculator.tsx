@@ -1,13 +1,16 @@
+
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Card, CardContent } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Slider } from "@/components/ui/slider";
 import CountrySelector from './CountrySelector';
 import Header from './Header';
 import Footer from './Footer';
 import { SUPPORTED_COUNTRIES } from '@/constants/countryConstants';
+import LoanFormField from './calculators/LoanFormField';
+import LoanSummary from './calculators/LoanSummary';
+import LoanInfoSection from './calculators/LoanInfoSection';
+import { calculateLoanDetails } from '@/utils/loanCalculator';
 
 const HomeLoanCalculator: React.FC = () => {
   const { t } = useTranslation();
@@ -32,15 +35,11 @@ const HomeLoanCalculator: React.FC = () => {
   const calculateLoan = () => {
     try {
       const principal = loanAmount - downPayment;
-      const monthlyRate = interestRate / 100 / 12;
-      const numberOfPayments = loanTerm * 12;
-      
-      // Calculate monthly payment using the formula: P * r * (1 + r)^n / ((1 + r)^n - 1)
-      const monthlyPayment = principal * monthlyRate * Math.pow(1 + monthlyRate, numberOfPayments) / 
-                           (Math.pow(1 + monthlyRate, numberOfPayments) - 1);
-      
-      const totalPayment = monthlyPayment * numberOfPayments;
-      const totalInterest = totalPayment - principal;
+      const { monthlyPayment, totalPayment, totalInterest } = calculateLoanDetails(
+        principal,
+        interestRate,
+        loanTerm
+      );
       
       setMonthlyPayment(monthlyPayment);
       setTotalPayment(totalPayment);
@@ -82,127 +81,63 @@ const HomeLoanCalculator: React.FC = () => {
               />
             </div>
             
-            <div className="space-y-2">
-              <div className="flex justify-between">
-                <Label htmlFor="loanAmount">Home Price</Label>
-                <span className="text-sm font-medium">{formatCurrency(loanAmount)}</span>
-              </div>
-              <Input
-                id="loanAmount"
-                type="number"
-                value={loanAmount}
-                onChange={(e) => setLoanAmount(Number(e.target.value))}
-                className="flex-1"
-              />
-              <Slider
-                value={[loanAmount]}
-                min={50000}
-                max={1000000}
-                step={10000}
-                onValueChange={(value) => setLoanAmount(value[0])}
-              />
-            </div>
+            <LoanFormField
+              id="loanAmount"
+              label="Home Price"
+              value={loanAmount}
+              onChange={setLoanAmount}
+              min={50000}
+              max={1000000}
+              step={10000}
+              formatValue={formatCurrency}
+              tooltip="The total purchase price of the home"
+            />
 
-            <div className="space-y-2">
-              <div className="flex justify-between">
-                <Label htmlFor="downPayment">Down Payment</Label>
-                <span className="text-sm font-medium">{formatCurrency(downPayment)}</span>
-              </div>
-              <Input
-                id="downPayment"
-                type="number"
-                value={downPayment}
-                onChange={(e) => setDownPayment(Number(e.target.value))}
-                className="flex-1"
-              />
-              <Slider
-                value={[downPayment]}
-                min={0}
-                max={loanAmount * 0.5}
-                step={5000}
-                onValueChange={(value) => setDownPayment(value[0])}
-              />
-            </div>
+            <LoanFormField
+              id="downPayment"
+              label="Down Payment"
+              value={downPayment}
+              onChange={setDownPayment}
+              min={0}
+              max={loanAmount * 0.5}
+              step={5000}
+              formatValue={formatCurrency}
+              tooltip="Initial payment made upfront. Typically 20% of home price for best rates"
+            />
 
-            <div className="space-y-2">
-              <div className="flex justify-between">
-                <Label htmlFor="interestRate">Interest Rate (%)</Label>
-                <span className="text-sm font-medium">{interestRate}%</span>
-              </div>
-              <Input
-                id="interestRate"
-                type="number"
-                value={interestRate}
-                onChange={(e) => setInterestRate(Number(e.target.value))}
-                step="0.1"
-                className="flex-1"
-              />
-              <Slider
-                value={[interestRate]}
-                min={1}
-                max={15}
-                step={0.1}
-                onValueChange={(value) => setInterestRate(value[0])}
-              />
-            </div>
+            <LoanFormField
+              id="interestRate"
+              label="Interest Rate (%)"
+              value={interestRate}
+              onChange={setInterestRate}
+              min={1}
+              max={15}
+              step={0.1}
+              unit="%"
+              tooltip="Annual interest rate charged by the lender"
+            />
 
-            <div className="space-y-2">
-              <div className="flex justify-between">
-                <Label htmlFor="loanTerm">Loan Term (years)</Label>
-                <span className="text-sm font-medium">{loanTerm} years</span>
-              </div>
-              <Input
-                id="loanTerm"
-                type="number"
-                value={loanTerm}
-                onChange={(e) => setLoanTerm(Number(e.target.value))}
-                className="flex-1"
-              />
-              <Slider
-                value={[loanTerm]}
-                min={5}
-                max={30}
-                step={1}
-                onValueChange={(value) => setLoanTerm(value[0])}
-              />
-            </div>
+            <LoanFormField
+              id="loanTerm"
+              label="Loan Term (years)"
+              value={loanTerm}
+              onChange={setLoanTerm}
+              min={5}
+              max={30}
+              step={1}
+              unit="years"
+              tooltip="Length of time to repay the loan. Common terms are 15 or 30 years"
+            />
           </div>
 
-          {/* Results Section */}
-          <div className="mt-6 p-4 bg-muted rounded-lg space-y-4">
-            <h3 className="text-xl font-semibold text-center">Loan Summary</h3>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
-              <div className="p-3 bg-background rounded-md">
-                <p className="text-sm text-muted-foreground mb-1">Monthly Payment</p>
-                <p className="text-2xl font-bold">{formatCurrency(monthlyPayment)}</p>
-              </div>
-              
-              <div className="p-3 bg-background rounded-md">
-                <p className="text-sm text-muted-foreground mb-1">Total Payment</p>
-                <p className="text-2xl font-bold">{formatCurrency(totalPayment)}</p>
-              </div>
-              
-              <div className="p-3 bg-background rounded-md">
-                <p className="text-sm text-muted-foreground mb-1">Total Interest</p>
-                <p className="text-2xl font-bold">{formatCurrency(totalInterest)}</p>
-              </div>
-            </div>
-          </div>
+          <LoanSummary
+            monthlyPayment={monthlyPayment}
+            totalPayment={totalPayment}
+            totalInterest={totalInterest}
+            formatCurrency={formatCurrency}
+          />
 
-          {/* Explanation Section */}
-          <div className="text-sm text-muted-foreground space-y-2 border-t pt-4">
-            <h3 className="font-medium text-foreground">About Home Loans</h3>
-            <p>
-              A home loan or mortgage is a long-term loan used to finance the purchase of a property. 
-              The monthly payment includes both principal and interest, and is calculated based on the loan amount, 
-              interest rate, and term length.
-            </p>
-            <p>
-              The down payment is the initial upfront payment you make when purchasing a home. A larger down payment 
-              typically results in lower monthly payments and less interest paid over the life of the loan.
-            </p>
-          </div>
+          <LoanInfoSection loanType="home" />
         </div>
       </CardContent>
     </Card>
